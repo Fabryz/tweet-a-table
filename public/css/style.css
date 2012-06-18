@@ -181,7 +181,7 @@ h1 {
   top: 410px;
 }
 
-.container .monitor ul li.g8,.g9,.g10,.g11,.g12,.g13,.g14,.g15 {left: 700px;}
+.container .monitor ul li.g8,.g9,.g10,.g11,.g12,.g13,.g14,.g15 {left: 660px;}
 
 .container .monitor ul li.g8 {
   font-size: 24px;
@@ -247,8 +247,25 @@ h1 {
 	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.75);
 }
 
+#copy {
+  margin-left: 8%;
+  color: #e9e72a;
+  font-family: 'SilkscreenNormal';
+  text-shadow: 2px 2px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+}
 
+#copy a {
+  color: #e9e72a;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, .5);
+}
 
+#copy a:hover {
+  color: #F2F2F2;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, .8);
+}
 
 @media only screen and (min-width: 35em) {
   
