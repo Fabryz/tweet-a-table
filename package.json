@@ -1,15 +1,15 @@
 {
   "name": "tweet-a-table",
-  "version": "0.3.0-10",
+  "version": "0.4.2",
   "private": true,
   "engines": {
     "node": "0.6.x"
   },
   "dependencies": {
     "express": "2.5.x",
-    "jade": "0.26.x",
     "socket.io": "0.9.x",
-    "jquery": "1.7.x"
+    "jquery": "1.7.x",
+    "tuiter": "0.1.x"
   },
   "subdomain": "tweet-a-table",
   "scripts": {
