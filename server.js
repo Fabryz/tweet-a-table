@@ -1,8 +1,7 @@
 var express = require('express'),
-	https = require('https'),
-	Buffer = require('buffer').Buffer,
 	fs = require('fs'),
 	jQuery = require('jquery'),
+	Tuiter = require('tuiter'),
 	app = module.exports = express.createServer();
 
 /*
@@ -23,7 +22,7 @@ app.configure('development', function(){
 });
 
 app.configure('production', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+    app.use(express.errorHandler()); 
 });
 
 /*
@@ -36,13 +35,23 @@ app.get('/', function(req, res) {
 
 app.get('/api', function(req, res) {
 	res.contentType('application/json');
- 	res.end(JSON.stringify(stream))
+ 	res.end(JSON.stringify(stream));
 });
 
 app.get('/resetdb', function(req, res) {
 	createDb();
 	console.log("Db has been resetted.");
 	res.redirect('/');
+});
+
+app.get('/restart', function(req, res) {
+	console.log(" * Restarting in 5 seconds... * ");
+	setTimeout(function() {
+		tu = '';
+		grabTwitterFeed();
+		console.log(" * Triggered restart * ");
+		res.redirect('/');
+	}, 5000);
 });
 
 /*
@@ -59,7 +68,7 @@ var stream = {
 	updatedAt: ''
 };
 
-var request = '',
+var tu = '',
 	configs = readConfigs();
 
 createParamsFile();
@@ -67,7 +76,7 @@ checkDb();
 
 app.listen(8080);
 
-grabFeed();
+grabTwitterFeed();
 
 console.log("Express server listening in %s mode", app.settings.env);
 
@@ -160,8 +169,7 @@ function readConfigs() {
 		paramsConfigs = readJSONFile("./configs/params.json");
 
 	return {
-		user : twitterConfigs.user,
-		password : twitterConfigs.pass,
+		twitterApp : twitterConfigs,
 		param : paramsConfigs.param,
 		value : paramsConfigs.value
 	};
@@ -216,51 +224,32 @@ function elaborateStats(hashtags) {
 }
 	
 // Using Twitter Streaming API
-function grabFeed() {
-	var postdata = configs.param +'='+ configs.value;
-	var requestOptions = {
-		host: "stream.twitter.com",
-		port: 443,
-		path: "/1/statuses/filter.json",
-		method: "POST",
-		headers: {
-			"User-Agent": "nodejs_agent",
-			"Authorization": "Basic "+ new Buffer(configs.user +":"+ configs.password).toString("base64"),
-			"Content-Type": "application/x-www-form-urlencoded",
-			"Content-Length": postdata.length
-		}
-	};
-
-	request = https.request(requestOptions, function(response) {
-		console.log("* Stream started.");
-
-		response.on('data', function(chunk) {
-			var json = chunk.toString('utf8');
-
-			if (json.length > 0) {
-				try {
-					var tweet = JSON.parse(json);
-
-					var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
-					elaborateStats(hashtags);
-
-					io.sockets.emit("leaderboard", strencode(stream.leaderboard));
-				} catch(e) {
-					console.log("Error: "+ e);
-				}
-			}
-		});
-
-		response.on('end', function() {
-			console.log("* Stream ended.");
-		});
+function grabTwitterFeed() {
+	tu = new Tuiter({
+	    "consumer_key" : configs.twitterApp.consumer_key
+	  , "consumer_secret" : configs.twitterApp.consumer_secret
+	  , "access_token_key" : configs.twitterApp.access_token_key
+	  , "access_token_secret" : configs.twitterApp.access_token_secret
 	});
 
-	request.write(postdata);
-	request.end();
+	tu.filter({ track: configs.value.split(",") }, function(feed) {
 
-	request.on('error', function(e) {
-		console.log('Request error: '+ e);
+		console.log(" * Stream started * ");
+
+		feed.on('tweet', function(tweet){
+			var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
+			elaborateStats(hashtags);
+
+			io.sockets.emit("leaderboard", strencode(stream.leaderboard));
+		});
+
+		feed.on('delete', function(del) {
+			console.log("Deleted: "+ del);
+		});
+
+		feed.on('error', function(err) {
+			console.log("Error: "+ err);
+		});
 	});
 }
 
@@ -286,10 +275,6 @@ io.sockets.on('connection', function(client) {
 	totUsers++;
 	console.log('+ User '+ client.id +' connected, total users: '+ totUsers);
 
-	// if ((totUsers > 0) && (request == '')) {
-	// 	grabFeed();
-	// }
-
 	client.emit("clientId", { id: client.id });
 	client.emit("filters", { event: stream.event, options: stream.options, createdAt: stream.createdAt });
 	io.sockets.emit("tot", { tot: totUsers });
@@ -299,11 +284,6 @@ io.sockets.on('connection', function(client) {
 	client.on('disconnect', function() {
 		totUsers--;
 		console.log('- User '+ client.id +' disconnected, total users: '+ totUsers);
-
-		// if (totUsers == 0) {
-		// 	request.abort();
-		// 	request = '';
-		// }
 
 		io.sockets.emit("tot", { tot: totUsers });
 	});
