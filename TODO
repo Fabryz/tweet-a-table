@@ -1,19 +1,7 @@
-- README
-
-X writeJSONFile
-- configs mrrobatto
-
 - about page
-- uptime date
-- stats start date
-- api json
-- admin panel to change #keyevent #options
-^ to reset the stats
-- database to file
+- uptime info
+- admin panel
 - database to mongodb
 - graphs of past/present trends
 - graphs of month/week/day trends
-
-- fix styles
-
-- make it work 24/7
+- make it work 24/7 -> autorestart after N minutes
