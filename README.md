@@ -17,13 +17,14 @@ Modules:
 
 * [Socket.io](http://socket.io/)
 * [Express](http://expressjs.com/)
+* [Tuiter](https://github.com/danzajdband/Tuiter)
 
 Installation
 ------------
 
 1. Clone the repository with ``git clone git://github.com/Fabryz/tweet-a-table.git``
 2. Install dependencies with ``npm install``
-3. Modify ``/configs/twitter.json`` with your twitter username and password
+3. Modify ``/configs/twitter.json`` with your twitter application credentials
 4. Modify ``/configs/keywords.json`` with the param/value used for filtering the tweets accordingly to the Twitter Streaming API Methods.
 An example of the default configuration file to search for the international teams trends on the Euro2012 event:
 
@@ -39,9 +40,9 @@ An example of the default configuration file to search for the international tea
 Contributors
 ------------
 
-* [Fabrizio Codello](https://github.com/Fabryz)
-* [Marco Sors](https://github.com/)
-* [Nicola De Lazzari](https://github.com/)
+* [Fabrizio Codello](http://fabryz.com/)
+* [Marco Sors](http://www.web-expert.it/)
+* [Nicola De Lazzari](https://twitter.com/#!/Nicola_DL)
 
 License
 -------
