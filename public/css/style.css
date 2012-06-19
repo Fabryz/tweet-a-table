@@ -118,7 +118,7 @@ h1 {
   height:640px;
   width:960px;
   position:relative;
-  margin: 0px 100px 0px;
+  margin: 0 auto;
 }
 
 .container .monitor {
@@ -248,7 +248,9 @@ h1 {
 }
 
 #copy {
-  margin-left: 8%;
+  width: 565px;
+  margin: 0 auto;
+  margin-top: 20px;
   color: #e9e72a;
   font-family: 'SilkscreenNormal';
   text-shadow: 2px 2px 1px #000000;
