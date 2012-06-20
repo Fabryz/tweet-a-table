@@ -1,6 +1,6 @@
 {
   "name": "tweet-a-table",
-  "version": "0.4.2",
+  "version": "0.4.3-3",
   "private": true,
   "engines": {
     "node": "0.6.x"
