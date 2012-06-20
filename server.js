@@ -78,6 +78,12 @@ app.listen(8080);
 
 grabTwitterFeed();
 
+var interval = setInterval(function() {
+	tu = '';
+	grabTwitterFeed();
+	console.log(" * 5 mins passed, autorestarted. * ");
+}, 300000); // 5 mins
+
 console.log("Express server listening in %s mode", app.settings.env);
 
 /*
