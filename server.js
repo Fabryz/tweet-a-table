@@ -33,16 +33,20 @@ app.get('/', function(req, res) {
 	res.sendfile('index.html');
 });
 
+app.get('/archive/euro2012.html', function(req, res) {
+	res.sendfile('archive/euro2012.html');
+});
+
 app.get('/api', function(req, res) {
 	res.contentType('application/json');
  	res.end(JSON.stringify(stream));
 });
 
-app.get('/resetdb', function(req, res) {
-	createDb();
-	console.log("Db has been resetted.");
-	res.redirect('/');
-});
+// app.get('/resetdb', function(req, res) {
+// 	createDb();
+// 	console.log("Db has been resetted.");
+// 	res.redirect('/');
+// });
 
 app.get('/restart', function(req, res) {
 	console.log(" * Restarting in 5 seconds... * ");
