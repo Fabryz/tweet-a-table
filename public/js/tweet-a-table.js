@@ -21,6 +21,8 @@ $(document).ready(function() {
 	function init() {
 		Debug.log("Connecting...");
 
+		resetLeaderboard();
+
 		$(document).keyup(function(e) {
 			if (e.keyCode === 220) { //backslash
 				Debug.toggle();
@@ -84,11 +86,16 @@ $(document).ready(function() {
 		return JSON.parse(decodeURIComponent(escape(data)));
 	}
 
+	function resetLeaderboard() {
+		$('.amount').html('0');
+	}
+
 	function updateLeaderboard(leaderboard) {
-		leaderboardHandle.html('');
+		//leaderboardHandle.html('');
 		leaderboard.forEach(function(item, index) {
 			//console.log(index +"# "+ item.option +" has "+ item.count);
-			leaderboardHandle.append("<li class=\"g"+ index +"\">"+ item.option +": "+ item.count +"</li>");
+			//leaderboardHandle.append("<li class=\"g"+ index +"\">"+ item.option +": "+ item.count +"</li>");
+			$('#'+ item.option +' .amount').html(item.count);
 		});
 	}
 
