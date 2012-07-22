@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="600.00000"
+   height="300.00000"
+   id="svg1">
+  <defs
+     id="defs3" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF
+       id="RDF5">
+      <cc:Work
+         rdf:about=""
+         id="Work6">
+        <dc:format
+           id="format7">image/svg+xml</dc:format>
+        <dc:type
+           id="type9"
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(4.000000,0.000000,0.000000,4.000000,-702.5087,-2458.366)"
+     id="g4657">
+    <rect
+       width="150.00000"
+       height="75.000000"
+       x="175.62717"
+       y="614.59137"
+       style="fill:#d81e05;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+       id="rect1530" />
+    <path
+       d="M 175.62717,689.59137 L 250.62717,652.09137 L 175.62717,614.59137 L 175.62717,689.59137 z "
+       style="fill:#ffc61e;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+       id="path908" />
+    <path
+       d="M 175.62717,689.59137 L 225.62717,652.09137 L 175.62717,614.59137 L 175.62717,689.59137 z "
+       style="fill:#000000;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+       id="path2773" />
+  </g>
+  <path
+     d="M 220.08561,618.02578 L 229.16766,618.02578 L 231.97311,609.38828 L 234.77856,618.02578 L 243.86061,618.02578 L 236.51414,623.36328 L 239.31959,632.00078 L 231.97311,626.66327 L 224.62664,632.00078 L 227.43209,623.36328 L 220.08561,618.02578 z "
+     transform="matrix(0.000000,-4.000000,4.000000,0.000000,-2420.903,1077.892)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path2203" />
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="135.00000"
+   height="90.00000"
+   id="svg1">
+  <defs
+     id="defs3" />
+  <g transform="scale(0.3)">
+  <rect
+     width="180.00000"
+     height="90.000000"
+     x="25.000000"
+     y="567.36218"
+     transform="matrix(3.333333,0.000000,0.000000,3.333333,-83.33333,-1891.207)"
+     style="fill:#0072c6;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect908" />
+  <rect
+     width="180.00000"
+     height="60.000000"
+     x="25.000000"
+     y="582.36218"
+     transform="matrix(3.333333,0.000000,0.000000,3.333333,-83.33333,-1891.207)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect1530" />
+  <rect
+     width="180.00000"
+     height="55.000000"
+     x="25.000000"
+     y="584.86218"
+     transform="matrix(3.333333,0.000000,0.000000,3.333333,-83.33333,-1891.207)"
+     style="fill:#ce1126;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect2152" />
+  <path
+     d="M 65.910807 606.25543 A 26.211634 26.211634 0 1 0 13.487539,606.25543 A 26.211634 26.211634 0 1 0 65.910807 606.25543 z"
+     transform="matrix(2.543400,0.000000,0.000000,2.543400,99.02912,-1391.950)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path2774" />
+  <path
+     d="M -54.430243,607.09218 L -39.952118,607.09218 L -35.479817,593.32280 L -31.007517,607.09218 L -16.529392,607.09218 L -28.240754,615.60092 L -23.768454,629.37030 L -35.479817,620.86156 L -47.191180,629.37030 L -42.718880,615.60092 L -54.430243,607.09218 z "
+     transform="matrix(3.238110,0.000000,0.000000,3.238110,315.0306,-1835.754)"
+     style="fill:#ce1126;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path2203" />
+  </g>
+</svg>

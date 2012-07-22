@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="135.00000"
+   height="90.00000"
+   id="svg6502">
+  <defs
+     id="defs6504" />
+  <g transform="scale(0.3)">
+  <rect
+     width="90.000000"
+     height="60.000000"
+     x="125.00000"
+     y="617.36218"
+     transform="matrix(5.000000,0.000000,0.000000,5.000000,-625.0000,-3086.811)"
+     style="fill:#1eb53a;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect6511" />
+  <path
+     d="M 151.28125,635.15625 C 150.89982,636.67238 150.62500,638.24104 150.62500,639.87500 C 150.62500,650.57000 159.30500,659.25000 170.00000,659.25000 C 180.69500,659.25000 189.37500,650.57000 189.37500,639.87500 C 189.37500,638.24104 189.10018,636.67238 188.71875,635.15625 C 188.56312,645.37229 180.25286,653.62500 170.00000,653.62500 C 159.74714,653.62500 151.43688,645.37229 151.28125,635.15625 z "
+     transform="matrix(5.000000,0.000000,0.000000,5.000000,-625.0000,-3086.811)"
+     style="fill:#fcd116;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path7133" />
+  <path
+     d="M 80.327128,549.98604 L 118.52713,549.98604 L 130.32713,513.65604 L 142.12713,549.98604 L 180.32713,549.98604 L 149.42713,572.43604 L 161.22713,608.76604 L 130.32713,586.31604 L 99.427133,608.76604 L 111.22713,572.43604 L 80.327128,549.98604 z "
+     transform="matrix(0.713265,0.000000,0.000000,0.713265,132.0420,-316.3725)"
+     style="fill:#fcd116;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path2203" />
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="135.00000"
+   height="90.00000"
+   id="svg1">
+  <defs
+     id="defs3" />
+  <g transform="scale(0.3)">
+  <rect
+     width="562.50000"
+     height="375.00000"
+     x="125.00000"
+     y="302.36218"
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#e23d28;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect908" />
+  <rect
+     width="562.50000"
+     height="250.00000"
+     x="125.00000"
+     y="427.36218"
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect1531" />
+  <rect
+     width="562.50000"
+     height="125.00000"
+     x="125.00000"
+     y="552.36218"
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#0c1c8c;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect2158" />
+  <path
+     d="M 125.00000,677.36218 L 237.67500,677.36218 L 518.92500,489.86218 L 237.67500,302.36218 L 125.00000,302.36218 L 125.00000,677.36218 z "
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path3409" />
+  <rect
+     width="562.50000"
+     height="75.000000"
+     x="125.00000"
+     y="452.36218"
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#007c59;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect2166" />
+  <path
+     d="M 125.00000,677.36218 L 192.60000,677.36218 L 473.85000,489.86218 L 192.60000,302.36218 L 125.00000,302.36218 L 125.00000,677.36218 z "
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#007c59;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path4652" />
+  <path
+     d="M 125.00000,632.28718 L 338.63750,489.86218 L 125.00000,347.43718 L 125.00000,632.28718 z "
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#fcb514;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path5895" />
+  <path
+     d="M 125.00000,602.24968 L 293.58750,489.86218 L 125.00000,377.47468 L 125.00000,602.24968 z "
+     transform="matrix(0.800000,0.000000,0.000000,0.800000,-100.0000,-241.8897)"
+     style="fill:#000000;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path6517" />
+  </g>
+</svg>

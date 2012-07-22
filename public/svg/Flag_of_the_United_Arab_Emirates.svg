@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="135.00000"
+   height="90.00000"
+   id="svg3423">
+  <defs
+     id="defs3425" />
+  <g transform="scale(0.3)">
+  <rect
+     width="150.00000"
+     height="75.000000"
+     x="125.00000"
+     y="602.36218"
+     transform="matrix(4.000000,0.000000,0.000000,4.000000,-500.0000,-2409.449)"
+     style="fill:#005951;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect908" />
+  <rect
+     width="150.00000"
+     height="50.000000"
+     x="125.00000"
+     y="627.36218"
+     transform="matrix(4.000000,0.000000,0.000000,4.000000,-500.0000,-2409.449)"
+     style="fill:#000000;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect4054" />
+  <rect
+     width="150.00000"
+     height="25.000000"
+     x="125.00000"
+     y="627.36218"
+     transform="matrix(4.000000,0.000000,0.000000,4.000000,-500.0000,-2409.449)"
+     style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect4676" />
+  <rect
+     width="37.500000"
+     height="75.000000"
+     x="125.00000"
+     y="602.36218"
+     transform="matrix(4.000000,0.000000,0.000000,4.000000,-500.0000,-2409.449)"
+     style="fill:#af1e2d;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect5298" />
+    </g>
+</svg>

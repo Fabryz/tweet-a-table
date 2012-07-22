@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0.0000000"
+   y="0.0000000"
+   width="135.00000"
+   height="90.00000"
+   id="svg1539">
+  <defs
+     id="defs1541" />
+  <g transform="scale(0.3)">
+  <rect
+     width="225.00000"
+     height="150.00000"
+     x="125.00000"
+     y="527.36218"
+     transform="matrix(2.000000,0.000000,0.000000,2.000000,-250.0000,-1054.724)"
+     style="fill:#1eb53a;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect908" />
+  <rect
+     width="150.00000"
+     height="150.00000"
+     x="200.00000"
+     y="527.36218"
+     transform="matrix(2.000000,0.000000,0.000000,2.000000,-250.0000,-1054.724)"
+     style="fill:#fcd116;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect2172" />
+  <rect
+     width="75.000000"
+     height="150.00000"
+     x="275.00000"
+     y="527.36218"
+     transform="matrix(2.000000,0.000000,0.000000,2.000000,-250.0000,-1054.724)"
+     style="fill:#ce1126;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="rect2173" />
+  <path
+     d="M 213.72506,594.63715 L 231.88916,594.63715 L 237.50006,577.36216 L 243.11096,594.63715 L 261.27506,594.63715 L 246.58211,605.31217 L 252.19301,622.58716 L 237.50006,611.91214 L 222.80711,622.58716 L 228.41801,605.31217 L 213.72506,594.63715 z "
+     transform="matrix(2.000000,0.000000,0.000000,2.000000,-250.0000,-1054.724)"
+     style="fill:#1eb53a;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;"
+     id="path2203" />
+  </g>
+</svg>
