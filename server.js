@@ -108,7 +108,7 @@ function resetDb() {
 function createDb() {
 	resetDb();
 
-    writeJSONFile("db.json", stream.leaderboard);
+    writeJSONFile("db.json", stream);
 }
 
 function checkDb() {
