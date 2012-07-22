@@ -101,6 +101,10 @@ td { vertical-align: top; }
 
 }
 
+.clear {
+  clear: both;
+}
+
 h1 {
   font-family: 'ChunkFiveRegular';
   font-size:50px;
@@ -255,8 +259,7 @@ h1 {
 
 #copy {
   width: 565px;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
   color: #e9e72a;
   font-family: 'SilkscreenNormal';
   text-shadow: 2px 2px 1px #000000;
@@ -447,6 +450,7 @@ h1 {
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px 2px #111;
   box-shadow: 2px 2px 2px 2px #111;
+  margin-top: 20px;
   margin-left: 20px;
 }
 
