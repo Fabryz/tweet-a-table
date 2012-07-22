@@ -101,6 +101,10 @@ td { vertical-align: top; }
 
 }
 
+.clear {
+  clear: both;
+}
+
 h1 {
   font-family: 'ChunkFiveRegular';
   font-size:50px;
@@ -108,6 +112,7 @@ h1 {
   margin: 0;
   padding-left: 80px;
   background: transparent url('../img/logo_euro2012.png') no-repeat left center;
+  float: left;
 }
 
 h1 a,
@@ -116,6 +121,32 @@ h1 a:hover {
   color: #f1e303;
   text-decoration: none;
 }
+
+#menu {
+  float: left;
+  margin-top: 18px;
+}
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+}
+#menu ul li {
+  float: left;
+  margin-right: 10px;
+}
+#menu ul li a {
+  color: #e9e72a;
+  font-family: 'SilkscreenNormal';
+  text-shadow: 2px 2px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  text-decoration: none;
+}
+#menu ul li a:hover {
+  text-decoration: underline;
+}
+
 
 .container {
   background-image: url('../img/box.png');

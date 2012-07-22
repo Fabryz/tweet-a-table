@@ -115,6 +115,30 @@ h1 {
   background: transparent url('../img/logo_london2012.png') no-repeat 20px 10px;
   height: 145px;
   line-height: 145px;
+  float: left;
+  margin-right: 50px;
+}
+
+#menu {
+  position: relative;
+  top: 58px;
+}
+#menu ul {
+  list-style-type: none;
+}
+#menu ul li {
+  float: left;
+}
+#menu ul li a {
+  color: #e9e72a;
+  font-family: 'SilkscreenNormal';
+  text-shadow: 2px 2px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  text-decoration: none;
+  padding: 10px;
+}
+#menu ul li a:hover {
+  text-decoration: underline;
 }
 
 .container {
