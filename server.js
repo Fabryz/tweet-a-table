@@ -1,6 +1,5 @@
 var express = require('express'),
 	fs = require('fs'),
-	jQuery = require('jquery'),
 	Tuiter = require('tuiter'),
 	app = module.exports = express.createServer();
 
@@ -200,21 +199,27 @@ function orderLeaderboard() {
 }
 
 function lowercaseHashtags(hashtags) {
-	var parsed = jQuery.map(hashtags, function(hash, i) {
-		return hash.text.toLowerCase();
-	});
+	var parsed = [];
+
+	var length = hashtags.length;
+	for (var i = 0; i < length; i++) {
+		parsed.push(hashtags[i].text.toLowerCase());
+	}
 
 	return parsed;
 }
 
 function parseTweetForHashtags(hashtags) {
+	var parsed = [];
+	
 	hashtags = lowercaseHashtags(hashtags);
 
-	var parsed = jQuery.map(hashtags, function(hash, i) {
+	var length = hashtags.length;
+	for (var i = 0; i < length; i++) {
 		if (hash !== stream.event.toLowerCase().substring(1)) {
-			return hash;
+			parsed.push(hashtags[i]);
 		}
-	});
+	}
 
 	return parsed;
 }
