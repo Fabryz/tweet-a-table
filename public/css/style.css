@@ -345,10 +345,10 @@ h1 {
 }
 
 .f1_container:hover .f1_card {
-  -webkit-transform: rotateY(180deg);
-     -moz-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
 .f2_container:hover .f2_card  {
@@ -371,6 +371,11 @@ h1 {
 
 .face {
   -webkit-transform-style: preserve-3d;
+}
+
+.face.back {
+  -webkit-box-shadow: -2px -2px 2px 2px #111;
+  box-shadow: -2px -2px 2px 2px #111;
 }
 
 .face2 {
@@ -452,11 +457,11 @@ h1 {
   color: #F1E303;
 }
 
-.face2.back2 p{
+.face2.back2 p, .face.back p{
   -webkit-transform: rotateX(180deg) rotateY(180deg);
-     -moz-transform: rotateX(180deg) rotateY(180deg);
-      -ms-transform: rotateX(180deg) rotateY(180deg);
-          transform: rotateX(180deg) rotateY(180deg);
+  -moz-transform: rotateX(180deg) rotateY(180deg);
+  -ms-transform: rotateX(180deg) rotateY(180deg);
+  transform: rotateX(180deg) rotateY(180deg);
   margin-top: 20px;
 }
 
@@ -467,7 +472,6 @@ h1 {
   width: 148px;
   margin-top: -8px;
 }
-
 
 #sports {
   width: 976px;
