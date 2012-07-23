@@ -32,6 +32,10 @@ app.get('/', function(req, res) {
 	res.sendfile('index.html');
 });
 
+app.get('/about.html', function(req, res) {
+	res.sendfile('about.html');
+});
+
 app.get('/archive/euro2012.html', function(req, res) {
 	res.sendfile('archive/euro2012.html');
 });
