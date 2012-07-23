@@ -28,6 +28,15 @@ app.configure('production', function(){
 * Express
 */
 
+function secondsToString(seconds) {
+	var numDays = Math.floor(seconds / 86400);
+	var numHours = Math.floor((seconds % 86400) / 3600);
+	var numMinutes = Math.floor(((seconds % 86400) % 3600) / 60);
+	var numSeconds = Math.floor((seconds % 86400) % 3600) % 60;
+
+	return numDays +" days "+ numHours +" hours "+ numMinutes +" minutes "+ numSeconds +" seconds.";
+}
+
 app.get('/', function(req, res) {
 	res.sendfile('index.html');
 });
@@ -43,6 +52,10 @@ app.get('/archive/euro2012.html', function(req, res) {
 app.get('/api', function(req, res) {
 	res.contentType('application/json');
  	res.end(JSON.stringify(stream));
+});
+
+app.get('/uptime', function(req, res) {
+	res.end("The server has been up for: "+ secondsToString( process.uptime().toString() ) );
 });
 
 // app.get('/resetdb', function(req, res) {
