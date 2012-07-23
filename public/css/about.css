@@ -1,0 +1,56 @@
+.rotate{
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+     
+    overflow:hidden;
+ 
+    }  
+ 
+.rotate:hover  
+{
+    -webkit-transform:rotate(20deg);
+    -moz-transform:rotate(20deg);
+    -o-transform:rotate(20deg);
+}
+
+#about 
+  {
+  font-family: 'SilkscreenNormal';
+  width:960px;
+  margin: 0 auto;
+  margin-bottom:100px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px 10px 10px 10px;
+    padding: 20px;
+  }
+
+#about p {
+  color: #ffffff;
+  font-size:13px;
+}
+
+#about h2,h5 {
+  color: #F1E303;
+}
+
+#about .profile {
+  width:100%;
+  height:150px;
+  padding:10px;
+}
+
+#about .profile .bio {
+  margin-left:30px;
+  float:left;
+}
+
+.fleft { float: left; }
+
+/* ********** */

@@ -144,6 +144,9 @@ h1 a:hover {
   text-decoration: none;
   padding: 10px;
 }
+#menu ul li a.selected {
+  text-decoration: underline;
+}
 #menu ul li a:hover {
   text-decoration: underline;
 }
