@@ -11,8 +11,8 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg734"
    sodipodi:version="0.33pre"
-   width="640"
-   height="480"
+   width="135"
+   height="90"
    sodipodi:docname="ir.svg"
    version="1.1"
    inkscape:version="0.48.1 r9760">
@@ -66,6 +66,7 @@
          y="7.859413e-06" />
     </clipPath>
   </defs>
+  <g transform="scale(0.21)">
   <g
      id="flag"
      transform="matrix(0.93749999,0,0,0.93749999,79.97951,-7.3681994e-6)"
@@ -3587,4 +3588,5 @@
          sodipodi:nodetypes="ccccccc" />
     </g>
   </g>
+</g>
 </svg>
