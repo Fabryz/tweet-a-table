@@ -476,16 +476,31 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
 }
 
 #sports {
-  width: 976px;
+  width: 1295px;
   height: 600px;
   clear: left;
-  background: transparent url('../img/track.jpg') no-repeat scroll left top;
+  background: transparent url('../img/bg_sports.jpg') no-repeat scroll left top;
+  background-size: cover;
    -webkit-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px 2px #111;
   box-shadow: 2px 2px 2px 2px #111;
   margin-top: 20px;
-  margin-left: 20px;
+  margin: 0 auto;
+  padding-top:5px;
+}
+
+h2.title_index {
+  font-family: 'ChunkFiveRegular';
+  font-size:45px;
+  color: #f1e303;
+  text-shadow: 3px 3px 3px #333;
+  margin: 0;
+  padding-left: 70px;
+  height: 115px;
+  line-height: 145px;
+  float: left;
+  margin-right: 50px;
 }
 
 #sports ul{
