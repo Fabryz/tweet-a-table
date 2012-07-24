@@ -264,7 +264,7 @@ h1 {
 #stats {
 z-index: 999;
 display: block;
-position: absolute;
+position: fixed;
 top: 0;
 right: 50px;
 margin-top: 0;

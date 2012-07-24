@@ -115,10 +115,8 @@ h1 {
   float: left;
 }
 
-h1 a,
-h1 a:visited,
-h1 a:hover {
-  color: #f1e303;
+h1 a, a:visited, a:hover {
+  color: #E9E72A;
   text-decoration: none;
 }
 
