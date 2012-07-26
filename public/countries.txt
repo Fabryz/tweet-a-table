@@ -74,6 +74,7 @@ liberia
 libya
 lithuania
 luxembourg
+
 macedonia
 madagascar
 malawi
@@ -86,14 +87,14 @@ mauritius
 mexico
 micronesia
 mongolia
-montenegro
+								montenegro [IMG]
 morocco
 nauru
 nepal
 netherlands
 newzealand
 niger
-nigeria
+								nigeria [IMG CORROTTA]
 norway
 pakistan
 palau
@@ -117,7 +118,7 @@ sanmarino
 saotomeandprincipe
 saudiarabia
 senegal
-serbia
+									serbia [IMG]
 sierraleone
 singapore
 slovakia

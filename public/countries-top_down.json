@@ -1,0 +1,596 @@
+[	
+	
+	
+	{
+		"type": "nation",
+		"id": "albania",
+		"src": "./svg/al.svg",
+		"count": 0,
+		"text": "Albania",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "algeria",
+		"src": "./svg/Flag_of_Algeria.svg",
+		"count": 0,
+		"text": "Algeria",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "antiguaandbarbuda",
+		"src": "./svg/Flag_of_Antigua_and_Barbuda.svg",
+		"count": 0,
+		"text": "Antigua and Barbuda",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "argentina",
+		"src": "./svg/ar.svg",
+		"count": 0,
+		"text": "Argentina",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "australia",
+		"src": "./svg/Flag_of_Australia.svg",
+		"count": 0,
+		"text": "Australia",
+		"continent": "australia"
+	},
+	{
+		"type": "nation",
+		"id": "austria",
+		"src": "./svg/Flag_of_Austria.svg",
+		"count": 0,
+		"text": "Austria",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "azerbaijan",
+		"src": "./svg/Flag_of_Azerbaijan.svg",
+		"count": 0,
+		"text": "Azerbaijan",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "bahamas",
+		"src": "./svg/Flag_of_the_Bahamas.svg",
+		"count": 0,
+		"text": "bahamas",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "bahrain",
+		"src": "./svg/Flag_of_Bahrain.svg",
+		"count": 0,
+		"text": "Bahrain",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "barbados",
+		"src": "./svg/bb.svg",
+		"count": 0,
+		"text": "Barbados",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "belarus",
+		"src": "./svg/by.svg",
+		"count": 0,
+		"text": "Belarus",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "belgium",
+		"src": "./svg/Flag_of_Belgium.svg",
+		"count": 0,
+		"text": "Belgium",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "benin",
+		"src": "./svg/Flag_of_Benin.svg",
+		"count": 0,
+		"text": "Benin",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "bolivia",
+		"src": "./svg/bo.svg",
+		"count": 0,
+		"text": "Bolivia",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "bosniaandherzegovina",
+		"src": "./svg/ba.svg",
+		"count": 0,
+		"text": "Bosnia and Herzegovina",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "botswana",
+		"src": "./svg/Flag_of_Botswana.svg",
+		"count": 0,
+		"text": "Botswana",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "brazil",
+		"src": "./svg/br.svg",
+		"count": 0,
+		"text": "Brazil",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "bulgaria",
+		"src": "./svg/Flag_of_Bulgaria.svg",
+		"count": 0,
+		"text": "Bulgaria",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "burkinafaso",
+		"src": "./svg/Flag_of_Burkina_Faso.svg",
+		"count": 0,
+		"text": "Burkina Faso",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "cameroon",
+		"src": "./svg/Flag_of_Cameroon.svg",
+		"count": 0,
+		"text": "Cameroon",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "canada",
+		"src": "./svg/ca.svg",
+		"count": 0,
+		"text": "Canada",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "centralafricanrepublic",
+		"src": "./svg/Flag_of_the_Central_African_Republic.svg",
+		"count": 0,
+		"text": "Central African Republic",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "chad",
+		"src": "./svg/Flag_of_Chad.svg",
+		"count": 0,
+		"text": "Chad",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "chile",
+		"src": "./svg/Flag_of_Chile.svg",
+		"count": 0,
+		"text": "Chile",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "colombia",
+		"src": "./svg/co.svg",
+		"count": 0,
+		"text": "Colombia",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "comoros",
+		"src": "./svg/Flag_of_Comoros.svg",
+		"count": 0,
+		"text": "Comoros",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "congo",
+		"src": "./svg/Flag_of_the_Republic_of_the_Congo.svg",
+		"count": 0,
+		"text": "Congo",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "costarica",
+		"src": "./svg/cr.svg",
+		"count": 0,
+		"text": "Costarica",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "cotedivoire",
+		"src": "./svg/ci.svg",
+		"count": 0,
+		"text": "Cote d'Ivoire",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "croatia",
+		"src": "./svg/hr.svg",
+		"count": 0,
+		"text": "Croatia",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "cuba",
+		"src": "./svg/Flag_of_Cuba.svg",
+		"count": 0,
+		"text": "Cuba",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "czechrepublic",
+		"src": "./svg/Flag_of_the_Czech_Republic.svg",
+		"count": 0,
+		"text": "Czech Republic",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "denmark",
+		"src": "./svg/Flag_of_Denmark.svg",
+		"count": 0,
+		"text": "Denmark",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "ecuador",
+		"src": "./svg/ec.svg",
+		"count": 0,
+		"text": "Ecuador",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "egypt",
+		"src": "./svg/eg.svg",
+		"count": 0,
+		"text": "Egypt",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "eritrea",
+		"src": "./svg/er.svg",
+		"count": 0,
+		"text": "Eritrea",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "estonia",
+		"src": "./svg/Flag_of_Estonia.svg",
+		"count": 0,
+		"text": "Estonia",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "ethiopia",
+		"src": "./svg/Flag_of_Ethiopia.svg",
+		"count": 0,
+		"text": "Ethiopia",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "finland",
+		"src": "./svg/Flag_of_Finland.svg",
+		"count": 0,
+		"text": "Finland",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "france",
+		"src": "./svg/Flag_of_France.svg",
+		"count": 0,
+		"text": "France",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "gabon",
+		"src": "./svg/Flag_of_Gabon.svg",
+		"count": 0,
+		"text": "Gabon",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "gambia",
+		"src": "./svg/Flag_of_the_Gambia.svg",
+		"count": 0,
+		"text": "Gambia",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "georgia",
+		"src": "./svg/Flag_of_Georgia.svg",
+		"count": 0,
+		"text": "Georgia",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "germany",
+		"src": "./svg/Flag_of_Germany.svg",
+		"count": 0,
+		"text": "Germany",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "ghana",
+		"src": "./svg/Flag_of_Ghana.svg",
+		"count": 0,
+		"text": "Ghana",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "greatbritain",
+		"src": "./svg/gb.svg",
+		"count": 0,
+		"text": "Great Britain",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "greece",
+		"src": "./svg/Flag_of_Greece.svg",
+		"count": 0,
+		"text": "Greece",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "guineabissau",
+		"src": "./svg/Flag_of_Guinea-Bissau.svg",
+		"count": 0,
+		"text": "Guinea Bissau",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "guyana",
+		"src": "./svg/Flag_of_Guyana.svg",
+		"count": 0,
+		"text": "Guyana",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "honduras",
+		"src": "./svg/Flag_of_Honduras.svg",
+		"count": 0,
+		"text": "Honduras",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "hongkong",
+		"src": "./svg/hk.svg",
+		"count": 0,
+		"text": "Hong Kong",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "hungary",
+		"src": "./svg/Flag_of_Hungary.svg",
+		"count": 0,
+		"text": "Hungary",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "iceland",
+		"src": "./svg/Flag_of_Iceland.svg",
+		"count": 0,
+		"text": "Iceland",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "india",
+		"src": "./svg/in.svg",
+		"count": 0,
+		"text": "India",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "indonesia",
+		"src": "./svg/id.svg",
+		"count": 0,
+		"text": "Indonesia",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "iran",
+		"src": "./svg/ir1.svg",
+		"count": 0,
+		"text": "Iran",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "iraq",
+		"src": "./svg/iq.svg",
+		"count": 0,
+		"text": "Iraq",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "ireland",
+		"src": "./svg/ie.svg",
+		"count": 0,
+		"text": "Ireland",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "israel",
+		"src": "./svg/Flag_of_Israel.svg",
+		"count": 0,
+		"text": "Israel",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "italy",
+		"src": "./svg/Flag_of_Italy.svg",
+		"count": 0,
+		"text": "Italy",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "jamaica",
+		"src": "./svg/Flag_of_Jamaica.svg",
+		"count": 0,
+		"text": "Jamaica",
+		"continent": "america"
+	},
+	{
+		"type": "nation",
+		"id": "japan",
+		"src": "./svg/Flag_of_Japan.svg",
+		"count": 0,
+		"text": "Japan",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "jordan",
+		"src": "./svg/Flag_of_Jordan.svg",
+		"count": 0,
+		"text": "Jordan",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "kazakhstan",
+		"src": "./svg/kz.svg",
+		"count": 0,
+		"text": "Kazakhstan",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "kenya",
+		"src": "./svg/Flag_of_Kenya.svg",
+		"count": 0,
+		"text": "Kenya",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "northkorea",
+		"src": "./svg/Flag_of_North_Korea.svg",
+		"count": 0,
+		"text": "North Korea",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "southkorea",
+		"src": "./svg/Flag_of_South_Korea.svg",
+		"count": 0,
+		"text": "South Korea",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "kuwait",
+		"src": "./svg/Flag_of_Kuwait.svg",
+		"count": 0,
+		"text": "Kuwait",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "latvia",
+		"src": "./svg/Flag_of_Latvia.svg",
+		"count": 0,
+		"text": "Latvia",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "lebanon",
+		"src": "./svg/lb.svg",
+		"count": 0,
+		"text": "Lebanon",
+		"continent": "asia"
+	},
+	{
+		"type": "nation",
+		"id": "liberia",
+		"src": "./svg/Flag_of_Liberia.svg",
+		"count": 0,
+		"text": "Liberia",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "libya",
+		"src": "./svg/ly.svg",
+		"count": 0,
+		"text": "Libya",
+		"continent": "africa"
+	},
+	{
+		"type": "nation",
+		"id": "lithuania",
+		"src": "./svg/Flag_of_Lithuania.svg",
+		"count": 0,
+		"text": "Lithuania",
+		"continent": "europe"
+	},
+	{
+		"type": "nation",
+		"id": "luxembourg",
+		"src": "./svg/Flag_of_Luxembourg.svg",
+		"count": 0,
+		"text": "Luxembourg",
+		"continent": "europe"
+	}
+]
