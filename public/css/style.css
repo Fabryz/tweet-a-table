@@ -225,16 +225,10 @@ h1 {
   box-shadow: 2px 2px 2px 2px #111;
 }
 
-.container ul li#map span#north-america{
-  top: 80px;
-  left: 90px;
+.container ul li#map span#america{
+  top: 130px;
+  left: 114px;
   border: 7px solid green;
-}
-
-.container ul li#map span#south-america{
-  top: 220px;
-  left: 165px;
-  border: 7px solid LawnGreen ;
 }
 
 .container ul li#map span#europe{
