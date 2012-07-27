@@ -1,5 +1,213 @@
 [	
 	{
+		"type": "sport",
+		"id": "archery",
+		"src": "./img/arco.jpg",
+		"count": 0,
+		"text": "Archery",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "athletics",
+		"src": "./img/atletica.jpg",
+		"count": 0,
+		"text": "Athletics",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "badminton",
+		"src": "./img/volano.jpg",
+		"count": 0,
+		"text": "Badminton",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "basketball",
+		"src": "./img/basket.jpg",
+		"count": 0,
+		"text": "Basketball",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "boxing",
+		"src": "./img/pugilato.jpg",
+		"count": 0,
+		"text": "Boxing",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "canoe",
+		"src": "./img/kayak.jpg",
+		"count": 0,
+		"text": "Canoe",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "cycling",
+		"src": "./img/bici.jpg",
+		"count": 0,
+		"text": "Cycling",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "equestrian",
+		"src": "./img/equitazione.jpg",
+		"count": 0,
+		"text": "Equestrian",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "fencing",
+		"src": "./img/scherma.jpg",
+		"count": 0,
+		"text": "Fencing",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "football",
+		"src": "./img/calcio.jpg",
+		"count": 0,
+		"text": "Football",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "gymnastics",
+		"src": "./img/ginnastica.jpg",
+		"count": 0,
+		"text": "Gymnastics",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "handball",
+		"src": "./img/pallamano.jpg",
+		"count": 0,
+		"text": "Handball",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "hockey",
+		"src": "./img/hockey.jpg",
+		"count": 0,
+		"text": "Hockey",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "judo",
+		"src": "./img/judo.jpg",
+		"count": 0,
+		"text": "Judo",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "pentathlon",
+		"src": "./img/pentathlon.jpg",
+		"count": 0,
+		"text": "Pentathlon",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "rowing",
+		"src": "./img/canoa.jpg",
+		"count": 0,
+		"text": "Rowing",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "sailing",
+		"src": "./img/vela.jpg",
+		"count": 0,
+		"text": "Sailing",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "shooting",
+		"src": "./img/piattello.jpg",
+		"count": 0,
+		"text": "Shooting",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "swimming",
+		"src": "./img/nuoto.jpg",
+		"count": 0,
+		"text": "Swimming",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "taekwondo",
+		"src": "./img/artimarziali.jpg",
+		"count": 0,
+		"text": "Taekwondo",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "tabletennis",
+		"src": "./img/pingpong.jpg",
+		"count": 0,
+		"text": "Table tennis",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "tennis",
+		"src": "./img/tennis.jpg",
+		"count": 0,
+		"text": "Tennis",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "triathlon",
+		"src": "./img/triathlon.jpg",
+		"count": 0,
+		"text": "Triathlon",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "volley",
+		"src": "./img/volley.jpg",
+		"count": 0,
+		"text": "Volley",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "weightlifting",
+		"src": "./img/weightlifting.jpg",
+		"count": 0,
+		"text": "Weightlifting",
+		"continent": ""
+	},
+	{
+		"type": "sport",
+		"id": "wrestling",
+		"src": "./img/lotta.jpg",
+		"count": 0,
+		"text": "Wrestling",
+		"continent": ""
+	},
+	{
 		"type": "nation",
 		"id": "albania",
 		"src": "./svg/al.svg",
