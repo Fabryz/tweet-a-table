@@ -12,6 +12,11 @@ $(document).ready(function() {
 			return options.fn(this);
 		}
 	});
+	Handlebars.registerHelper('ifIsSport', function(type, options) {
+		if (type == "sport") {
+			return options.fn(this);
+		}
+	});
 
 	var Debug = {
 
@@ -36,6 +41,11 @@ $(document).ready(function() {
 				nationsTemplate = Handlebars.compile(nationsSource);
 				var html = nationsTemplate({ nation: entities });
 				nationsHandle.append(html);
+
+				sportsSource = $("#sport-template").html();
+				sportsTemplate = Handlebars.compile(sportsSource);
+				var html = sportsTemplate({ sport: entities });
+				sportsHandle.append(html);
 			}
 		});
 	}
@@ -86,7 +96,9 @@ $(document).ready(function() {
 		entities = {};
 
 	var nationsSource,
-		nationsTemplate;
+		nationsTemplate,
+		sportsSource,
+		sportsTemplate;
 
 	init();
 
