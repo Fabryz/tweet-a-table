@@ -11,17 +11,17 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(__dirname + '/public'))
+    app.use(express.static(__dirname + '/public'));
     app.use(express.logger(':remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
     app.use(express.favicon());
 });
 
 app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-    app.use(express.errorHandler()); 
+	app.use(express.errorHandler());
 });
 
 /*
@@ -51,7 +51,7 @@ app.get('/archive/euro2012.html', function(req, res) {
 
 app.get('/api', function(req, res) {
 	res.contentType('application/json');
- 	res.end(JSON.stringify(stream));
+	res.end(JSON.stringify(stream));
 });
 
 app.get('/uptime', function(req, res) {
@@ -59,9 +59,9 @@ app.get('/uptime', function(req, res) {
 });
 
 // app.get('/resetdb', function(req, res) {
-// 	createDb();
-// 	console.log("Db has been resetted.");
-// 	res.redirect('/');
+//	createDb();
+//	console.log("Db has been resetted.");
+//	res.redirect('/');
 // });
 
 app.get('/restart', function(req, res) {
@@ -129,12 +129,12 @@ function createDb() {
 
 function checkDb() {
 	fs.stat(__dirname +'/db.json', function(err, stat) {
-		if (err == null) { // file exists
-		    loadDb();
+		if (err === null) { // file exists
+			loadDb();
 		} else if (err.code == 'ENOENT') { // file doesn't exist
 			createDb();
 		} else {
-		    console.log('Error while reading the database file: '+ err.code);
+			console.log('Error while reading the database file: '+ err.code);
 		}
 	});
 }
@@ -206,8 +206,8 @@ function strencode(data) {
 }
 
 function SortByCountDesc(a, b){
-	var a = a.count;
-	var b = b.count; 
+	a = a.count;
+	b = b.count;
 	return ((a < b) ? 1 : ((a > b) ? -1 : 0));
 }
 
@@ -258,10 +258,10 @@ function elaborateStats(hashtags) {
 // Using Twitter Streaming API
 function grabTwitterFeed() {
 	tu = new Tuiter({
-	    "consumer_key" : configs.twitterApp.consumer_key
-	  , "consumer_secret" : configs.twitterApp.consumer_secret
-	  , "access_token_key" : configs.twitterApp.access_token_key
-	  , "access_token_secret" : configs.twitterApp.access_token_secret
+		"consumer_key" : configs.twitterApp.consumer_key,
+		"consumer_secret" : configs.twitterApp.consumer_secret,
+		"access_token_key" : configs.twitterApp.access_token_key,
+		"access_token_secret" : configs.twitterApp.access_token_secret
 	});
 
 	tu.filter({ track: configs.value.split(",") }, function(feed) {
@@ -291,10 +291,10 @@ function grabTwitterFeed() {
 
 var io = require('socket.io').listen(app);
 
-io.configure(function() { 
+io.configure(function() {
 	io.enable('browser client minification');
-	io.set('log level', 1); 
-	io.set('transports', [ 
+	io.set('log level', 1);
+	io.set('transports', [
 			'websocket',
 			'flashsocket',
 			'htmlfile',
