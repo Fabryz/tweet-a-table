@@ -1,42 +1,69 @@
+  	*afghanistan
 albania
 algeria
+  	*americansamoa
+  	*americanvirginiland
+  	*andorra
+  	*angola
 antiguaandbarbuda
 argentina
+  	*armenia
+  	*aruba
 australia
 austria
 azerbaijan
 bahamas
 bahrain
+  *bangladesh
 barbados
 belarus
 belgium
+	*belize
 benin
+	*bermuda
+	*bhutan
 bolivia
 bosniaandherzegovina
 botswana
 brazil
+	*britishvirginisland
+	*bruneidarussalam
 bulgaria
 burkinafaso
+	*burundi
+	*cambodia
 cameroon
 canada
+	*capeverde
+	*caymanisland
 centralafricanrepublic
 chad
 chile
 china
+	*chinesetaipei
 colombia
 comoros
 congo
+	*cookisland
 costarica
 cotedivoire
 croatia
 cuba
+	*cyprus
 czechrepublic
 denmark
+	*djibouti
+	*dominica
+	*dominicanrepublic
+	*drconco
 ecuador
 egypt
+	*elsalvador
+	*equatorialguinea
 eritrea
 estonia
 ethiopia
+	*fiji
 finland
 france
 gabon
@@ -46,13 +73,17 @@ germany
 ghana
 greatbritain
 greece
+	*grenada
+	*guam
+	*guatemela
 guinea
 guineabissau
 guyana
 honduras
-/hongkong
+hongkong
 hungary
 iceland
+	*indipendentolympicathletes
 india
 indonesia
 iran
@@ -60,21 +91,27 @@ iraq
 ireland
 israel
 italy
+	*ivorycoast
 jamaica
 japan
 jordan
 kazakhstan
 kenya
+	*kiribati
+	*kuwait
+	*kyrgystan
+	*laopeople'sdemrepublic
 northkorea
 southkorea
 kuwait
 latvia
 lebanon
+	*lesotho
 liberia
 libya
+	*liechtenstein
 lithuania
 luxembourg
-
 macedonia
 madagascar
 malawi
@@ -82,24 +119,33 @@ malaysia
 maldives
 mali
 malta
+	*marshallisland
 mauritania
 mauritius
 mexico
 micronesia
+	*moldova
+	*monaco
 mongolia
-								montenegro [IMG]
+montenegro
 morocco
+	*mozambique
+	*myanmar
+	*namibia
 nauru
 nepal
 netherlands
 newzealand
+	*nicaragua
 niger
-								nigeria [IMG CORROTTA]
+nigeria
 norway
+	*oman
 pakistan
 palau
 palestine
 panama
+	*papuanewguinea
 paraguay
 peru
 philippines
@@ -118,29 +164,43 @@ sanmarino
 saotomeandprincipe
 saudiarabia
 senegal
-									serbia [IMG]
+serbia
+	*seychelles
 sierraleone
 singapore
 slovakia
 slovenia
+	*solomislands
 somalia
 southafrica
 spain
+	*srilanka
 sudan
 suriname
+	*swaziland
 sweden
 switzerland
+	*syria
+	*saotomèandprincipe
+	*tajikistan
 tanzania
 thailand
+	*timor-leste
 togo
+	*tonga
 trinidadandtobago
 tunisia
 turkey
+	*turkmenistan
+	*tuvalu
+	*uganda
 ukraine
 unitedarabemirates
 unitedstates
 uruguay
 uzbekistan
+	*vanatu
 venezuela
 vietnam
+	*yemen
 zambia
