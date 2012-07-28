@@ -185,7 +185,7 @@ h1 {
 }
 
 
-.container ul li#map {
+.container div#map {
   float: left;
   margin: 0 35px 10px 0;
   height: auto;
@@ -202,13 +202,13 @@ h1 {
   height: 90px;
 }
 
-.container ul li#map embed{
+.container div#map embed{
   -webkit-box-shadow: none;
   box-shadow: none;
   width: 715px; height: 365px;
 }
 
-.container ul li#map span{
+.container div#map span{
   position: absolute;
   color: yellow;
   font-weight: bold;
@@ -225,31 +225,31 @@ h1 {
   box-shadow: 2px 2px 2px 2px #111;
 }
 
-.container ul li#map span#america{
+.container div#map span#america{
   top: 130px;
   left: 114px;
   border: 7px solid green;
 }
 
-.container ul li#map span#europe{
+.container div#map span#europe{
   top: 40px;
   left: 300px;
   border: 7px solid blue;
 }
 
-.container ul li#map span#africa{
+.container div#map span#africa{
   top: 160px;
   left: 310px;
   border: 7px solid black;
 }
 
-.container ul li#map span#asia{
+.container div#map span#asia{
   top: 60px;
   left: 450px;
   border: 7px solid yellow;
 }
 
-.container ul li#map span#oceania{
+.container div#map span#oceania{
   top: 240px;
   left: 580px;
   border: 7px solid red;

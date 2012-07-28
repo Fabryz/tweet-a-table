@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.5.6 / 2012-07-28
+- Most of the countries and all of the sports are now listed in a json
+- Using [Handlebars.js](http://handlebarsjs.com/) to parse this nice json in the frontend
+- Nations and sports are now ordered by count
+
+
+# Template example below here:
+
 ## v1.1.1 / 2012-07-23
 - Lorem ipsum dolor sit amet, magna ultrices accumsan
 - Esque maecenas, sed non elementum id odio, risus mauris magna justo natoque nec. Vestibulum

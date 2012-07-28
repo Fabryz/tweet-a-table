@@ -30,22 +30,47 @@ $(document).ready(function() {
 		}
 	};
 
+	function SortByCountDesc(a, b) {
+		a = a.count;
+		b = b.count;
+		return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+	}
+	function SortByIdAsc(a, b) {
+		a = a.id;
+		b = b.id;
+		return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+	}
+
+	function updateNations() {
+		nationsHandle.html(''); //FIMXE
+		nationsHandle.append(nationsTemplate({ nation: entities }));
+	}
+
+	function updateSports() {
+		sportsHandle.html('');
+		sportsHandle.append(sportsTemplate({ sport: entities }));
+	}
+
+	function updateAll() {
+		updateNations();
+		updateSports();
+	}
+
 	function readAndGenerate() {
 		$.ajax({
 			url: 'countries.json',
 			dataType: 'json',
 			success: function(data) {
 				entities = data;
+				//entities = data.sort(SortByIdAsc); // make sure it's ordered alphabetically
 
 				nationsSource = $("#nation-template").html();
 				nationsTemplate = Handlebars.compile(nationsSource);
-				var html = nationsTemplate({ nation: entities });
-				nationsHandle.append(html);
+				updateNations();
 
 				sportsSource = $("#sport-template").html();
 				sportsTemplate = Handlebars.compile(sportsSource);
-				var html = sportsTemplate({ sport: entities });
-				sportsHandle.append(html);
+				updateSports();
 			}
 		});
 	}
@@ -93,7 +118,7 @@ $(document).ready(function() {
 		maxPerSecondInterval = null,
 		tweetsAmount = 0,
 		maxTweetsAmount = 0,
-		entities = {};
+		entities;
 
 	var nationsSource,
 		nationsTemplate,
@@ -101,7 +126,6 @@ $(document).ready(function() {
 		sportsTemplate;
 
 	init();
-
 	calcMaxPerSecond();
 
 	/*
@@ -137,9 +161,19 @@ $(document).ready(function() {
 		//leaderboardHandle.html('');
 		leaderboard.forEach(function(item, index) {
 			//console.log(index +"# "+ item.option +" has "+ item.count);
-			//leaderboardHandle.append("<li class=\"g"+ index +"\">"+ item.option +": "+ item.count +"</li>");
-			$('#'+ item.option +' .amount').html(item.count);
+
+			// $('#'+ item.option +' .amount').html(item.count);
+
+			var length = entities.length;
+			for (var i = 0; i < length; i++) {
+				if (entities[i].id == item.option) {
+					entities[i].count = item.count;
+					break;
+				}
+			}
 		});
+		entities.sort(SortByCountDesc);
+		updateAll();
 	}
 
 	socket.on('leaderboard', function(leaderboard) {

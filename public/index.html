@@ -24,17 +24,15 @@
         </ul>
       </div>
       <div class="clear"></div>
-      <ul id="nations">
-        <li id="map">
-          <embed src="./svg/world_map.svg" type="image/svg+xml" />
-          <span id="america"></span>
-          <span id="europe"></span>
-          <span id="africa"></span>
-          <span id="asia"></span>
-          <span id="oceania"></span>
-        </li>
-
-      </ul>
+      <div id="map">
+        <embed src="./svg/world_map.svg" type="image/svg+xml" />
+        <span id="america"></span>
+        <span id="europe"></span>
+        <span id="africa"></span>
+        <span id="asia"></span>
+        <span id="oceania"></span>
+      </div>
+      <ul id="nations"></ul>
       <script id="nation-template" type="text/x-handlebars-template">
         {{#each nation}}
           {{#ifIsNation type }}
