@@ -1,14 +1,21 @@
 /*
 * This app has been made for the H-ack012 http://www.facebook.com/h.ack.012
 * Authors: Fabrizio Codello, Marco Sors, Nicola De Lazzari
-* License: GPLv3
+* Copyright © 2012
 *
 */
 
 $(document).ready(function() {
+
+	Handlebars.registerHelper('ifIsNation', function(type, options) {
+		if (type == "nation") {
+			return options.fn(this);
+		}
+	});
+
 	var Debug = {
 
-		log: function (msg) {
+		log: function(msg) {
 			console.log(new Date().toJSON() +": "+ msg);
 		},
 
@@ -18,10 +25,27 @@ $(document).ready(function() {
 		}
 	};
 
+	function readAndGenerate() {
+		$.ajax({
+			url: 'countries.json',
+			dataType: 'json',
+			success: function(data) {
+				entities = data;
+
+				nationsSource = $("#nation-template").html();
+				nationsTemplate = Handlebars.compile(nationsSource);
+				var html = nationsTemplate({ nation: entities });
+				nationsHandle.append(html);
+			}
+		});
+	}
+
 	function init() {
 		Debug.log("Connecting...");
 
-		resetLeaderboard();
+		readAndGenerate();
+
+		// resetLeaderboard();
 
 		$(document).keyup(function(e) {
 			if (e.keyCode === 220) { //backslash
@@ -51,20 +75,27 @@ $(document).ready(function() {
 	var socket = new io.connect(window.location.href);
 	
 	var leaderboardHandle = $("#tweets ul"),
+		nationsHandle = $("#nations"),
+		sportsHandle = $("#sports ul"),
 		defaultDebug = $("#stats"),
 		speed = $("#speed"),
 		maxSpeed = $("#maxSpeed"),
 		maxPerSecondInterval = null,
 		tweetsAmount = 0,
-		maxTweetsAmount = 0;
-	
+		maxTweetsAmount = 0,
+		entities = {};
+
+	var nationsSource,
+		nationsTemplate;
+
 	init();
+
 	calcMaxPerSecond();
 
-	/* 
-	* Socket stuff	
+	/*
+	* Socket stuff
 	*/
-	    
+    
     socket.on('connect', function() {
 		Debug.log("Connected.");
 	});
@@ -74,11 +105,11 @@ $(document).ready(function() {
 		clearInterval(maxPerSecondInterval);
 	});
 		
-	socket.on('tot', function(data) {	
+	socket.on('tot', function(data) {
 		Debug.log("Current viewers: "+ data.tot);
 	});
 
-	socket.on('filters', function(data) {	
+	socket.on('filters', function(data) {
 		Debug.log("Event: "+ data.event +", options: "+ data.options.join(", ") +", created at: "+ data.createdAt);
 	});
 
@@ -99,7 +130,7 @@ $(document).ready(function() {
 		});
 	}
 
-	socket.on('leaderboard', function(leaderboard) {	
+	socket.on('leaderboard', function(leaderboard) {
 		leaderboard = strdecode(leaderboard);
 
 		updateLeaderboard(leaderboard);
