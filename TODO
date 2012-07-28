@@ -1,6 +1,9 @@
-- uptime info
 - admin panel
 - database to mongodb
 - graphs of past/present trends
 - graphs of month/week/day trends
-- make it work 24/7 -> autorestart after N minutes
+
+
+- somma continenti
+- handlebars
+- loading gif
