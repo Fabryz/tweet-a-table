@@ -194,7 +194,7 @@
 	{
 		"type": "sport",
 		"id": "weightlifting",
-		"src": "./img/weightlifting.jpg",
+		"src": "./img/pesi.jpg",
 		"count": 0,
 		"text": "Weightlifting",
 		"continent": ""
