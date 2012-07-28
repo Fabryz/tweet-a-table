@@ -1138,7 +1138,7 @@
 	{
 		"type": "nation",
 		"id": "serbia",
-		"src": "",
+		"src": "./svg/sr.svg",
 		"count": 0,
 		"text": "Serbia",
 		"continent": "europe"
