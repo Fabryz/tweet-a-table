@@ -7,6 +7,14 @@
 
 $(document).ready(function() {
 
+	jQuery.fn.sortDomElements = (function() {
+		return function(comparator) {
+			return Array.prototype.sort.call(this, comparator).each(function(i) {
+				this.parentNode.appendChild(this);
+			});
+		};
+	})();
+
 	Handlebars.registerHelper('ifIsNation', function(type, options) {
 		if (type == "nation") {
 			return options.fn(this);
@@ -42,13 +50,23 @@ $(document).ready(function() {
 	}
 
 	function updateNations() {
-		nationsHandle.html(''); //FIMXE
-		nationsHandle.append(nationsTemplate({ nation: entities }));
+		nationsHandle.children().sortDomElements(function(a, b) {
+			var akey = $(a).find(".amount").text();
+			var bkey = $(b).find(".amount").text();
+			if (akey == bkey) return 0;
+			if (akey < bkey) return 1;
+			if (akey > bkey) return -1;
+		});
 	}
 
 	function updateSports() {
-		sportsHandle.html('');
-		sportsHandle.append(sportsTemplate({ sport: entities }));
+		sportsHandle.children().sortDomElements(function(a, b) {
+			var akey = $(a).find(".amount").text();
+			var bkey = $(b).find(".amount").text();
+			if (akey == bkey) return 0;
+			if (akey < bkey) return 1;
+			if (akey > bkey) return -1;
+		});
 	}
 
 	function updateAll() {
@@ -66,11 +84,13 @@ $(document).ready(function() {
 
 				nationsSource = $("#nation-template").html();
 				nationsTemplate = Handlebars.compile(nationsSource);
-				updateNations();
+				nationsHandle.append(nationsTemplate({ nation: entities }));
 
 				sportsSource = $("#sport-template").html();
 				sportsTemplate = Handlebars.compile(sportsSource);
-				updateSports();
+				sportsHandle.append(sportsTemplate({ sport: entities }));
+
+				isReady = true;
 			}
 		});
 	}
@@ -118,7 +138,8 @@ $(document).ready(function() {
 		maxPerSecondInterval = null,
 		tweetsAmount = 0,
 		maxTweetsAmount = 0,
-		entities;
+		entities,
+		isReady = false;
 
 	var nationsSource,
 		nationsTemplate,
@@ -162,25 +183,26 @@ $(document).ready(function() {
 		leaderboard.forEach(function(item, index) {
 			//console.log(index +"# "+ item.option +" has "+ item.count);
 
-			// $('#'+ item.option +' .amount').html(item.count);
+			$('#'+ item.option +' .amount').html(item.count);
 
-			var length = entities.length;
-			for (var i = 0; i < length; i++) {
-				if (entities[i].id == item.option) {
-					entities[i].count = item.count;
-					break;
-				}
-			}
+			// var length = entities.length;
+			// for (var i = 0; i < length; i++) {
+			// 	if (entities[i].id == item.option) {
+			// 		entities[i].count = item.count;
+			// 		break;
+			// 	}
+			// }
 		});
-		entities.sort(SortByCountDesc);
-		updateAll();
+		// updateAll();
 	}
 
 	socket.on('leaderboard', function(leaderboard) {
-		leaderboard = strdecode(leaderboard);
+		if (isReady) {
+			leaderboard = strdecode(leaderboard);
 
-		updateLeaderboard(leaderboard);
+			updateLeaderboard(leaderboard);
 
-		tweetsAmount++;
+			tweetsAmount++;
+		}
 	});
 });
