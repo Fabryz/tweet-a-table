@@ -127,7 +127,7 @@ micronesia
 	*moldova
 	*monaco
 mongolia
-montenegro
+	*montenegro
 morocco
 	*mozambique
 	*myanmar

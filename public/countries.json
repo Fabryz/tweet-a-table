@@ -897,14 +897,6 @@
 	},
 	{
 		"type": "nation",
-		"id": "montenegro",
-		"src": "",
-		"count": 0,
-		"text": "Montenegro",
-		"continent": "europe"
-	},
-	{
-		"type": "nation",
 		"id": "morocco",
 		"src": "./svg/ma.svg",
 		"count": 0,
