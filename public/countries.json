@@ -898,7 +898,7 @@
 	{
 		"type": "nation",
 		"id": "montenegro",
-		"src": "./svg/.svg",
+		"src": "",
 		"count": 0,
 		"text": "Montenegro",
 		"continent": "europe"
@@ -1138,7 +1138,7 @@
 	{
 		"type": "nation",
 		"id": "serbia",
-		"src": "./svg/.svg",
+		"src": "",
 		"count": 0,
 		"text": "Serbia",
 		"continent": "europe"
