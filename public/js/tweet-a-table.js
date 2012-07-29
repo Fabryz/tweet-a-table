@@ -95,7 +95,17 @@ $(document).ready(function() {
 		});
 	}
 
+	function resetSums() {
+		americaAmount.html('0');
+		europeAmount.html('0');
+		africaAmount.html('0');
+		asiaAmount.html('0');
+		oceaniaAmount.html('0');
+	}
+
 	function updateSums() {
+		resetSums();
+
 		var length = entities.length;
 		for (var i = 0; i < length; i++) {
 			if (entities[i].type == "nation") {
@@ -161,7 +171,12 @@ $(document).ready(function() {
 		tweetsAmount = 0,
 		maxTweetsAmount = 0,
 		entities,
-		isReady = false;
+		isReady = false,
+		americaAmount = $(".america"),
+		europeAmount = $(".europe"),
+		africaAmount = $(".africa"),
+		asiaAmount = $(".asia"),
+		oceaniaAmount = $(".oceania");
 
 	var nationsSource,
 		nationsTemplate,
