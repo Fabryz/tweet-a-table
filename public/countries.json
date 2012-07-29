@@ -569,10 +569,10 @@
 	},
 	{
 		"type": "nation",
-		"id": "greatbritain",
+		"id": "uk",
 		"src": "./svg/gb.svg",
 		"count": 0,
-		"text": "Great Britain",
+		"text": "United Kingdom",
 		"continent": "europe"
 	},
 	{
@@ -1289,7 +1289,7 @@
 	},
 	{
 		"type": "nation",
-		"id": "unitedstates",
+		"id": "usa",
 		"src": "./svg/us.svg",
 		"count": 0,
 		"text": "United States",
