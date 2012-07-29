@@ -4,6 +4,7 @@
 - Added independent tweets sum amount for each continent
 - changed hashtags for #usa and #uk
 - fixed the flag of nigeria
+- v0.5.8.1: fixed sum amount reset on each update
 
 ## v0.5.7 / 2012-07-28
 - Most of the countries and all of the sports are now listed in a json
