@@ -95,6 +95,28 @@ $(document).ready(function() {
 		});
 	}
 
+	function updateSums() {
+		var length = entities.length;
+		for (var i = 0; i < length; i++) {
+			if (entities[i].type == "nation") {
+				var handle = $("."+ entities[i].continent);
+				var amount = parseInt(handle.text(), 10) + entities[i].count;
+
+				handle.html(amount);
+			}
+		}
+	}
+
+	function updateEntity(entity, count) {
+		var length = entities.length;
+		for (var i = 0; i < length; i++) {
+			if (entities[i].id == entity) {
+				entities[i].count = count;
+				break;
+			}
+		}
+	}
+
 	function init() {
 		Debug.log("Connecting...");
 
@@ -185,13 +207,7 @@ $(document).ready(function() {
 
 			$('#'+ item.option +' .amount').html(item.count);
 
-			// var length = entities.length;
-			// for (var i = 0; i < length; i++) {
-			// 	if (entities[i].id == item.option) {
-			// 		entities[i].count = item.count;
-			// 		break;
-			// 	}
-			// }
+			updateEntity(item.option, item.count);
 		});
 		// updateAll();
 	}
@@ -201,6 +217,7 @@ $(document).ready(function() {
 			leaderboard = strdecode(leaderboard);
 
 			updateLeaderboard(leaderboard);
+			updateSums();
 
 			tweetsAmount++;
 		}

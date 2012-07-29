@@ -187,7 +187,7 @@ h1 {
 
 .container div#map {
   float: left;
-  margin: 0 35px 10px 0;
+  margin: 0 75px 10px 0;
   height: auto;
   display: block;
   position: relative;
@@ -225,31 +225,31 @@ h1 {
   box-shadow: 2px 2px 2px 2px #111;
 }
 
-.container div#map span#america{
+.container div#map span.america{
   top: 130px;
   left: 114px;
   border: 7px solid green;
 }
 
-.container div#map span#europe{
+.container div#map span.europe{
   top: 40px;
   left: 300px;
   border: 7px solid blue;
 }
 
-.container div#map span#africa{
+.container div#map span.africa{
   top: 160px;
   left: 310px;
   border: 7px solid black;
 }
 
-.container div#map span#asia{
+.container div#map span.asia{
   top: 60px;
   left: 450px;
   border: 7px solid yellow;
 }
 
-.container div#map span#oceania{
+.container div#map span.oceania{
   top: 240px;
   left: 580px;
   border: 7px solid red;
