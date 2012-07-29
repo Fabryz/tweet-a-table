@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5.8 / 2012-07-29
+- Added independent tweets sum amount for each continent
+- changed hashtags for #usa and #uk
+- fixed the flag of nigeria
+
 ## v0.5.7 / 2012-07-28
 - Most of the countries and all of the sports are now listed in a json
 - Using [Handlebars.js](http://handlebarsjs.com/) to parse this nice json in the frontend
