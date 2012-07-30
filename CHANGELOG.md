@@ -1,5 +1,12 @@
 # Changelog
 
+
+## v0.5.9 / 2012-07-30
+- added initial metatags
+- fix australia on oceania continent
+- fixed turkey flag
+- added addthis
+
 ## v0.5.8 / 2012-07-29
 - Added independent tweets sum amount for each continent
 - changed hashtags for #usa and #uk
