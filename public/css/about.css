@@ -62,3 +62,8 @@
 #stats {
   display: none;
 }
+
+#about a,
+#about a:visited {
+  color: #00B7FF;
+}
