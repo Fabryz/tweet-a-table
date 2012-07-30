@@ -319,6 +319,13 @@ h1 a, a:visited, a:hover {
   background-color: rgba(0, 0, 0, .8);
 }
 
+.addthis_toolbox {
+  position: absolute;
+  top: 46px;
+  right: 287px;
+  width: 370px;
+}
+
 @media only screen and (min-width: 35em) {
   
 
