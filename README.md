@@ -19,24 +19,6 @@ Modules:
 * [Express](http://expressjs.com/)
 * [Tuiter](https://github.com/danzajdband/Tuiter)
 
-Installation
-------------
-
-1. Clone the repository with ``git clone git://github.com/Fabryz/tweet-a-table.git``
-2. Install dependencies with ``npm install``
-3. Modify ``/configs/twitter.json`` with your twitter application credentials
-4. Modify ``/configs/keywords.json`` with the param/value used for filtering the tweets accordingly to the Twitter Streaming API Methods.
-An example of the default configuration file to search for the international teams trends on the Euro2012 event:
-
-		{
-			"param": "track",
-			"value": "#euro2012 #croatia,#euro2012 #czech,#euro2012 #denmark,#euro2012 #england,#euro2012 #france,#euro2012 #germany,#euro2012 #greece,#euro2012 #italy,#euro2012 #netherlands,#euro2012 #poland,#euro2012 #portugal,#euro2012 #ireland,#euro2012 #russia,#euro2012 #spain,#euro2012 #sweden,#euro2012 #ukraine"
-		}
-
-4. Start the server with ``node server.js``
-5. Point your browser to ``YOUR_SERVER_IP:8080``
-6. Stare at the screen, use "\" to toggle the stats panel
-
 Contributors
 ------------
 
