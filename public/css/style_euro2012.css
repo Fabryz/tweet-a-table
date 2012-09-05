@@ -121,7 +121,7 @@ h1 a, a:visited, a:hover {
 }
 
 #menu {
-  float: left;
+  /*float: left;*/
   margin-top: 18px;
 }
 #menu ul {

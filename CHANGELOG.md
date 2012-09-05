@@ -1,6 +1,8 @@
 # Changelog
 
-copy img sfondo
+## v0.5.10 / 2012-09-05
+- archived london2012 event
+- new index splash screen
 
 ## v0.5.9 / 2012-07-30
 - added initial metatags

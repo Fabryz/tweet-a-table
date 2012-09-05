@@ -1,88 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   <meta name="description" content="Realtime scoreboard about London 2012 Olympics tweets">
-  <meta property="og:title" content="Tweet-a-table | London2012 Event"/>
-  <meta property="og:url" content="tweet-a-table.nodejitsu.com"/>
-  <meta property="og:site_name" content="Tweet-a-table | London2012 Event"/>
-  <meta property="og:type" content="athlete"/>
-  <meta property="og:image" content="/img/logo_london2012.png" /> 
+  <meta property="og:title" content="Tweet-a-table | London2012 Event">
+  <meta property="og:url" content="tweet-a-table.nodejitsu.com">
+  <meta property="og:site_name" content="Tweet-a-table | London2012 Event">
+  <meta property="og:type" content="athlete">
+  <meta property="og:image" content="/img/logo_london2012.png"> 
   <meta name="keywords" content="Tweet-a-table, nodejs, realtime, twitter, tweet"> 
    
   <title>Tweet-a-table | London2012 Event</title>
 
   <link type="text/css" rel="stylesheet" href="./css/style.css" media="screen">
 
-  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="./socket.io/socket.io.js"></script>
   <script type="text/javascript" src="./js/modernizr-2.5.3.min.js"></script>
   <script type="text/javascript" src="./js/handlebars-1.0.0.beta.6.js"></script>
   <script type="text/javascript" src="./js/tweet-a-table.js"></script>
-</head>
-<body>
+
   <div id="wrapper">
     <div id="tweets" class="container">
       <h1>TWEET-A-TABLE</h1>
       <div id="menu">
         <ul>
           <li><a href="./about.html" title="About this project">About us</a></li>
-          <li><a href="./archive/euro2012.html" title="Archived event: Euro2012">Euro2012 Event</a></li>
+          <li><a href="./archive/euro2012.html" title="Archived event: Euro2012">&#35;Euro2012</a></li>
+          <li><a href="./archive/london2012.html" title="Archived event: London2012">&#35;London2012</a></li>
         </ul>
       </div>
       <div class="clear"></div>
-      <div id="map">
-        <embed src="./svg/world_map.svg" type="image/svg+xml" />
-        <span class="america">0</span>
-        <span class="europe">0</span>
-        <span class="africa">0</span>
-        <span class="asia">0</span>
-        <span class="oceania">0</span>
+      <div id="content">
+        <img src="./img/coming-soon.jpg" alt="Coming soon" />
+        <p>Coming soon: #election2012</p>
       </div>
-      <ul id="nations"></ul>
-      <script id="nation-template" type="text/x-handlebars-template">
-        {{#each nation}}
-          {{#ifIsNation type }}
-          <li id="{{id}}" class="f1_container">
-            <span class="f1_card shadow">
-              <span class="front face">
-                <embed src="{{src}}" type="image/svg+xml" />
-                <span class="amount tweet">{{count}}</span>
-              </span>
-              <span class="back face center">
-                <p>{{text}}</p>
-              </span>
-            </span>
-          </li>
-          {{/ifIsNation}}
-        {{/each}}
-      </script>
     </div>
-    <div class="clear"></div>
-    <div id="sports">
-      <ul></ul>
-      <script id="sport-template" type="text/x-handlebars-template">
-        {{#each sport}}
-          {{#ifIsSport type }}
-          <li id="{{id}}" class="f2_container">
-            <span class="f2_card shadow">
-              <span class="front2 face2">
-                <img src="{{src}}" alt="{{text}}" />
-                <span class="amount tweet2">{{count}}</span>
-              </span>
-              <span class="back2 face2 center2">
-                <p>{{text}}</p>
-              </span>
-            </span>
-          </li>
-          {{/ifIsSport}}
-        {{/each}}
-      </script>
-      <div class="clear"></div>
-      <h2 class="title_index">SPORTS</h2>
-    </div>
-    <p id="copy">&copy;2012 <a href="http://fabryz.com" target="_blank">Fabrizio Codello</a>, <a href="http://www.web-expert.it" target="_blank">Marco Sors</a>, <a href="https://twitter.com/#!/Nicola_DL" target="_blank">Nicola De Lazzari</a></p>
-    <div id="stats"><span id="speed">0</span> tweets/sec (Max: <span id="maxSpeed">0</span> )</div>
+    <p id="copy">©2012 <a href="http://fabryz.com" target="_blank">Fabrizio Codello</a>, <a href="http://www.web-expert.it" target="_blank">Marco Sors</a>, <a href="https://twitter.com/#!/Nicola_DL" target="_blank">Nicola De Lazzari</a></p>
   </div>
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style ">
@@ -104,5 +57,5 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-</body>
-</html>
+
+</body></html>

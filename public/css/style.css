@@ -148,7 +148,7 @@ h1 {
 .container {
   background-position: center bottom;
   background-repeat: no-repeat;
-  height:640px;
+  /*height:640px;*/
   width:100%;
   position:relative;
   margin: 0 auto;
@@ -278,6 +278,19 @@ border-bottom-right-radius: 10px;
 -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
 box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
 }
+
+#content {
+  width: 940px;
+  margin: 10px auto;
+  padding: 10px;
+  color: #e9e72a;
+  font-family: 'SilkscreenNormal';
+  text-shadow: 2px 2px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  background-color: rgba(0, 0, 0, .8);
+  text-align: center;
+}
+
 
 #copy {
   width: 565px;
