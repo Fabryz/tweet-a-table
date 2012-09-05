@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html><head><script id="LR1" type="text/javascript" async="" src="http://platform.twitter.com/js/tfw/widget/hubclient.js"></script><script type="text/javascript" src="//api-public.addthis.com/url/shares.json?url=http%3A%2F%2Ftweet-a-table.nodejitsu.com%2F&amp;callback=_ate.cbs.sc_httptweetatablenodejitsucom0"></script><script type="text/javascript" src="//ct1.addthis.com/static/r07/counter002C.js"></script><link rel="stylesheet" type="text/css" href="//ct1.addthis.com/static/r07/counter002C.css" media="all"><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script><link rel="stylesheet" type="text/css" href="//ct1.addthis.com/static/r07/widget092.css" media="all">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Realtime scoreboard about London 2012 Olympics tweets">
+  <meta property="og:title" content="Tweet-a-table | London2012 Event">
+  <meta property="og:url" content="tweet-a-table.nodejitsu.com">
+  <meta property="og:site_name" content="Tweet-a-table | London2012 Event">
+  <meta property="og:type" content="athlete">
+  <meta property="og:image" content="../.../../img/logo_london2012.png"> 
+  <meta name="keywords" content="Tweet-a-table, nodejs, realtime, twitter, tweet"> 
+   
+  <title>Tweet-a-table | London2012 Event</title>
+
+  <link type="text/css" rel="stylesheet" href="../../css/style.css" media="screen">
+
+  <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="../js/modernizr-2.5.3.min.js"></script>
+<div style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000; " id="_atssh"><iframe id="_atssh489" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px; " src="//ct1.addthis.com/static/r07/sh098.html#iit=1346870602226&amp;tmr=load%3D1346870596052%26core%3D1346870597542%26main%3D1346870602218%26ifr%3D1346870602226&amp;cb=0&amp;cdn=1&amp;chr=UTF-8&amp;kw=Tweet-a-table%2Cnodejs%2Crealtime%2Ctwitter%2Ctweet&amp;ab=-&amp;dh=tweet-a-table.nodejitsu.com&amp;dr=&amp;du=http%3A%2F%2Ftweet-a-table.nodejitsu.com%2F&amp;dt=Tweet-a-table%20%7C%20London2012%20Event&amp;md=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;irt=0&amp;jsl=33&amp;lng=it&amp;ogt=image%2Ctype%3Dathlete%2Csite_name%2Curl%2Ctitle&amp;pc=men&amp;pub=ra-4f149a4f2cd61cbc&amp;ssl=0&amp;sid=50479d45e5ce43b8&amp;srpl=0.00001&amp;srd=0&amp;srf=0.02&amp;srp=0.2&amp;srl=1&amp;srx=1&amp;ver=250&amp;xck=0&amp;xtr=0&amp;og=title%3DTweet-a-table%2520%257C%2520London2012%2520Event%26url%3Dtweet-a-table.nodejitsu.com%26site_name%3DTweet-a-table%2520%257C%2520London2012%2520Event%26type%3Dathlete%26image%3D%252Fimg%252Flogo_london2012.png&amp;rev=116057&amp;ct=1&amp;xld=1&amp;xd=1"></iframe></div><script type="text/javascript" src="http://ct1.addthis.com/static/r07/core032.js"></script></head>
+<body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
+  <div id="wrapper">
+    <div id="tweets" class="container">
+      <h1>TWEET-A-TABLE</h1>
+      <div id="menu">
+        <ul>
+          <li><a href="../../about.html" title="About this project">About us</a></li>
+          <li><a href="../../archive/euro2012.html" title="Archived event: Euro2012">Euro2012 Event</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div id="map">
+        <embed src="../../svg/world_map.svg" type="image/svg+xml">
+        <span class="america">116325</span>
+        <span class="europe">39929</span>
+        <span class="africa">26868</span>
+        <span class="asia">38387</span>
+        <span class="oceania">5654</span>
+      </div>
+      <ul id="nations">
+        
+          <li id="albania" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/al.svg" type="image/svg+xml">
+                <span class="amount tweet">83</span>
+              </span>
+              <span class="back face center">
+                <p>Albania</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="algeria" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Algeria.svg" type="image/svg+xml">
+                <span class="amount tweet">594</span>
+              </span>
+              <span class="back face center">
+                <p>Algeria</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="antiguaandbarbuda" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Antigua_and_Barbuda.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Antigua and Barbuda</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="argentina" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ar.svg" type="image/svg+xml">
+                <span class="amount tweet">2835</span>
+              </span>
+              <span class="back face center">
+                <p>Argentina</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="australia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Australia.svg" type="image/svg+xml">
+                <span class="amount tweet">4198</span>
+              </span>
+              <span class="back face center">
+                <p>Australia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="austria" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Austria.svg" type="image/svg+xml">
+                <span class="amount tweet">121</span>
+              </span>
+              <span class="back face center">
+                <p>Austria</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="azerbaijan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Azerbaijan.svg" type="image/svg+xml">
+                <span class="amount tweet">1486</span>
+              </span>
+              <span class="back face center">
+                <p>Azerbaijan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="bahamas" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Bahamas.svg" type="image/svg+xml">
+                <span class="amount tweet">326</span>
+              </span>
+              <span class="back face center">
+                <p>bahamas</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="bahrain" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Bahrain.svg" type="image/svg+xml">
+                <span class="amount tweet">2976</span>
+              </span>
+              <span class="back face center">
+                <p>Bahrain</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="barbados" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/bb.svg" type="image/svg+xml">
+                <span class="amount tweet">49</span>
+              </span>
+              <span class="back face center">
+                <p>Barbados</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="belarus" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/by.svg" type="image/svg+xml">
+                <span class="amount tweet">903</span>
+              </span>
+              <span class="back face center">
+                <p>Belarus</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="belgium" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Belgium.svg" type="image/svg+xml">
+                <span class="amount tweet">400</span>
+              </span>
+              <span class="back face center">
+                <p>Belgium</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="benin" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Benin.svg" type="image/svg+xml">
+                <span class="amount tweet">19</span>
+              </span>
+              <span class="back face center">
+                <p>Benin</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="bolivia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/bo.svg" type="image/svg+xml">
+                <span class="amount tweet">64</span>
+              </span>
+              <span class="back face center">
+                <p>Bolivia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="bosniaandherzegovina" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ba.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Bosnia and Herzegovina</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="botswana" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Botswana.svg" type="image/svg+xml">
+                <span class="amount tweet">248</span>
+              </span>
+              <span class="back face center">
+                <p>Botswana</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="brazil" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/br.svg" type="image/svg+xml">
+                <span class="amount tweet">9331</span>
+              </span>
+              <span class="back face center">
+                <p>Brazil</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="bulgaria" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Bulgaria.svg" type="image/svg+xml">
+                <span class="amount tweet">601</span>
+              </span>
+              <span class="back face center">
+                <p>Bulgaria</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="burkinafaso" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Burkina_Faso.svg" type="image/svg+xml">
+                <span class="amount tweet">4</span>
+              </span>
+              <span class="back face center">
+                <p>Burkina Faso</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="cameroon" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Cameroon.svg" type="image/svg+xml">
+                <span class="amount tweet">691</span>
+              </span>
+              <span class="back face center">
+                <p>Cameroon</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="canada" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ca.svg" type="image/svg+xml">
+                <span class="amount tweet">13556</span>
+              </span>
+              <span class="back face center">
+                <p>Canada</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="centralafricanrepublic" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Central_African_Republic.svg" type="image/svg+xml">
+                <span class="amount tweet">2</span>
+              </span>
+              <span class="back face center">
+                <p>Central African Republic</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="chad" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Chad.svg" type="image/svg+xml">
+                <span class="amount tweet">104</span>
+              </span>
+              <span class="back face center">
+                <p>Chad</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="chile" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Chile.svg" type="image/svg+xml">
+                <span class="amount tweet">554</span>
+              </span>
+              <span class="back face center">
+                <p>Chile</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="colombia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/co.svg" type="image/svg+xml">
+                <span class="amount tweet">2286</span>
+              </span>
+              <span class="back face center">
+                <p>Colombia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="comoros" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Comoros.svg" type="image/svg+xml">
+                <span class="amount tweet">4</span>
+              </span>
+              <span class="back face center">
+                <p>Comoros</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="congo" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Republic_of_the_Congo.svg" type="image/svg+xml">
+                <span class="amount tweet">228</span>
+              </span>
+              <span class="back face center">
+                <p>Congo</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="costarica" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/cr.svg" type="image/svg+xml">
+                <span class="amount tweet">78</span>
+              </span>
+              <span class="back face center">
+                <p>Costarica</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="cotedivoire" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ci.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Cote d'Ivoire</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="croatia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/hr.svg" type="image/svg+xml">
+                <span class="amount tweet">743</span>
+              </span>
+              <span class="back face center">
+                <p>Croatia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="cuba" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Cuba.svg" type="image/svg+xml">
+                <span class="amount tweet">3332</span>
+              </span>
+              <span class="back face center">
+                <p>Cuba</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="czechrepublic" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Czech_Republic.svg" type="image/svg+xml">
+                <span class="amount tweet">166</span>
+              </span>
+              <span class="back face center">
+                <p>Czech Republic</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="denmark" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Denmark.svg" type="image/svg+xml">
+                <span class="amount tweet">586</span>
+              </span>
+              <span class="back face center">
+                <p>Denmark</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="ecuador" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ec.svg" type="image/svg+xml">
+                <span class="amount tweet">1021</span>
+              </span>
+              <span class="back face center">
+                <p>Ecuador</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="egypt" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/eg.svg" type="image/svg+xml">
+                <span class="amount tweet">8164</span>
+              </span>
+              <span class="back face center">
+                <p>Egypt</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="eritrea" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/er.svg" type="image/svg+xml">
+                <span class="amount tweet">124</span>
+              </span>
+              <span class="back face center">
+                <p>Eritrea</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="estonia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Estonia.svg" type="image/svg+xml">
+                <span class="amount tweet">62</span>
+              </span>
+              <span class="back face center">
+                <p>Estonia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="ethiopia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Ethiopia.svg" type="image/svg+xml">
+                <span class="amount tweet">1307</span>
+              </span>
+              <span class="back face center">
+                <p>Ethiopia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="finland" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Finland.svg" type="image/svg+xml">
+                <span class="amount tweet">176</span>
+              </span>
+              <span class="back face center">
+                <p>Finland</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="france" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_France.svg" type="image/svg+xml">
+                <span class="amount tweet">4841</span>
+              </span>
+              <span class="back face center">
+                <p>France</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="gabon" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Gabon.svg" type="image/svg+xml">
+                <span class="amount tweet">309</span>
+              </span>
+              <span class="back face center">
+                <p>Gabon</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="gambia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Gambia.svg" type="image/svg+xml">
+                <span class="amount tweet">27</span>
+              </span>
+              <span class="back face center">
+                <p>Gambia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="georgia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Georgia.svg" type="image/svg+xml">
+                <span class="amount tweet">160</span>
+              </span>
+              <span class="back face center">
+                <p>Georgia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="germany" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Germany.svg" type="image/svg+xml">
+                <span class="amount tweet">1652</span>
+              </span>
+              <span class="back face center">
+                <p>Germany</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="ghana" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Ghana.svg" type="image/svg+xml">
+                <span class="amount tweet">264</span>
+              </span>
+              <span class="back face center">
+                <p>Ghana</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="uk" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/gb.svg" type="image/svg+xml">
+                <span class="amount tweet">4627</span>
+              </span>
+              <span class="back face center">
+                <p>United Kingdom</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="greece" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Greece.svg" type="image/svg+xml">
+                <span class="amount tweet">808</span>
+              </span>
+              <span class="back face center">
+                <p>Greece</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="guineabissau" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Guinea-Bissau.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Guinea Bissau</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="guyana" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Guyana.svg" type="image/svg+xml">
+                <span class="amount tweet">38</span>
+              </span>
+              <span class="back face center">
+                <p>Guyana</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="honduras" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Honduras.svg" type="image/svg+xml">
+                <span class="amount tweet">2524</span>
+              </span>
+              <span class="back face center">
+                <p>Honduras</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="hongkong" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/hk.svg" type="image/svg+xml">
+                <span class="amount tweet">111</span>
+              </span>
+              <span class="back face center">
+                <p>Hong Kong</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="hungary" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Hungary.svg" type="image/svg+xml">
+                <span class="amount tweet">929</span>
+              </span>
+              <span class="back face center">
+                <p>Hungary</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="iceland" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Iceland.svg" type="image/svg+xml">
+                <span class="amount tweet">168</span>
+              </span>
+              <span class="back face center">
+                <p>Iceland</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="india" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/in.svg" type="image/svg+xml">
+                <span class="amount tweet">5993</span>
+              </span>
+              <span class="back face center">
+                <p>India</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="indonesia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/id.svg" type="image/svg+xml">
+                <span class="amount tweet">1196</span>
+              </span>
+              <span class="back face center">
+                <p>Indonesia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="iran" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ir1.svg" type="image/svg+xml">
+                <span class="amount tweet">1525</span>
+              </span>
+              <span class="back face center">
+                <p>Iran</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="iraq" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/iq.svg" type="image/svg+xml">
+                <span class="amount tweet">194</span>
+              </span>
+              <span class="back face center">
+                <p>Iraq</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="ireland" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ie.svg" type="image/svg+xml">
+                <span class="amount tweet">1825</span>
+              </span>
+              <span class="back face center">
+                <p>Ireland</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="israel" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Israel.svg" type="image/svg+xml">
+                <span class="amount tweet">1224</span>
+              </span>
+              <span class="back face center">
+                <p>Israel</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="italy" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Italy.svg" type="image/svg+xml">
+                <span class="amount tweet">2208</span>
+              </span>
+              <span class="back face center">
+                <p>Italy</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="jamaica" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Jamaica.svg" type="image/svg+xml">
+                <span class="amount tweet">5346</span>
+              </span>
+              <span class="back face center">
+                <p>Jamaica</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="japan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Japan.svg" type="image/svg+xml">
+                <span class="amount tweet">5127</span>
+              </span>
+              <span class="back face center">
+                <p>Japan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="jordan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Jordan.svg" type="image/svg+xml">
+                <span class="amount tweet">439</span>
+              </span>
+              <span class="back face center">
+                <p>Jordan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="kazakhstan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/kz.svg" type="image/svg+xml">
+                <span class="amount tweet">2311</span>
+              </span>
+              <span class="back face center">
+                <p>Kazakhstan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="kenya" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Kenya.svg" type="image/svg+xml">
+                <span class="amount tweet">2140</span>
+              </span>
+              <span class="back face center">
+                <p>Kenya</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="northkorea" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_North_Korea.svg" type="image/svg+xml">
+                <span class="amount tweet">212</span>
+              </span>
+              <span class="back face center">
+                <p>North Korea</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="southkorea" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_South_Korea.svg" type="image/svg+xml">
+                <span class="amount tweet">716</span>
+              </span>
+              <span class="back face center">
+                <p>South Korea</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="kuwait" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Kuwait.svg" type="image/svg+xml">
+                <span class="amount tweet">1320</span>
+              </span>
+              <span class="back face center">
+                <p>Kuwait</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="latvia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Latvia.svg" type="image/svg+xml">
+                <span class="amount tweet">808</span>
+              </span>
+              <span class="back face center">
+                <p>Latvia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="lebanon" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/lb.svg" type="image/svg+xml">
+                <span class="amount tweet">707</span>
+              </span>
+              <span class="back face center">
+                <p>Lebanon</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="liberia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Liberia.svg" type="image/svg+xml">
+                <span class="amount tweet">47</span>
+              </span>
+              <span class="back face center">
+                <p>Liberia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="libya" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ly.svg" type="image/svg+xml">
+                <span class="amount tweet">1119</span>
+              </span>
+              <span class="back face center">
+                <p>Libya</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="lithuania" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Lithuania.svg" type="image/svg+xml">
+                <span class="amount tweet">949</span>
+              </span>
+              <span class="back face center">
+                <p>Lithuania</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="luxembourg" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Luxembourg.svg" type="image/svg+xml">
+                <span class="amount tweet">34</span>
+              </span>
+              <span class="back face center">
+                <p>Luxembourg</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="macedonia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Macedonia.svg" type="image/svg+xml">
+                <span class="amount tweet">7</span>
+              </span>
+              <span class="back face center">
+                <p>Macedonia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="madagascar" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Madagascar.svg" type="image/svg+xml">
+                <span class="amount tweet">86</span>
+              </span>
+              <span class="back face center">
+                <p>Madagascar</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="malawi" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Malawi.svg" type="image/svg+xml">
+                <span class="amount tweet">101</span>
+              </span>
+              <span class="back face center">
+                <p>Malawi</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="malaysia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Malaysia.svg" type="image/svg+xml">
+                <span class="amount tweet">1871</span>
+              </span>
+              <span class="back face center">
+                <p>malaysia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="maldives" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Maldives.svg" type="image/svg+xml">
+                <span class="amount tweet">318</span>
+              </span>
+              <span class="back face center">
+                <p>Maldives</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="mali" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Mali.svg" type="image/svg+xml">
+                <span class="amount tweet">37</span>
+              </span>
+              <span class="back face center">
+                <p>Mali</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="malta" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/mt.svg" type="image/svg+xml">
+                <span class="amount tweet">44</span>
+              </span>
+              <span class="back face center">
+                <p>Malta</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="mauritania" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Mauritania.svg" type="image/svg+xml">
+                <span class="amount tweet">6</span>
+              </span>
+              <span class="back face center">
+                <p>Mauritania</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="mauritius" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Mauritius.svg" type="image/svg+xml">
+                <span class="amount tweet">70</span>
+              </span>
+              <span class="back face center">
+                <p>Mauritius</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="mexico" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/mx.svg" type="image/svg+xml">
+                <span class="amount tweet">17014</span>
+              </span>
+              <span class="back face center">
+                <p>Mexico</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="micronesia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Micronesia.svg" type="image/svg+xml">
+                <span class="amount tweet">18</span>
+              </span>
+              <span class="back face center">
+                <p>Micronesia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="mongolia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/mn.svg" type="image/svg+xml">
+                <span class="amount tweet">249</span>
+              </span>
+              <span class="back face center">
+                <p>Mongolia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="morocco" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ma.svg" type="image/svg+xml">
+                <span class="amount tweet">426</span>
+              </span>
+              <span class="back face center">
+                <p>Morocco</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="nauru" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Nauru.svg" type="image/svg+xml">
+                <span class="amount tweet">18</span>
+              </span>
+              <span class="back face center">
+                <p>nauru</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="nepal" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Nepal.svg" type="image/svg+xml">
+                <span class="amount tweet">179</span>
+              </span>
+              <span class="back face center">
+                <p>Nepal</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="netherlands" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_Netherlands.svg" type="image/svg+xml">
+                <span class="amount tweet">555</span>
+              </span>
+              <span class="back face center">
+                <p>Netherlands</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="newzealand" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_New_Zealand.svg" type="image/svg+xml">
+                <span class="amount tweet">1009</span>
+              </span>
+              <span class="back face center">
+                <p>New Zealand</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="nigeria" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Nigeria.svg" type="image/svg+xml">
+                <span class="amount tweet">4906</span>
+              </span>
+              <span class="back face center">
+                <p>Nigeria</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="norway" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Norway.svg" type="image/svg+xml">
+                <span class="amount tweet">865</span>
+              </span>
+              <span class="back face center">
+                <p>Norway</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="pakistan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Pakistan.svg" type="image/svg+xml">
+                <span class="amount tweet">4181</span>
+              </span>
+              <span class="back face center">
+                <p>Pakistan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="palau" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Palau.svg" type="image/svg+xml">
+                <span class="amount tweet">39</span>
+              </span>
+              <span class="back face center">
+                <p>Palau</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="palestine" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ps.svg" type="image/svg+xml">
+                <span class="amount tweet">1183</span>
+              </span>
+              <span class="back face center">
+                <p>Palestine</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="panama" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Panama.svg" type="image/svg+xml">
+                <span class="amount tweet">445</span>
+              </span>
+              <span class="back face center">
+                <p>Panama</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="paraguay" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/py.svg" type="image/svg+xml">
+                <span class="amount tweet">1404</span>
+              </span>
+              <span class="back face center">
+                <p>Paraguay</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="peru" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/pe.svg" type="image/svg+xml">
+                <span class="amount tweet">274</span>
+              </span>
+              <span class="back face center">
+                <p>Peru</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="philippines" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ph.svg" type="image/svg+xml">
+                <span class="amount tweet">573</span>
+              </span>
+              <span class="back face center">
+                <p>philippines</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="poland" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/pl.svg" type="image/svg+xml">
+                <span class="amount tweet">986</span>
+              </span>
+              <span class="back face center">
+                <p>Poland</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="portugal" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/pt.svg" type="image/svg+xml">
+                <span class="amount tweet">508</span>
+              </span>
+              <span class="back face center">
+                <p>Portugal</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="puertorico" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Puerto_Rico.svg" type="image/svg+xml">
+                <span class="amount tweet">1043</span>
+              </span>
+              <span class="back face center">
+                <p>Puertorico</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="qatar" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Qatar.svg" type="image/svg+xml">
+                <span class="amount tweet">1226</span>
+              </span>
+              <span class="back face center">
+                <p>Qatar</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="romania" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Romania.svg" type="image/svg+xml">
+                <span class="amount tweet">500</span>
+              </span>
+              <span class="back face center">
+                <p>Romania</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="russia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Russia.svg" type="image/svg+xml">
+                <span class="amount tweet">4209</span>
+              </span>
+              <span class="back face center">
+                <p>Russia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="rwanda" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Rwanda.svg" type="image/svg+xml">
+                <span class="amount tweet">157</span>
+              </span>
+              <span class="back face center">
+                <p>Rwanda</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="saintkittsandnevis" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_St._Kitts_and_Nevis.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Saint Kitts and Nevis</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="saintlucia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Saint_Lucia.svg" type="image/svg+xml">
+                <span class="amount tweet">1</span>
+              </span>
+              <span class="back face center">
+                <p>Saint Lucia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="saintvincentandthegrenadines" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Saint_Vincent_and_the_Grenadines.svg" type="image/svg+xml">
+                <span class="amount tweet">1</span>
+              </span>
+              <span class="back face center">
+                <p>saintvincentandthegrenadines</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="samoa" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Samoa.svg" type="image/svg+xml">
+                <span class="amount tweet">54</span>
+              </span>
+              <span class="back face center">
+                <p>Samoa</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="sanmarino" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/sm.svg" type="image/svg+xml">
+                <span class="amount tweet">31</span>
+              </span>
+              <span class="back face center">
+                <p>San Marino</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="saotomeandprincipe" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Sao_Tome_and_Principe.svg" type="image/svg+xml">
+                <span class="amount tweet">0</span>
+              </span>
+              <span class="back face center">
+                <p>Saotome and Principe</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="saudiarabia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/sa.svg" type="image/svg+xml">
+                <span class="amount tweet">332</span>
+              </span>
+              <span class="back face center">
+                <p>Saudi Arabia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="senegal" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Senegal.svg" type="image/svg+xml">
+                <span class="amount tweet">1334</span>
+              </span>
+              <span class="back face center">
+                <p>Senegal</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="serbia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/sr.svg" type="image/svg+xml">
+                <span class="amount tweet">1181</span>
+              </span>
+              <span class="back face center">
+                <p>Serbia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="sierraleone" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Sierra_Leone.svg" type="image/svg+xml">
+                <span class="amount tweet">43</span>
+              </span>
+              <span class="back face center">
+                <p>sierraleone</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="singapore" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Singapore.svg" type="image/svg+xml">
+                <span class="amount tweet">633</span>
+              </span>
+              <span class="back face center">
+                <p>Singapore</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="slovakia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Slovakia.svg" type="image/svg+xml">
+                <span class="amount tweet">103</span>
+              </span>
+              <span class="back face center">
+                <p>Slovakia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="slovenia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Slovenia.svg" type="image/svg+xml">
+                <span class="amount tweet">325</span>
+              </span>
+              <span class="back face center">
+                <p>Slovenia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="somalia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Somalia.svg" type="image/svg+xml">
+                <span class="amount tweet">405</span>
+              </span>
+              <span class="back face center">
+                <p>Somalia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="southafrica" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_South_Africa.svg" type="image/svg+xml">
+                <span class="amount tweet">1760</span>
+              </span>
+              <span class="back face center">
+                <p>South Africa</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="spain" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/es.svg" type="image/svg+xml">
+                <span class="amount tweet">4007</span>
+              </span>
+              <span class="back face center">
+                <p>Spain</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="sudan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Sudan.svg" type="image/svg+xml">
+                <span class="amount tweet">310</span>
+              </span>
+              <span class="back face center">
+                <p>Sudan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="suriname" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Suriname.svg" type="image/svg+xml">
+                <span class="amount tweet">69</span>
+              </span>
+              <span class="back face center">
+                <p>Suriname</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="sweden" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Sweden.svg" type="image/svg+xml">
+                <span class="amount tweet">935</span>
+              </span>
+              <span class="back face center">
+                <p>Sweden</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="switzerland" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Switzerland.svg" type="image/svg+xml">
+                <span class="amount tweet">370</span>
+              </span>
+              <span class="back face center">
+                <p>Switzerland</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="tanzania" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Tanzania.svg" type="image/svg+xml">
+                <span class="amount tweet">61</span>
+              </span>
+              <span class="back face center">
+                <p>Tanzania</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="thailand" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Thailand.svg" type="image/svg+xml">
+                <span class="amount tweet">1088</span>
+              </span>
+              <span class="back face center">
+                <p>Thailand</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="togo" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Togo.svg" type="image/svg+xml">
+                <span class="amount tweet">60</span>
+              </span>
+              <span class="back face center">
+                <p>Togo</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="trinidadandtobago" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Trinidad_and_Tobago.svg" type="image/svg+xml">
+                <span class="amount tweet">169</span>
+              </span>
+              <span class="back face center">
+                <p>Trinidad and Tobago</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="tunisia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Tunisia.svg" type="image/svg+xml">
+                <span class="amount tweet">1649</span>
+              </span>
+              <span class="back face center">
+                <p>Tunisia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="turkey" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Turkey.svg" type="image/svg+xml">
+                <span class="amount tweet">2051</span>
+              </span>
+              <span class="back face center">
+                <p>Turkey</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="ukraine" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Ukraine.svg" type="image/svg+xml">
+                <span class="amount tweet">1465</span>
+              </span>
+              <span class="back face center">
+                <p>Ukraine</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="unitedarabemirates" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_the_United_Arab_Emirates.svg" type="image/svg+xml">
+                <span class="amount tweet">11</span>
+              </span>
+              <span class="back face center">
+                <p>United Arab Emirates</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="usa" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/us.svg" type="image/svg+xml">
+                <span class="amount tweet">50225</span>
+              </span>
+              <span class="back face center">
+                <p>United States</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="uruguay" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/uy.svg" type="image/svg+xml">
+                <span class="amount tweet">773</span>
+              </span>
+              <span class="back face center">
+                <p>Uruguay</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="uzbekistan" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Uzbekistan.svg" type="image/svg+xml">
+                <span class="amount tweet">112</span>
+              </span>
+              <span class="back face center">
+                <p>Uzbekistan</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="venezuela" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/ve.svg" type="image/svg+xml">
+                <span class="amount tweet">3567</span>
+              </span>
+              <span class="back face center">
+                <p>Venezuela</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="vietnam" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/Flag_of_Vietnam.svg" type="image/svg+xml">
+                <span class="amount tweet">79</span>
+              </span>
+              <span class="back face center">
+                <p>Vietnam</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="zambia" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="../../svg/zm.svg" type="image/svg+xml">
+                <span class="amount tweet">132</span>
+              </span>
+              <span class="back face center">
+                <p>Zambia</p>
+              </span>
+            </span>
+          </li>
+          
+        
+      </ul>
+      <script id="nation-template" type="text/x-handlebars-template">
+        {{#each nation}}
+          {{#ifIsNation type }}
+          <li id="{{id}}" class="f1_container">
+            <span class="f1_card shadow">
+              <span class="front face">
+                <embed src="{{src}}" type="image/svg+xml" />
+                <span class="amount tweet">{{count}}</span>
+              </span>
+              <span class="back face center">
+                <p>{{text}}</p>
+              </span>
+            </span>
+          </li>
+          {{/ifIsNation}}
+        {{/each}}
+      </script>
+    </div>
+    <div class="clear"></div>
+    <div id="sports">
+      <ul>
+        
+          
+          <li id="archery" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/arco.jpg" alt="Archery">
+                <span class="amount tweet2">9355</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Archery</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="athletics" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/atletica.jpg" alt="Athletics">
+                <span class="amount tweet2">26316</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Athletics</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="badminton" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/volano.jpg" alt="Badminton">
+                <span class="amount tweet2">38975</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Badminton</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="basketball" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/basket.jpg" alt="Basketball">
+                <span class="amount tweet2">34102</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Basketball</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="boxing" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/pugilato.jpg" alt="Boxing">
+                <span class="amount tweet2">31951</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Boxing</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="canoe" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/kayak.jpg" alt="Canoe">
+                <span class="amount tweet2">720</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Canoe</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="cycling" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/bici.jpg" alt="Cycling">
+                <span class="amount tweet2">24377</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Cycling</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="equestrian" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/equitazione.jpg" alt="Equestrian">
+                <span class="amount tweet2">10395</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Equestrian</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="fencing" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/scherma.jpg" alt="Fencing">
+                <span class="amount tweet2">14588</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Fencing</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="football" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/calcio.jpg" alt="Football">
+                <span class="amount tweet2">17821</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Football</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="gymnastics" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/ginnastica.jpg" alt="Gymnastics">
+                <span class="amount tweet2">41116</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Gymnastics</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="handball" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/pallamano.jpg" alt="Handball">
+                <span class="amount tweet2">10326</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Handball</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="hockey" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/hockey.jpg" alt="Hockey">
+                <span class="amount tweet2">20141</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Hockey</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="judo" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/judo.jpg" alt="Judo">
+                <span class="amount tweet2">19370</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Judo</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="pentathlon" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/pentathlon.jpg" alt="Pentathlon">
+                <span class="amount tweet2">799</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Pentathlon</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="rowing" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/canoa.jpg" alt="Rowing">
+                <span class="amount tweet2">19775</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Rowing</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="sailing" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/vela.jpg" alt="Sailing">
+                <span class="amount tweet2">7572</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Sailing</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="shooting" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/piattello.jpg" alt="Shooting">
+                <span class="amount tweet2">9594</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Shooting</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="swimming" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/nuoto.jpg" alt="Swimming">
+                <span class="amount tweet2">44771</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Swimming</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="taekwondo" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/artimarziali.jpg" alt="Taekwondo">
+                <span class="amount tweet2">8528</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Taekwondo</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="tabletennis" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/pingpong.jpg" alt="Table tennis">
+                <span class="amount tweet2">5278</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Table tennis</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="tennis" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/tennis.jpg" alt="Tennis">
+                <span class="amount tweet2">30156</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Tennis</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="triathlon" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/triathlon.jpg" alt="Triathlon">
+                <span class="amount tweet2">9011</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Triathlon</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="volley" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/volley.jpg" alt="Volley">
+                <span class="amount tweet2">3520</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Volley</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="weightlifting" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/pesi.jpg" alt="Weightlifting">
+                <span class="amount tweet2">5701</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Weightlifting</p>
+              </span>
+            </span>
+          </li>
+          
+        
+          
+          <li id="wrestling" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="../../img/lotta.jpg" alt="Wrestling">
+                <span class="amount tweet2">8362</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>Wrestling</p>
+              </span>
+            </span>
+          </li>
+          
+      </ul>
+      <script id="sport-template" type="text/x-handlebars-template">
+        {{#each sport}}
+          {{#ifIsSport type }}
+          <li id="{{id}}" class="f2_container">
+            <span class="f2_card shadow">
+              <span class="front2 face2">
+                <img src="{{src}}" alt="{{text}}" />
+                <span class="amount tweet2">{{count}}</span>
+              </span>
+              <span class="back2 face2 center2">
+                <p>{{text}}</p>
+              </span>
+            </span>
+          </li>
+          {{/ifIsSport}}
+        {{/each}}
+      </script>
+      <div class="clear"></div>
+      <h2 class="title_index">SPORTS</h2>
+    </div>
+<p id="copy">&copy;2012 <a href="http://fabryz.com" target="_blank">Fabrizio Codello</a>, <a href="http://www.web-expert.it" target="_blank">Marco Sors</a>, <a href="https://twitter.com/#!/Nicola_DL" target="_blank">Nicola De Lazzari</a></p>
+  </div>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_pinterest_pinit"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f149a4f2cd61cbc"></script>
+<!-- AddThis Button END -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32693789-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

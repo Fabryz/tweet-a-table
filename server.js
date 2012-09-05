@@ -49,6 +49,10 @@ app.get('/archive/euro2012.html', function(req, res) {
 	res.sendfile('archive/euro2012.html');
 });
 
+app.get('/archive/london2012.html', function(req, res) {
+	res.sendfile('archive/london2012.html');
+});
+
 app.get('/api', function(req, res) {
 	res.contentType('application/json');
 	res.end(JSON.stringify(stream));

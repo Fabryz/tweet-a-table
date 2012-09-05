@@ -1,5 +1,6 @@
 # Changelog
 
+copy img sfondo
 
 ## v0.5.9 / 2012-07-30
 - added initial metatags
