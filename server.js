@@ -86,7 +86,7 @@ var	totUsers = 0;
 
 var stream = {
 	leaderboard: [],
-	event: '',
+	events: {},
 	options: {},
 	createdAt: '',
 	updatedAt: ''
@@ -113,6 +113,16 @@ console.log("Express server listening in %s mode", app.settings.env);
 /*
 * Functions
 */
+
+function contains(arr, obj) {
+	var length = arr.length;
+    for (var i = 0; i < length; i++) {
+        if (arr[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
 
 function resetDb() {
 	var now = new Date();
@@ -178,11 +188,13 @@ function writeJSONFile(filename, contents) {
 function createParamsFile() {
 	var keywords = readJSONFile("./configs/keywords.json");
 	stream.options = keywords.options.split(",");
-	stream.event = keywords.event;
+	stream.events = keywords.events.split(",");
 	
 	var value = "";
 	stream.options.forEach(function(opt) {
-		value += stream.event +" "+ opt +",";
+		stream.events.forEach(function(ev) {
+			value += ev +" "+ opt +",";
+		});
 	});
 	value = value.substring(0, value.length - 1); // remove last ,
 
@@ -237,7 +249,8 @@ function parseTweetForHashtags(hashtags) {
 
 	var length = hashtags.length;
 	for (var i = 0; i < length; i++) {
-		if (hashtags[i] !== stream.event.toLowerCase().substring(1)) {
+		// if (hashtags[i] !== stream.events.toLowerCase().substring(1)) {
+		if (!contains(stream.events, hashtags[i].toLowerCase().substring(1))) {
 			parsed.push(hashtags[i]);
 		}
 	}
@@ -312,7 +325,7 @@ io.sockets.on('connection', function(client) {
 	console.log('+ User '+ client.id +' connected, total users: '+ totUsers);
 
 	client.emit("clientId", { id: client.id });
-	client.emit("filters", { event: stream.event, options: stream.options, createdAt: stream.createdAt });
+	client.emit("filters", { events: stream.events, options: stream.options, createdAt: stream.createdAt });
 	io.sockets.emit("tot", { tot: totUsers });
 
 	io.sockets.emit("leaderboard", strencode(stream.leaderboard));
