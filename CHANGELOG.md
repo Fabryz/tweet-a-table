@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.11 / 2012-09-06
+- tracking #election2012
+- supporting list of events
+
 ## v0.5.10 / 2012-09-05
 - archived london2012 event
 - new index splash screen
