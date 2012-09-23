@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   <meta name="description" content="Realtime scoreboard about US Election 2012">
   <meta property="og:title" content="Tweet-a-table | Election2012 Event">
@@ -13,15 +15,20 @@
 
   <link type="text/css" rel="stylesheet" href="./css/style.css" media="screen">
 
-  <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="./socket.io/socket.io.js"></script>
   <script type="text/javascript" src="./js/modernizr-2.5.3.min.js"></script>
   <script type="text/javascript" src="./js/handlebars-1.0.0.beta.6.js"></script>
   <script type="text/javascript" src="./js/tweet-a-table.js"></script>
-
+  </head>
+  <body>
   <div id="wrapper">
+    <div id="birds"></div>
     <div id="tweets" class="container">
-      <h1>TWEET-A-TABLE</h1>
+      
+      <div id="content">
+        <h1>TWEET-A-TABLE</h1>
       <div id="menu">
         <ul>
           <li><a href="./about.html" title="About this project">About us</a></li>
@@ -30,20 +37,49 @@
         </ul>
       </div>
       <div class="clear"></div>
-      <div id="content">
-        <div id="obama">
-          <span class="label">Obama:</span>
-          <span class="amount">0</span>
-        </div>
-        <div id="romney">
-          <span class="label">Romney:</span>
-          <span class="amount">0</span>
-        </div>
-        <img src="./img/coming-soon.jpg" alt="Coming soon" />
-        <p>Coming soon: #election2012</p>
+        <div id="obama" class="f2_container">
+           <div class="f2_card shadow">
+              <div class="front2 face2">
+                 <dl>
+                  <dt class="label">Barack</dt>
+                  <dd class="amount">0</dd>
+                </dl>
+              </div>
+              <div class="back2 face2 center2">
+                <p>Honolulu<br>August 4, 1961</p>
+              </div>
+            </div>
+          </div>
+          <div id="romney" class="f2_container">
+           <div class="f2_card shadow">
+              <div class="front2 face2">
+                 <dl>
+                  <dt class="label">Mitt</dt>
+                  <dd class="amount">0</dd>
+                </dl>
+              </div>
+              <div class="back2 face2 center2">
+                <p>Detroit<br>March 12, 1947</p>
+              </div>
+            </div>
+            
+          </div>
+          <span id="hover">&lt; Hover &gt;</span>
+          <section id="slogan">
+            
+            <div style="" class="demo demo2 oridomi" data-id="2" data-anchor="l">FORWARD<img src="img/obama_logo.jpg" alt=""><span class="amount">0</span></div>
+            
+            <div style="" class="demo demo3 oridomi" data-id="3" data-anchor="r">KEEP AMERICA AMERICAN<img src="img/romney_logo.png" alt=""><span class="amount">0</span></div>
+            
+            <span id="click">&lt; Click &gt;</span>
+
+          </section>
+
+        <p id="copy">©2012 <a href="http://fabryz.com" target="_blank">Fabrizio Codello</a>, <a href="http://www.web-expert.it" target="_blank">Marco Sors</a>, <a href="https://twitter.com/#!/Nicola_DL" target="_blank">Nicola De Lazzari</a></p>
       </div>
+      
     </div>
-    <p id="copy">©2012 <a href="http://fabryz.com" target="_blank">Fabrizio Codello</a>, <a href="http://www.web-expert.it" target="_blank">Marco Sors</a>, <a href="https://twitter.com/#!/Nicola_DL" target="_blank">Nicola De Lazzari</a></p>
+    
   </div>
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style ">
@@ -54,6 +90,9 @@
 </div>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f149a4f2cd61cbc"></script>
 <!-- AddThis Button END -->
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/oriDomi.js"></script>
+<script src="js/demo.js"></script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-32693789-1']);

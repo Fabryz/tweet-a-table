@@ -5,12 +5,13 @@ audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background: url('../img/stripes-horizontal.gif') left top repeat;}
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-body { margin: 0; font-size: 1em; line-height: 1.4; background: #222 url('../img/london1.jpg') no-repeat top left; background-size: 100% 1062px; }
-
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+#birds {background: url(../img/birds.gif) right top repeat; position: absolute; top: 0; left: 0; width: 50%; height: 100%;}
+#wrapper {display: block; overflow: hidden;}
+::-moz-selection { background: #333; color: #ccc; text-shadow: none; }
+::selection { background: #333; color: #ccc; text-shadow: none; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -101,6 +102,14 @@ td { vertical-align: top; }
 
 }
 
+
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://themes.googleusercontent.com/static/fonts/abrilfatface/v5/X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff) format('woff');
+}
+
 .clear {
   clear: both;
 }
@@ -111,17 +120,15 @@ h1 {
   color: #f1e303;
   text-shadow: 3px 3px 3px #333;
   margin: 0;
-  padding-left: 160px;
-  background: transparent url('../img/logo_london2012.png') no-repeat 20px 10px;
-  height: 145px;
-  line-height: 145px;
+  height: 110px;
+  line-height: 110px;
   float: left;
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 #menu {
   position: relative;
-  top: 58px;
+  top: 30px;
 }
 #menu ul {
   list-style-type: none;
@@ -131,18 +138,26 @@ h1 {
 }
 #menu ul li a {
   color: #e9e72a;
-  font-family: 'SilkscreenNormal';
-  text-shadow: 2px 2px 1px #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000000;
   filter: dropshadow(color=#000000, offx=1, offy=1);
   text-decoration: none;
-  padding: 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 2px 2px 2px #555;
+  box-shadow: 2px 2px 2px #555;
 }
 
 #menu ul li a.selected {
   text-decoration: underline;
 }
+
 #menu ul li a:hover {
-  text-decoration: underline;
+  color: #F2F2F2;
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .container {
@@ -173,7 +188,7 @@ h1 {
 .container ul li {
   float: left;
   margin: 0 15px 15px 0;
-  height: 90px;
+  height: 30px;
   display: block;
 }
 
@@ -281,7 +296,7 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
 
 #content {
   width: 940px;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 10px;
   color: #e9e72a;
   font-family: 'SilkscreenNormal';
@@ -289,6 +304,16 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
   filter: dropshadow(color=#000000, offx=1, offy=1);
   background-color: rgba(0, 0, 0, .8);
   text-align: center;
+  background: transparent url('../img/central-bg.jpg') no-repeat left top;
+  background-size: 100% 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 3px 3px 3px #555;
+  box-shadow: 3px 3px 3px #555;
+}
+
+#slogan {
+  position: relative;
 }
 
 
@@ -296,21 +321,30 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
   width: 565px;
   margin: 20px auto;
   color: #e9e72a;
-  font-family: 'SilkscreenNormal';
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
   text-shadow: 2px 2px 1px #000000;
   filter: dropshadow(color=#000000, offx=1, offy=1);
+  clear: both;
 }
 
 #copy a {
   color: #e9e72a;
   padding: 5px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .3);
+  text-decoration: none;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 2px 2px 2px #555;
+  box-shadow: 2px 2px 2px #555;
+  margin-right: 5px;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 #copy a:hover {
   color: #F2F2F2;
   padding: 5px;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .f1_container{
@@ -412,11 +446,7 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
 }
 
 .front2{
-   -webkit-border-radius: 10px;
-  border-radius: 10px; 
-  -webkit-box-shadow: 2px 2px 2px 2px #111;
-  box-shadow: 2px 2px 2px 2px #111; 
-  border: 4px solid #fff;
+  
 }
 
 .face2.back2 {
@@ -432,10 +462,7 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
   color: white;
   text-align: center;
   background-color: #666;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 2px 2px #111;
-  box-shadow: 2px 2px 2px 2px #111;
+ 
   text-transform: uppercase;
   color: #F1E303;
 }
@@ -471,12 +498,10 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
      -moz-transform: rotateX(180deg) rotateY(180deg);
       -ms-transform: rotateX(180deg) rotateY(180deg);
           transform: rotateX(180deg) rotateY(180deg);
-  margin-top: 20px;
+  margin-top: 340px;
 }
 
 .face2.back2 {
-  -webkit-box-shadow: -2px -2px 2px 2px #111;
-  box-shadow: -2px -2px 2px 2px #111;
   height: 88px;
   width: 148px;
   margin-top: -8px;
@@ -525,6 +550,137 @@ h2.title_index {
   top: 10px;
   right: 310px;
 }
+
+.f2_container{
+  width: 356px;
+  height: 468px;
+  float: left;
+}
+
+#romney.f2_container{
+  float: right;
+}
+
+#obama, #romney{
+  font-size: 40px;
+  font-family: 'ChunkFiveRegular';
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+#obama .front2{
+  width: 356px;
+  height: 468px;
+  background: transparent url('../img/obama.png') no-repeat scroll left top;
+  float: left;
+}
+
+#obama .back2{
+  width: 356px;
+  height: 468px;
+  background: transparent url('../img/obama-back.png') no-repeat scroll left top;
+  float: left;
+  font-style: italic;
+  font-size: 30px;
+}
+
+#romney .front2{
+  width: 356px;
+  height: 468px;
+  background: transparent url('../img/romney.png') no-repeat scroll left top;
+  float: right;
+}
+
+#romney .back2{
+  width: 356px;
+  height: 468px;
+  background: transparent url('../img/romney-back.png') no-repeat scroll left top;
+  float: right;
+  font-style: italic;
+  font-size: 30px;
+}
+
+#obama dl, #romney dl{
+  margin-top: 340px;
+  text-align: left;
+  padding: 0 20px 0 30px;
+}
+
+#obama dd, #romney dd{
+  margin: 0;
+}
+
+#romney dl{
+  text-align: right;
+}
+
+.demo2 span, .demo3 span {
+    clear: both;
+    display: block;
+    font-family: 'ChunkFiveRegular';
+    color: #E9E72A;
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+}
+
+#hover, #click{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #999;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+#hover{
+    top:32%;
+    left: 46%;
+}
+
+#click{
+    top:55%;
+    left: 46%;
+}
+
+#slogan{
+ padding: 50px 0;
+ overflow: hidden;
+ clear: both;
+}
+
+.demo2{
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    padding: 0px; width: 420px; height: 450px; background-color: #E03C42; background-image: none; border: medium none; outline: medium none;
+    float: left;
+    color: #fff;
+    margin-right: 95px;
+}
+
+.demo3{
+    font-family: "Abril Fatface","Hoefler Text", Constantia, Palatino, Georgia, serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    padding: 0px; width: 420px; height: 450px; background-color: #467BA6; background-image: none; border: medium none; outline: medium none;
+    text-align: center;
+    float: left;
+    color: #fff;
+    line-height: 55px;
+}
+
+.demo2 img, .demo3 img {
+    clear: both;
+}
+
+#obama .front2 dt, #obama .back2{
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+#romney .front2 dt, #romney .back2{
+  font-family: "Abril Fatface","Hoefler Text", Constantia, Palatino, Georgia, serif;
+}
+
 
 @media only screen and (min-width: 35em) {
   
