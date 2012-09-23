@@ -4,6 +4,7 @@
 var $body,
     $tagline,
     $foldMe,
+    $demo1,
     $demo2,
     $demo3,
     methodMap = { demo2: 'reveal', demo3: 'stairs', demo4: 'accordion', demo5: 'curl' };
