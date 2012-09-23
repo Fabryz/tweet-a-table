@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.5.13 / 2012-09-23
+- new shiny frontend for election2012
+
 ## v0.5.12 / 2012-09-23
 - updated code to support multiple events
 - fixed entities and sum amount
