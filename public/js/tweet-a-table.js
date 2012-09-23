@@ -15,17 +15,6 @@ $(document).ready(function() {
 		};
 	})();
 
-	Handlebars.registerHelper('ifIsNation', function(type, options) {
-		if (type == "nation") {
-			return options.fn(this);
-		}
-	});
-	Handlebars.registerHelper('ifIsSport', function(type, options) {
-		if (type == "sport") {
-			return options.fn(this);
-		}
-	});
-
 	var Debug = {
 
 		log: function(msg) {
@@ -76,19 +65,20 @@ $(document).ready(function() {
 
 	function readAndGenerate() {
 		$.ajax({
-			url: 'countries.json',
+			url: 'election2012.json',
 			dataType: 'json',
 			success: function(data) {
 				entities = data;
+
 				//entities = data.sort(SortByIdAsc); // make sure it's ordered alphabetically
 
-				nationsSource = $("#nation-template").html();
-				nationsTemplate = Handlebars.compile(nationsSource);
-				nationsHandle.append(nationsTemplate({ nation: entities }));
+				// nationsSource = $("#nation-template").html();
+				// nationsTemplate = Handlebars.compile(nationsSource);
+				// nationsHandle.append(nationsTemplate({ nation: entities }));
 
-				sportsSource = $("#sport-template").html();
-				sportsTemplate = Handlebars.compile(sportsSource);
-				sportsHandle.append(sportsTemplate({ sport: entities }));
+				// sportsSource = $("#sport-template").html();
+				// sportsTemplate = Handlebars.compile(sportsSource);
+				// sportsHandle.append(sportsTemplate({ sport: entities }));
 
 				isReady = true;
 			}
@@ -96,11 +86,8 @@ $(document).ready(function() {
 	}
 
 	function resetSums() {
-		americaAmount.html('0');
-		europeAmount.html('0');
-		africaAmount.html('0');
-		asiaAmount.html('0');
-		oceaniaAmount.html('0');
+		obamaAmount.html('0');
+		romneyAmount.html('0');
 	}
 
 	function updateSums() {
@@ -108,19 +95,18 @@ $(document).ready(function() {
 
 		var length = entities.length;
 		for (var i = 0; i < length; i++) {
-			if (entities[i].type == "nation") {
-				var handle = $("."+ entities[i].continent);
-				var amount = parseInt(handle.text(), 10) + entities[i].count;
+			var handle = $("#"+ entities[i].type +" .amount");
+			var amount = parseInt(handle.text(), 10) + entities[i].count;
 
-				handle.html(amount);
-			}
+			handle.html(amount);
 		}
+
 	}
 
 	function updateEntity(entity, count) {
 		var length = entities.length;
 		for (var i = 0; i < length; i++) {
-			if (entities[i].id == entity) {
+			if (entities[i].option == entity) {
 				entities[i].count = count;
 				break;
 			}
@@ -172,11 +158,8 @@ $(document).ready(function() {
 		maxTweetsAmount = 0,
 		entities,
 		isReady = false,
-		americaAmount = $(".america"),
-		europeAmount = $(".europe"),
-		africaAmount = $(".africa"),
-		asiaAmount = $(".asia"),
-		oceaniaAmount = $(".oceania");
+		obamaAmount = $("#obama .amount"),
+		romneyAmount = $("#romney .amount");
 
 	var nationsSource,
 		nationsTemplate,
@@ -204,7 +187,7 @@ $(document).ready(function() {
 	});
 
 	socket.on('filters', function(data) {
-		Debug.log("Event: "+ data.event +", options: "+ data.options.join(", ") +", created at: "+ data.createdAt);
+		Debug.log("Event: "+ data.events.join(", ") +", options: "+ data.options.join(", ") +", created at: "+ data.createdAt);
 	});
 
 	function strdecode(data) {
@@ -218,9 +201,9 @@ $(document).ready(function() {
 	function updateLeaderboard(leaderboard) {
 		//leaderboardHandle.html('');
 		leaderboard.forEach(function(item, index) {
-			//console.log(index +"# "+ item.option +" has "+ item.count);
+			// console.log(index +"# "+ item.option +" has "+ item.count);
 
-			$('#'+ item.option +' .amount').html(item.count);
+			// $('#'+ item.option +' .amount').html(item.count);
 
 			updateEntity(item.option, item.count);
 		});

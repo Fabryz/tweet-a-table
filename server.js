@@ -189,7 +189,7 @@ function createParamsFile() {
 	var keywords = readJSONFile("./configs/keywords.json");
 	stream.options = keywords.options.split(",");
 	stream.events = keywords.events.split(",");
-	
+
 	var value = "";
 	stream.options.forEach(function(opt) {
 		stream.events.forEach(function(ev) {
@@ -250,15 +250,19 @@ function parseTweetForHashtags(hashtags) {
 	var length = hashtags.length;
 	for (var i = 0; i < length; i++) {
 		// if (hashtags[i] !== stream.events.toLowerCase().substring(1)) {
-		if (!contains(stream.events, hashtags[i].toLowerCase().substring(1))) {
-			parsed.push(hashtags[i]);
+		for (var j = 0; j < stream.events; j++) {
+			if (!contains(stream.events[j], hashtags[i].toLowerCase().substring(1))) {
+				parsed.push(hashtags[i]);
+			}
 		}
+		
 	}
 
 	return parsed;
 }
 
 function elaborateStats(hashtags) {
+
 	hashtags.forEach(function(hash) {
 		stream.leaderboard.forEach(function(item) {
 			if (item.option == hash) {
@@ -266,7 +270,7 @@ function elaborateStats(hashtags) {
 
 				saveDb();
 
-				// console.log(item.option +" has now "+ item.count);
+				console.log(item.option +" has now "+ item.count);
 			}
 		});
 	});
@@ -282,12 +286,13 @@ function grabTwitterFeed() {
 	});
 
 	tu.filter({ track: configs.value.split(",") }, function(feed) {
-
 		console.log(" * Stream started * ");
 
 		feed.on('tweet', function(tweet){
 			var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
 			elaborateStats(hashtags);
+
+			// console.log(tweet.text);
 
 			io.sockets.emit("leaderboard", strencode(stream.leaderboard));
 		});
@@ -297,7 +302,7 @@ function grabTwitterFeed() {
 		});
 
 		feed.on('error', function(err) {
-			console.log("Error: "+ err);
+			console.log("Error: "+ JSON.stringify(err));
 		});
 	});
 }
