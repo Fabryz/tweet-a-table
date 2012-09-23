@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.12 / 2012-09-23
+- updated code to support multiple events
+- fixed entities and sum amount
+
 ## v0.5.11 / 2012-09-06
 - tracking #election2012
 - supporting list of events
