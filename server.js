@@ -114,16 +114,6 @@ console.log("Express server listening in %s mode", app.settings.env);
 * Functions
 */
 
-function contains(arr, obj) {
-	var length = arr.length;
-    for (var i = 0; i < length; i++) {
-        if (arr[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-}
-
 function resetDb() {
 	var now = new Date();
 	stream.createdAt = now;
@@ -242,6 +232,16 @@ function lowercaseHashtags(hashtags) {
 	return parsed;
 }
 
+function contains(arr, obj) {
+	var length = arr.length;
+    for (var i = 0; i < length; i++) {
+        if (arr[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function parseTweetForHashtags(hashtags) {
 	var parsed = [];
 	
@@ -250,19 +250,15 @@ function parseTweetForHashtags(hashtags) {
 	var length = hashtags.length;
 	for (var i = 0; i < length; i++) {
 		// if (hashtags[i] !== stream.events.toLowerCase().substring(1)) {
-		for (var j = 0; j < stream.events; j++) {
-			if (!contains(stream.events[j], hashtags[i].toLowerCase().substring(1))) {
-				parsed.push(hashtags[i]);
-			}
+		if (!contains(stream.events, hashtags[i].toLowerCase().substring(1))) {
+			parsed.push(hashtags[i]);
 		}
-		
 	}
 
 	return parsed;
 }
 
 function elaborateStats(hashtags) {
-
 	hashtags.forEach(function(hash) {
 		stream.leaderboard.forEach(function(item) {
 			if (item.option == hash) {
@@ -270,7 +266,7 @@ function elaborateStats(hashtags) {
 
 				saveDb();
 
-				console.log(item.option +" has now "+ item.count);
+				// console.log(item.option +" has now "+ item.count);
 			}
 		});
 	});
@@ -295,10 +291,6 @@ function grabTwitterFeed() {
 			// console.log(tweet.text);
 
 			io.sockets.emit("leaderboard", strencode(stream.leaderboard));
-		});
-
-		feed.on('delete', function(del) {
-			console.log("Deleted: "+ del);
 		});
 
 		feed.on('error', function(err) {
