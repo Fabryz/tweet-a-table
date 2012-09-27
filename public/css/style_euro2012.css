@@ -108,11 +108,13 @@ td { vertical-align: top; }
 h1 {
   font-family: 'ChunkFiveRegular';
   font-size:50px;
+  color: #f1e303;
   text-shadow: 3px 3px 3px #333;
   margin: 0;
-  padding-left: 80px;
-  background: transparent url('../img/logo_euro2012.png') no-repeat left center;
+  height: 110px;
+  line-height: 110px;
   float: left;
+  margin-right: 40px;
 }
 
 h1 a, a:visited, a:hover {
@@ -120,8 +122,7 @@ h1 a, a:visited, a:hover {
   text-decoration: none;
 }
 
-#menu {
-  /*float: left;*/
+/*#menu {
   margin-top: 18px;
 }
 #menu ul {
@@ -147,14 +148,58 @@ h1 a, a:visited, a:hover {
 }
 #menu ul li a:hover {
   text-decoration: underline;
+}*/
+
+#menu {
+  position: relative;
+  top: 30px;
+}
+#menu ul {
+  list-style-type: none;
+}
+#menu ul li {
+  float: left;
+}
+#menu ul li a {
+  color: #e9e72a;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 2px 2px 2px #555;
+  box-shadow: 2px 2px 2px #555;
 }
 
+#menu ul li a.selected {
+  text-decoration: underline;
+}
+
+#menu ul li a:hover {
+  color: #F2F2F2;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.container ul {
+  list-style-type: none;
+}
+
+.container ul li {
+  float: left;
+  margin: 12px 15px 15px 0;
+  height: 30px;
+  display: block;
+}
 
 .container {
   background-image: url('../img/box.png');
   background-position: center bottom;
   background-repeat: no-repeat;
-  height:640px;
+  height:680px;
   width:960px;
   position:relative;
   margin: 0 auto;
@@ -321,9 +366,8 @@ h1 a, a:visited, a:hover {
 
 .addthis_toolbox {
   position: absolute;
-  top: 46px;
-  right: 287px;
-  width: 370px;
+  top: 10px;
+  right: 310px;
 }
 
 @media only screen and (min-width: 35em) {

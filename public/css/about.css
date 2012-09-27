@@ -23,17 +23,23 @@
 #about 
   {
   font-family: 'SilkscreenNormal';
-  width:960px;
+  width:890px;
   margin: 0 auto;
-  margin-bottom:100px;
+  margin-bottom:30px;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 10px 10px 10px 10px;
     padding: 20px;
+    text-align: left;
   }
 
 #about p {
   color: #ffffff;
   font-size:13px;
+}
+
+#content h1 a, a:active, a:focus, a:hover {
+  text-decoration: none;
+  color: #F1E303;
 }
 
 #about h2,h5 {
