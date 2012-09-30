@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5.14 / 2012-09-30
+- updated js code for forward and keepamericaamerican
+- minor fix on Versus labels
+- fixed backend hashtags bug
+
 ## v0.5.13 / 2012-09-23
 - new shiny frontend for election2012
 
@@ -31,32 +36,3 @@
 - Most of the countries and all of the sports are now listed in a json
 - Using [Handlebars.js](http://handlebarsjs.com/) to parse this nice json in the frontend
 - Nations and sports are now prepared to be ordered by count
-
-
-# Template example below here:
-
-## v1.1.1 / 2012-07-23
-- Lorem ipsum dolor sit amet, magna ultrices accumsan
-- Esque maecenas, sed non elementum id odio, risus mauris magna justo natoque nec. Vestibulum
-
-## v1.0.4 / 2012-07-20
-
-- Ad aliquam mauris, massa dolor vitae natoque nibh id arcu, et sed a lectus massa rhoncus, convallis eu suspendis
-- Fixed: um consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac.
-- Added: um consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac.
-- Improved: um consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac.
-- Removed: um consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac.
-- Note: um consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac.
-
-## v1.0.1 / 2012-07-20
-
-- Lawl consectetuer, neque dapibus, sociis molestie leo volutpat ligula, duis odio amet platea auctor, pretium est nisl lac
-
-## v1.0 / 2012-07-19
-
-- **Priority 1**
-  - it tortor justo viverra, est arcu nec a, sed mollis quisque nulla, vivamus semper eros vitae convallis.
-  - dolor ante morbi orci. Aenean cras nam, nibh vestibulum id praesent sit praesent molestie, tincidunt in
-- **Priority 2**
-  - dolor ante morbi orci. Aenean cras nam, nibh vestibulum id praesent sit praesent molestie, tincidunt in
-  - it tortor justo viverra, est arcu nec a, sed mollis quisque nulla, vivamus semper eros vitae convallis
