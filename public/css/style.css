@@ -633,14 +633,14 @@ h2.title_index {
     text-shadow: none;
 }
 
-#hover{
-    top:32%;
-    left: 46%;
+#hover {
+  left: 42%;
+  top: 30%;
 }
 
-#click{
-    top:55%;
-    left: 46%;
+#click {
+  left: 39%;
+  top: 45%;
 }
 
 #slogan{
@@ -669,8 +669,15 @@ h2.title_index {
     line-height: 55px;
 }
 
-.demo2 img, .demo3 img {
+.demo2 img,
+.demo3 img {
     clear: both;
+}
+
+.demo2,
+.demo3 {
+  position: relative;
+  z-index: 10;
 }
 
 #obama .front2 dt, #obama .back2{
