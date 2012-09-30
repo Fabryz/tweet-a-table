@@ -106,10 +106,12 @@ $(document).ready(function() {
 			handle.html(amount);
 
 			if (entities[i].option == "forward") {
-				slogan1Amount.html(parseInt(slogan1Amount.text(), 10) + entities[i].count);
+				amount = parseInt(slogan1Amount.text(), 10) + entities[i].count;
+				slogan1Amount.html(amount);
 			}
 			if (entities[i].option == "keepamericaamerican") {
-				slogan2Amount.html(parseInt(slogan2Amount.text(), 10) + entities[i].count);
+				amount = parseInt(slogan2Amount.text(), 10) + entities[i].count;
+				slogan2Amount.html(amount);
 			}
 			
 		}
