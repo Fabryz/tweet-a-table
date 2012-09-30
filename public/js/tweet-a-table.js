@@ -88,10 +88,15 @@ $(document).ready(function() {
 	function resetSums() {
 		obamaAmount.html('0');
 		romneyAmount.html('0');
+		slogan1Amount.html('0');
+		slogan2Amount.html('0');
 	}
 
 	function updateSums() {
 		resetSums();
+
+		var slogan1Amount = $("#slogan1 .amount"),
+			slogan2Amount = $("#slogan2 .amount");
 
 		var length = entities.length;
 		for (var i = 0; i < length; i++) {
@@ -99,6 +104,14 @@ $(document).ready(function() {
 			var amount = parseInt(handle.text(), 10) + entities[i].count;
 
 			handle.html(amount);
+
+			if (entities[i].option == "forward") {
+				slogan1Amount.html(parseInt(slogan1Amount.text(), 10) + entities[i].count);
+			}
+			if (entities[i].option == "keepamericaamerican") {
+				slogan2Amount.html(parseInt(slogan2Amount.text(), 10) + entities[i].count);
+			}
+			
 		}
 
 	}
@@ -159,8 +172,9 @@ $(document).ready(function() {
 		entities,
 		isReady = false,
 		obamaAmount = $("#obama .amount"),
-		romneyAmount = $("#romney .amount"),
-		slogan1Amount = $("#slogan1 .amount"),
+		romneyAmount = $("#romney .amount");
+
+	var slogan1Amount = $("#slogan1 .amount"),
 		slogan2Amount = $("#slogan2 .amount");
 
 	var nationsSource,
