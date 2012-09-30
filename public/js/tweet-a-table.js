@@ -159,7 +159,9 @@ $(document).ready(function() {
 		entities,
 		isReady = false,
 		obamaAmount = $("#obama .amount"),
-		romneyAmount = $("#romney .amount");
+		romneyAmount = $("#romney .amount"),
+		slogan1Amount = $("#slogan1 .amount"),
+		slogan2Amount = $("#slogan2 .amount");
 
 	var nationsSource,
 		nationsTemplate,
