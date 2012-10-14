@@ -95,24 +95,25 @@ $(document).ready(function() {
 	function updateSums() {
 		resetSums();
 
-		var slogan1Amount = $("#slogan1 .amount"),
-			slogan2Amount = $("#slogan2 .amount");
+		var slogan1Amount = jQuery("#slogan1 .amount"),
+			slogan2Amount = jQuery("#slogan2 .amount");
 
 		var length = entities.length;
 		for (var i = 0; i < length; i++) {
-			var handle = $("#"+ entities[i].type +" .amount");
-			var amount = parseInt(handle.text(), 10) + entities[i].count;
+			var handle = $("#"+ entities[i].type +" .amount"),
+				amount = parseInt(handle.text(), 10) + entities[i].count,
+				sloganAmout = 0;
 
 			handle.html(amount);
 
-			if (entities[i].option == "forward") {
-				amount = parseInt(slogan1Amount.text(), 10) + entities[i].count;
-				slogan1Amount.html(amount);
-			}
-			if (entities[i].option == "keepamericaamerican") {
-				amount = parseInt(slogan2Amount.text(), 10) + entities[i].count;
-				slogan2Amount.html(amount);
-			}
+			// if (entities[i].option == "forward") {
+			// 	sloganAmout = parseInt(slogan1Amount.text(), 10) +  parseInt(entities[i].count, 10);
+			// 	slogan1Amount.text(sloganAmout);
+			// }
+			// if (entities[i].option == "keepamericaamerican") {
+			// 	sloganAmout = parseInt(slogan2Amount.text(), 10) +  parseInt(entities[i].count, 10);
+			// 	slogan2Amount.text(sloganAmout);
+			// }
 			
 		}
 
