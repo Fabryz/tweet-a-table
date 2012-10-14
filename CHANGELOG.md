@@ -1,6 +1,7 @@
 # Changelog
 
-## v0.5.15 / 2012-10-14
+## v0.5.16 / 2012-10-14
+- removed slogans
 - uniformed frontend layout
 - new frontend art
 
