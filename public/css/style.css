@@ -312,6 +312,24 @@ box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
   box-shadow: 3px 3px 3px #555;
 }
 
+.mike #content {
+  width: 1200px;
+  height: 900px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #e9e72a;
+  text-shadow: 2px 2px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  background-color: rgba(0, 0, 0, .8);
+  text-align: center;
+  background: transparent url('../img/romney-vs-obama.jpg') no-repeat left top;
+  background-size: 100% 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 3px 3px 3px #555;
+  box-shadow: 3px 3px 3px #555;
+}
+
 #slogan {
   position: relative;
 }
@@ -557,7 +575,7 @@ h2.title_index {
   float: left;
 }
 
-#romney.f2_container{
+#obama.f2_container{
   float: right;
 }
 
@@ -565,7 +583,8 @@ h2.title_index {
   font-size: 40px;
   font-family: 'ChunkFiveRegular';
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 280px;
+  font-family: 'Lato';
 }
 
 #obama .front2{
@@ -601,8 +620,8 @@ h2.title_index {
 }
 
 #obama dl, #romney dl{
-  margin-top: 340px;
-  text-align: left;
+  margin-top: 360px;
+  text-align: center;
   padding: 0 20px 0 30px;
 }
 
@@ -611,7 +630,7 @@ h2.title_index {
 }
 
 #romney dl{
-  text-align: right;
+  text-align: center;
 }
 
 .demo2 span, .demo3 span {
@@ -635,7 +654,7 @@ h2.title_index {
 
 #hover {
   left: 42%;
-  top: 30%;
+  top: 45%;
 }
 
 #click {
