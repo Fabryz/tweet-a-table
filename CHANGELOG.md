@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.15 / 2012-10-14
+- uniformed frontend layout
+- new frontend art
+
 ## v0.5.14 / 2012-09-30
 - updated js code for forward and keepamericaamerican
 - minor fix on Versus labels
