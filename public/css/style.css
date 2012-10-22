@@ -707,6 +707,17 @@ h2.title_index {
   font-family: "Abril Fatface","Hoefler Text", Constantia, Palatino, Georgia, serif;
 }
 
+.artwork{
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 11px;
+  color: #000;
+  text-shadow: none;
+  text-align: left;
+}
+
 
 @media only screen and (min-width: 35em) {
   
