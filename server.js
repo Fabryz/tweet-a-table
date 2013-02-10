@@ -1,26 +1,35 @@
 var express = require('express'),
-	fs = require('fs'),
-	Tuiter = require('tuiter'),
-	app = module.exports = express.createServer();
+fs = require('fs'),
+Tuiter = require('tuiter'),
+app = module.exports = express.createServer();
+
+var tweet_manager = require('./controllers/tweet_manager');
 
 /*
 * Configurations
 */
 
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(app.router);
-    app.use(express.static(__dirname + '/public'));
-    app.use(express.logger(':remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
-    app.use(express.favicon());
+app.configure(function() {
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(app.router);
+  app.use(express.static(__dirname + '/public'));
+  app.use(express.logger(':remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
+  app.use(express.favicon());
 });
 
-app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+// all environments
+app.configure(function() {
+
 });
 
-app.configure('production', function(){
+// development only
+app.configure('development', function() {
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+// production only
+app.configure('production', function() {
 	app.use(express.errorHandler());
 });
 
@@ -34,7 +43,7 @@ function secondsToString(seconds) {
 	var numMinutes = Math.floor(((seconds % 86400) % 3600) / 60);
 	var numSeconds = Math.floor((seconds % 86400) % 3600) % 60;
 
-	return numDays +" days "+ numHours +" hours "+ numMinutes +" minutes "+ numSeconds +" seconds.";
+	return numDays +' days '+ numHours +' hours '+ numMinutes +' minutes '+ numSeconds +' seconds.';
 }
 
 app.get('/', function(req, res) {
@@ -53,27 +62,24 @@ app.get('/archive/london2012.html', function(req, res) {
 	res.sendfile('archive/london2012.html');
 });
 
-app.get('/api', function(req, res) {
-	res.contentType('application/json');
-	res.end(JSON.stringify(stream));
-});
+app.get('/api', tweet_manager.api);
 
 app.get('/uptime', function(req, res) {
-	res.end("The server has been up for: "+ secondsToString( process.uptime().toString() ) );
+	res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
 });
 
 // app.get('/resetdb', function(req, res) {
 //	createDb();
-//	console.log("Db has been resetted.");
+//	console.log('Db has been resetted.');
 //	res.redirect('/');
 // });
 
 app.get('/restart', function(req, res) {
-	console.log(" * Restarting in 5 seconds... * ");
+	console.log(' * Restarting in 5 seconds... * ');
 	setTimeout(function() {
 		tu = '';
 		grabTwitterFeed();
-		console.log(" * Triggered restart * ");
+		console.log(' * Triggered restart * ');
 		res.redirect('/');
 	}, 5000);
 });
@@ -93,22 +99,22 @@ var stream = {
 };
 
 var tu = '',
-	configs = readConfigs();
+configs = readConfigs();
 
-createParamsFile();
-checkDb();
+//createParamsFile();
+// checkDb();
 
 app.listen(8080);
 
 grabTwitterFeed();
 
-var interval = setInterval(function() {
-	tu = '';
-	grabTwitterFeed();
-	console.log(" * 5 mins passed, autorestarted. * ");
-}, 300000); // 5 mins
+// var interval = setInterval(function() {
+//   tu = '';
+//   grabTwitterFeed();
+//   console.log(' * 5 mins passed, autorestarted. * ');
+// }, 300000); // 5 mins
 
-console.log("Express server listening in %s mode", app.settings.env);
+console.log('Express server listening in %s mode', app.settings.env);
 
 /*
 * Functions
@@ -128,7 +134,7 @@ function resetDb() {
 function createDb() {
 	resetDb();
 
-    writeJSONFile("db.json", stream);
+  writeJSONFile('db.json', stream);
 }
 
 function checkDb() {
@@ -136,32 +142,32 @@ function checkDb() {
 		if (err === null) { // file exists
 			loadDb();
 		} else if (err.code == 'ENOENT') { // file doesn't exist
-			createDb();
-		} else {
-			console.log('Error while reading the database file: '+ err.code);
-		}
-	});
+   createDb();
+ } else {
+   console.log('Error while reading the database file: '+ err.code);
+ }
+});
 }
 
 function loadDb() {
-	stream = readJSONFile("db.json");
+	stream = readJSONFile('db.json');
 	orderLeaderboard();
 }
 
 function saveDb() {
 	orderLeaderboard();
 	stream.updatedAt = new Date();
-	writeJSONFile("db.json", stream);
+	writeJSONFile('db.json', stream);
 }
 
-// return require("./filename-with-no-extension"); could be used
+// return require('./filename-with-no-extension'); could be used
 function readJSONFile(filename) {
-	var JSONFile = "";
+	var JSONFile = '';
 	
 	try {
 		JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
 	} catch(e) {
-		console.log("Error while reading "+ filename +": "+ e);
+		console.log('Error while reading '+ filename +': '+ e);
 	}
 
 	return JSONFile;
@@ -171,47 +177,48 @@ function writeJSONFile(filename, contents) {
 	try {
 		fs.writeFileSync(__dirname +'/'+ filename, JSON.stringify(contents), 'utf8');
 	} catch(e) {
-		console.log("Error while writing "+ filename +": "+ e);
+		console.log('Error while writing '+ filename +': '+ e);
 	}
 }
 
 function createParamsFile() {
-	var keywords = readJSONFile("./configs/keywords.json");
-	stream.options = keywords.options.split(",");
-	stream.events = keywords.events.split(",");
+	var keywords = readJSONFile('./configs/keywords.json');
+	stream.options = keywords.options.split(',');
+	stream.events = keywords.events.split(',');
 
-	var value = "";
+	var value = '';
 	stream.options.forEach(function(opt) {
 		stream.events.forEach(function(ev) {
-			value += ev +" "+ opt +",";
+			value += ev +' '+ opt +',';
 		});
 	});
 	value = value.substring(0, value.length - 1); // remove last ,
 
 	var params = {
-		"param": keywords.param,
-		"value": value
+		'param': keywords.param,
+		'value': value
 	};
 
-	writeJSONFile("./configs/params.json", params);
+	writeJSONFile('./configs/params.json', params);
 }
 
 function readConfigs() {
-	var twitterConfigs = readJSONFile("./configs/twitter.json"),
-		paramsConfigs = readJSONFile("./configs/params.json");
+  var env = process.env.NODE_ENV,
+    twitterConfigs = readJSONFile('./configs/twitter_'+ env +'.json'),
+    paramsConfigs = readJSONFile('./configs/params.json');
 
-	return {
-		twitterApp : twitterConfigs,
-		param : paramsConfigs.param,
-		value : paramsConfigs.value
-	};
+  return {
+    twitterApp : twitterConfigs,
+    param : paramsConfigs.param,
+    value : paramsConfigs.value
+  };
 }
 
 function strencode(data) {
   return unescape(encodeURIComponent(JSON.stringify(data)));
 }
 
-function SortByCountDesc(a, b){
+function SortByCountDesc(a, b) {
 	a = a.count;
 	b = b.count;
 	return ((a < b) ? 1 : ((a > b) ? -1 : 0));
@@ -221,80 +228,42 @@ function orderLeaderboard() {
 	stream.leaderboard.sort(SortByCountDesc);
 }
 
-function lowercaseHashtags(hashtags) {
-	var parsed = [];
-
-	var length = hashtags.length;
-	for (var i = 0; i < length; i++) {
-		parsed.push(hashtags[i].text.toLowerCase());
-	}
-
-	return parsed;
-}
-
-function contains(arr, obj) {
-	var length = arr.length;
-    for (var i = 0; i < length; i++) {
-        if (arr[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function parseTweetForHashtags(hashtags) {
-	var parsed = [];
-	
-	hashtags = lowercaseHashtags(hashtags);
-
-	var length = hashtags.length;
-	for (var i = 0; i < length; i++) {
-		// if (hashtags[i] !== stream.events.toLowerCase().substring(1)) {
-		if (!contains(stream.events, hashtags[i].toLowerCase().substring(1))) {
-			parsed.push(hashtags[i]);
-		}
-	}
-
-	return parsed;
-}
-
 function elaborateStats(hashtags) {
-	hashtags.forEach(function(hash) {
-		stream.leaderboard.forEach(function(item) {
-			if (item.option == hash) {
-				item.count++;
+   hashtags.forEach(function(hash) {
+    stream.leaderboard.forEach(function(item) {
+     if (item.option == hash) {
+      item.count++;
 
-				saveDb();
+      saveDb();
 
-				// console.log(item.option +" has now "+ item.count);
+				// console.log(item.option +' has now '+ item.count);
 			}
 		});
-	});
+  });
 }
-	
+
 // Using Twitter Streaming API
 function grabTwitterFeed() {
-	tu = new Tuiter({
-		"consumer_key" : configs.twitterApp.consumer_key,
-		"consumer_secret" : configs.twitterApp.consumer_secret,
-		"access_token_key" : configs.twitterApp.access_token_key,
-		"access_token_secret" : configs.twitterApp.access_token_secret
-	});
+	tu = new Tuiter(configs.twitterApp);
 
-	tu.filter({ track: configs.value.split(",") }, function(feed) {
-		console.log(" * Stream started * ");
+	tu.filter({ track: configs.value.split(',') }, function(feed) {
+		console.log(' * Stream started * ');
 
-		feed.on('tweet', function(tweet){
-			var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
-			elaborateStats(hashtags);
+		feed.on('tweet', function(tweet) {
+			// var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
+			//elaborateStats(hashtags);
 
-			// console.log(tweet.text);
+      tweet_manager.create(tweet);
 
-			io.sockets.emit("leaderboard", strencode(stream.leaderboard));
+      //if (process.env.NODE_ENV == "development") {
+        console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags));
+      //}
+
+			//io.sockets.emit('leaderboard', strencode(stream.leaderboard));
 		});
 
 		feed.on('error', function(err) {
-			console.log("Error: "+ JSON.stringify(err));
+			console.log(err);
 		});
 	});
 }
@@ -309,28 +278,28 @@ io.configure(function() {
 	io.enable('browser client minification');
 	io.set('log level', 1);
 	io.set('transports', [
-			'websocket',
-			'flashsocket',
-			'htmlfile',
-			'xhr-polling',
-			'jsonp-polling'
-	]);
+   'websocket',
+   'flashsocket',
+   'htmlfile',
+   'xhr-polling',
+   'jsonp-polling'
+   ]);
 });
 
 io.sockets.on('connection', function(client) {
 	totUsers++;
 	console.log('+ User '+ client.id +' connected, total users: '+ totUsers);
 
-	client.emit("clientId", { id: client.id });
-	client.emit("filters", { events: stream.events, options: stream.options, createdAt: stream.createdAt });
-	io.sockets.emit("tot", { tot: totUsers });
+	client.emit('clientId', { id: client.id });
+	client.emit('filters', { events: stream.events, options: stream.options, createdAt: stream.createdAt });
+	io.sockets.emit('tot', { tot: totUsers });
 
-	io.sockets.emit("leaderboard", strencode(stream.leaderboard));
+	io.sockets.emit('leaderboard', strencode(stream.leaderboard));
 
 	client.on('disconnect', function() {
 		totUsers--;
 		console.log('- User '+ client.id +' disconnected, total users: '+ totUsers);
 
-		io.sockets.emit("tot", { tot: totUsers });
+		io.sockets.emit('tot', { tot: totUsers });
 	});
 });
