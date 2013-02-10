@@ -1,3 +1,5 @@
 .DS_Store
 node_modules
-configs/twitter.json
+
+configs/twitter_*.json
+configs/database_*.json
