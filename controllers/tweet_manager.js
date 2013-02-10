@@ -207,6 +207,10 @@ function parseTweets(tweets) {
   return parsed;
 }
 
+function getAll() {
+
+}
+
 exports.api = function(req, res, next) {
   var marker_start = Date.now(),
       marker_end = '';
@@ -229,4 +233,65 @@ exports.api = function(req, res, next) {
     res.end('{ "tweets" : '+ JSON.stringify(tweets) +' }');
   });
 
+};
+
+function orderByValue(obj) {
+    var tuples = [];
+
+    for (var key in obj)
+      tuples.push([key, obj[key]]);
+
+    tuples.sort(function(a, b) {
+      return a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0;
+    });
+
+    return tuples;
+}
+
+
+// TODO from DATE to DATE span
+function generateOccurrences(tweets) {
+  var parsed = [];
+
+  var length = tweets.length;
+  for (var i = 0; i < length; i++) {
+    var hashtags = JSON.parse(tweets[i].hashtags);
+
+    hashtags.forEach(function(hash) {
+      if (!parsed[hash]) {
+        parsed[hash] = 0;
+      }
+      parsed[hash] = parsed[hash] + 1;
+    });
+
+  }
+
+  // FIXME improve this
+  parsed = orderByValue(parsed);
+
+  return parsed;
+}
+
+// FIXME remove duplicated code
+exports.stats = function(req, res, next) {
+  var marker_start = Date.now(),
+      marker_end = '';
+
+  console.log('* Received STATS Request...');
+
+  Tweet.find().lean().exec(function(err, tweets) {
+    if (err) {
+      console.log(err);
+
+      return next();
+    }
+
+    marker_end = Date.now();
+    console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
+
+    var occurrences = generateOccurrences(tweets);
+
+    res.contentType('application/json');
+    res.end('{ "occurrences" : '+ JSON.stringify(occurrences) +' }');
+  });
 };

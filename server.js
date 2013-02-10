@@ -64,6 +64,8 @@ app.get('/archive/london2012.html', function(req, res) {
 
 app.get('/api', tweet_manager.api);
 
+app.get('/stats', tweet_manager.stats);
+
 app.get('/uptime', function(req, res) {
 	res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
 });
