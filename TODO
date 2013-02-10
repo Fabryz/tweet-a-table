@@ -1,8 +1,9 @@
 - admin panel
-- database to mongodb
 - graphs of past/present trends
 - graphs of month/week/day trends
 
 
 - loading gif
 - alberatura: index lista eventi, /events/XYZ per addthis
+
+- related hashtags for the tracked ones
