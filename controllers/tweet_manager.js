@@ -190,16 +190,16 @@ function parseTweets(tweets) {
     // LEGACY in early stages Tweet table didn't have the row hashtags
     // but as we stored the whole tweet in the content field
     // we can extract the row from entities.hashtags
-    
-    var hashtags = tweets[i].hashtags;
-    if (!hashtags) {
-      var json = JSON.parse(tweets[i].content);
-      hashtags = json.entities.hashtags;
-    }
+
+    // var hashtags = tweets[i].hashtags;
+    // if (!hashtags) {
+    //   var json = JSON.parse(tweets[i].content);
+    //   hashtags = json.entities.hashtags;
+    // }
 
     parsed.push({
       id_str     : tweets[i].id_str,
-      hashtags   : hashtags,
+      hashtags   : tweets[i].hashtags,
       created_at : tweets[i].created_at
     });
   }
@@ -226,7 +226,7 @@ exports.api = function(req, res, next) {
     tweets = parseTweets(tweets);
 
     res.contentType('application/json');
-    res.end('{ tweets: '+ JSON.stringify(tweets) +' }');
+    res.end('{ "tweets" : '+ JSON.stringify(tweets) +' }');
   });
 
 };
