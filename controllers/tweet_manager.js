@@ -272,6 +272,18 @@ function generateOccurrences(tweets) {
   return parsed;
 }
 
+// function findAll() {
+//   Tweet.find().lean().exec(function(err, tweets) {
+//     if (err) {
+//       console.log(err);
+
+//       return next();
+//     }
+
+//     return tweets;
+//   });
+// }
+
 // FIXME remove duplicated code
 exports.stats = function(req, res, next) {
   var marker_start = Date.now(),
@@ -279,19 +291,61 @@ exports.stats = function(req, res, next) {
 
   console.log('* Received STATS Request...');
 
-  Tweet.find().lean().exec(function(err, tweets) {
-    if (err) {
-      console.log(err);
+  //var occurrences = generateOccurrences(tweets);
 
-      return next();
-    }
+  res.contentType('application/json');
+  //res.end('{ "occurrences" : '+ JSON.stringify(occurrences) +' }');
 
-    marker_end = Date.now();
-    console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
+    Tweet.find().lean().exec(function(err, tweets) {
+      if (err) {
+        console.log(err);
 
-    var occurrences = generateOccurrences(tweets);
+        return next();
+      }
 
-    res.contentType('application/json');
-    res.end('{ "occurrences" : '+ JSON.stringify(occurrences) +' }');
-  });
+      Tweet.find({}).sort({ created_at: 1 }).limit(1).lean().exec(function(err, date_start) {
+        if (err) {
+          console.log(err);
+
+          return next();
+        }
+
+        Tweet.find({}).sort({ created_at: -1 }).limit(1).lean().exec(function(err, date_end) {
+          if (err) {
+            console.log(err);
+
+            return next();
+          }
+
+          Tweet.count().lean().exec(function(err, total_tweets) {
+            if (err) {
+              console.log(err);
+
+              return next();
+            }
+
+            var occurrences = generateOccurrences(tweets);
+
+            var response_json = {
+              occurrences  : JSON.stringify(occurrences),
+              date_start   : date_start[0].created_at,
+              date_end     : date_end[0].created_at,
+            //   hashtags     : 1,
+              total_tweets : total_tweets
+            };
+
+            res.end(JSON.stringify(response_json));
+
+            marker_end = Date.now();
+            console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
+            
+          });
+          
+        });
+      
+      });
+
+    });
+
+  
 };
