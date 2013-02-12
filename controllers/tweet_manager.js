@@ -163,8 +163,7 @@ exports.create = function(data) {
 
   var tweet = new Tweet({
     id_str   : data.id_str,
-    hashtags : JSON.stringify(hashtags),
-    content  : JSON.stringify(data)
+    hashtags : JSON.stringify(hashtags)
   });
 
   tweet.save(function(err) {
@@ -187,15 +186,6 @@ function parseTweets(tweets) {
 
   var length = tweets.length;
   for (var i = 0; i < length; i++) {
-    // LEGACY in early stages Tweet table didn't have the row hashtags
-    // but as we stored the whole tweet in the content field
-    // we can extract the row from entities.hashtags
-
-    // var hashtags = tweets[i].hashtags;
-    // if (!hashtags) {
-    //   var json = JSON.parse(tweets[i].content);
-    //   hashtags = json.entities.hashtags;
-    // }
 
     parsed.push({
       id_str     : tweets[i].id_str,
