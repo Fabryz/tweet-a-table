@@ -203,7 +203,7 @@ exports.api = function(req, res, next) {
 
   console.log('* Received API Request...');
 
-  Tweet.find().lean().exec(function(err, tweets) {
+  Tweet.find().select('_id id_str hashtags created_at').lean().exec(function(err, tweets) {
     if (err) {
       console.log(err);
 
@@ -282,21 +282,21 @@ exports.stats = function(req, res, next) {
   res.contentType('application/json');
   //res.end('{ "occurrences" : '+ JSON.stringify(occurrences) +' }');
 
-    Tweet.find().lean().exec(function(err, tweets) {
+    Tweet.find().select('_id id_str hashtags created_at').lean().exec(function(err, tweets) {
       if (err) {
         console.log(err);
 
         return next();
       }
 
-      Tweet.find({}).sort({ created_at: 1 }).limit(1).lean().exec(function(err, date_start) {
+      Tweet.find({}).select('created_at').sort({ created_at: 1 }).limit(1).lean().exec(function(err, date_start) {
         if (err) {
           console.log(err);
 
           return next();
         }
 
-        Tweet.find({}).sort({ created_at: -1 }).limit(1).lean().exec(function(err, date_end) {
+        Tweet.find({}).select('created_at').sort({ created_at: -1 }).limit(1).lean().exec(function(err, date_end) {
           if (err) {
             console.log(err);
 
