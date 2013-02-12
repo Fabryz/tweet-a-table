@@ -3,7 +3,6 @@ var Schema = require('mongoose').Schema;
 var tweet_schema = new Schema({
   id_str       : { type: String, index: true },
   hashtags     : { type: String, index: true },
-  content      : { type: String },
   created_at   : { type: Date, default: Date.now }
 });
 
