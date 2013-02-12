@@ -197,10 +197,6 @@ function parseTweets(tweets) {
   return parsed;
 }
 
-function getAll() {
-
-}
-
 exports.api = function(req, res, next) {
   var marker_start = Date.now(),
       marker_end = '';
@@ -217,7 +213,7 @@ exports.api = function(req, res, next) {
     marker_end = Date.now();
     console.log('* ...answered API Request ('+ (marker_end - marker_start) +'ms)');
 
-    tweets = parseTweets(tweets);
+    //tweets = parseTweets(tweets);
 
     res.contentType('application/json');
     res.end('{ "tweets" : '+ JSON.stringify(tweets) +' }');
