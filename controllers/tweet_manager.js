@@ -234,6 +234,19 @@ function orderByValue(obj) {
     return tuples;
 }
 
+function sortArrayByValueDesc(obj) {
+    var tuples = [];
+
+    for (var key in obj) {
+      tuples.push({ hash: key, count: obj[key] });
+    }
+
+    tuples.sort(function(a, b) {
+      return (a.count < b.count ? 1 : a.count > b.count ? -1 : 0);
+    });
+
+    return tuples;
+}
 
 // TODO from DATE to DATE span
 function generateOccurrences(tweets) {
@@ -252,8 +265,7 @@ function generateOccurrences(tweets) {
 
   }
 
-  // FIXME improve this
-  parsed = orderByValue(parsed);
+  parsed = sortArrayByValueDesc(parsed);
 
   return parsed;
 }
@@ -320,6 +332,7 @@ exports.stats = function(req, res, next) {
               total_tweets : total_tweets
             };
 
+            res.writeHead(200, { "Content-Type": "application/json" });
             res.end(JSON.stringify(response_json));
 
             marker_end = Date.now();
