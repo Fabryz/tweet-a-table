@@ -460,7 +460,7 @@ exports.graph = function(req, res, next) {
 
   console.log('* Received GRAPH Request...');
 
-  Tweet.find().select('_id id_str hashtags created_at').sort({ created_at: 1 }).lean().exec(function(err, tweets) {
+  Tweet.find().select('_id id_str hashtags created_at').lean().exec(function(err, tweets) {
     if (err) {
       console.log(err);
 
