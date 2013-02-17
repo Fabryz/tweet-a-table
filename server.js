@@ -285,13 +285,13 @@ var io = require('socket.io').listen(app);
 io.configure(function() {
 	io.enable('browser client minification');
 	io.set('log level', 1);
-	io.set('transports', [
-   'websocket',
-   'flashsocket',
-   'htmlfile',
-   'xhr-polling',
-   'jsonp-polling'
-   ]);
+	// io.set('transports', [
+ //   'websocket',
+ //   'flashsocket',
+ //   'htmlfile',
+ //   'xhr-polling',
+ //   'jsonp-polling'
+ //   ]);
 });
 
 io.sockets.on('connection', function(client) {
