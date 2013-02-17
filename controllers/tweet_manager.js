@@ -450,7 +450,7 @@ function parseTweetsForGraph(tweets) {
     series.push({ name: '#'+ key, data: data });
   });
 
-  return series;
+  return { series: series, categories: dates };
 }
 
 // FIXME remove duplicated code, please?
@@ -468,7 +468,7 @@ exports.graph = function(req, res, next) {
     }
 
     var response_json = {
-      series : parseTweetsForGraph(tweets)
+      graph : parseTweetsForGraph(tweets)
     };
 
     res.contentType('application/json');

@@ -66,7 +66,11 @@ app.get('/api', tweet_manager.api);
 
 app.get('/stats', tweet_manager.stats);
 
-app.get('/graph', tweet_manager.graph);
+app.get('/graph.json', tweet_manager.graph);
+
+app.get('/graph.html', function(req, res) {
+  res.sendfile('graph.html');
+});
 
 app.get('/uptime', function(req, res) {
 	res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
