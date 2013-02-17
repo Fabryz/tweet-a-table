@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Elezioni 2013 | Tweet-a-Table</title>
+  
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+
+$(function () {
+    function generateGraph(options) {
+        return new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'line',
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: 'Elezioni2013 Hashcount',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: Twitter.com',
+                x: -20
+            },
+            xAxis: {
+                categories: options.categories
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of Tweets'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        this.x +': '+ this.y +' tweets';
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: options.series
+        });
+
+    }
+
+    var chart;
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: '/graph.json',
+            dataType: 'json',
+            success: function(data) {
+                var graphData = data.graph;
+
+                chart = generateGraph({ series: graphData.series, categories: graphData.categories });
+
+                console.log(JSON.stringify(graphData));
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+               console.log('Error: '+ textStatus +': '+ errorThrown);
+            }
+        });
+    });
+
+});
+
+</script>
+
+</head>
+<body>
+
+    <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+  
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+</body>
+</html>
