@@ -9,6 +9,7 @@
         content="Twitter hashcounts visualization for the 2013 Italian Elections event"/>
   
   <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/spin.min.js"></script>
 
 <script type="text/javascript">
 
@@ -63,12 +64,34 @@ $(function () {
 
     var chart;
     $(document).ready(function() {
+        var opts = {
+          lines: 13, // The number of lines to draw
+          length: 27, // The length of each line
+          width: 4, // The line thickness
+          radius: 38, // The radius of the inner circle
+          corners: 1, // Corner roundness (0..1)
+          rotate: 0, // The rotation offset
+          color: '#000', // #rgb or #rrggbb
+          speed: 1, // Rounds per second
+          trail: 60, // Afterglow percentage
+          shadow: false, // Whether to render a shadow
+          hwaccel: true, // Whether to use hardware acceleration
+          className: 'spinner', // The CSS class to assign to the spinner
+          zIndex: 2e9, // The z-index (defaults to 2000000000)
+          top: 'auto', // Top position relative to parent in px
+          left: 'auto' // Left position relative to parent in px
+        };
+        var target = document.getElementById('loading');
+        var spinner = new Spinner(opts).spin(target);
+
         $.ajax({
             type: 'GET',
             url: '/graph.json',
             dataType: 'json',
             success: function(data) {
                 var graphData = data.graph;
+
+                $('#loading').hide();
 
                 chart = generateGraph({ series: graphData.series, categories: graphData.categories });
 
@@ -88,6 +111,7 @@ $(function () {
 <body>
 
     <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="loading"></div>
   
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
