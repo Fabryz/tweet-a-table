@@ -68,8 +68,8 @@ app.get('/stats', tweet_manager.stats);
 
 app.get('/graph.json', tweet_manager.graph);
 
-app.get('/graph.html', function(req, res) {
-  res.sendfile('graph.html');
+app.get('/elezioni2013.html', function(req, res) {
+  res.sendfile('elezioni2013.html');
 });
 
 app.get('/uptime', function(req, res) {
