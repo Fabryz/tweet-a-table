@@ -171,7 +171,7 @@ function saveDb() {
 // return require('./filename-with-no-extension'); could be used
 function readJSONFile(filename) {
 	var JSONFile = '';
-	
+
 	try {
 		JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
 	} catch(e) {
@@ -264,7 +264,7 @@ function grabTwitterFeed() {
       tweet_manager.create(tweet);
 
       //if (process.env.NODE_ENV == "development") {
-        console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags));
+        console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
       //}
 
 			//io.sockets.emit('leaderboard', strencode(stream.leaderboard));

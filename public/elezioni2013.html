@@ -7,7 +7,7 @@
   <meta property="og:image" content="./img/twitter-bird-white-on-blue.png"/>
   <meta property="og:description"
         content="Twitter hashcounts visualization for the 2013 Italian Elections event"/>
-  
+
   <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="./js/spin.min.js"></script>
 
@@ -86,18 +86,19 @@ $(function () {
 
         $.ajax({
             type: 'GET',
-            url: '/graph.json',
+            url: '/js/graph_elezioni2013.json', // point to the static JSON, after event conclusion
             dataType: 'json',
             success: function(data) {
-                var graphData = data.graph;
+                // var graphData = data.graph;
 
                 $('#loading').hide();
 
-                chart = generateGraph({ series: graphData.series, categories: graphData.categories });
+                // chart = generateGraph({ series: graphData.series, categories: graphData.categories });
+                chart = generateGraph({ series: data.series, categories: data.categories });
 
-                console.log(JSON.stringify(graphData));
+                //console.log(JSON.stringify(data));
             },
-            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
                console.log('Error: '+ textStatus +': '+ errorThrown);
             }
         });
@@ -112,7 +113,7 @@ $(function () {
 
     <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
     <div id="loading"></div>
-  
+
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
