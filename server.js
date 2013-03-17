@@ -114,7 +114,7 @@ configs = readConfigs();
 
 app.listen(8080);
 
-grabTwitterFeed();
+// grabTwitterFeed(); // UNCOMMENT ME TO START
 
 // var interval = setInterval(function() {
 //   tu = '';
