@@ -1,6 +1,6 @@
 {
-  "name": "tweet-a-table",
-  "version": "0.6.0-6",
+  "name": "highwheel",
+  "version": "0.0.1",
   "private": true,
   "engines": {
     "node": "0.8.x"
@@ -11,7 +11,6 @@
     "tuiter": "0.2.x",
     "mongoose": "3.5.x"
   },
-  "subdomain": "tweet-a-table",
   "scripts": {
     "start": "server.js"
   }
