@@ -1,1 +1,3 @@
 - save the whole tweet AND id/date/hashtags
+- add the single event hashtag on track list parameters
+- save to DB only after N tweets have been collected
