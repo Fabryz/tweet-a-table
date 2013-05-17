@@ -1,6 +1,11 @@
 High Wheel
 ==========
 
+* duplicate database.dist.json in database_development.json and update it
+* duplicate database.dist.json in database_production.json and update it
+* duplicate twitter.dist.json in twitter_development.json and update it
+* duplicate twitter.dist.json in twitter_production.json and update it
+
 License
 -------
 
