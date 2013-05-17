@@ -86,7 +86,7 @@ exports.update = function(req, res, next) {
       });
     }
   });
-  
+
 };
 
 
@@ -112,7 +112,7 @@ exports.remove = function(req, res, next) {
       return res.redirect('/admin/users');
     });
   });
-  
+
 };
 
 exports.new = function(req, res, next) {
@@ -145,7 +145,7 @@ function contains(arr, obj) {
 
 function parseTweetForHashtags(hashtags) {
   var parsed = [];
-  
+
   hashtags = lowercaseHashtags(hashtags);
 
   var length = hashtags.length;
@@ -163,6 +163,7 @@ exports.create = function(data) {
 
   var tweet = new Tweet({
     id_str   : data.id_str,
+    tweet    : JSON.stringify(data),
     hashtags : JSON.stringify(hashtags)
   });
 
@@ -331,11 +332,11 @@ exports.stats = function(req, res, next) {
 
           marker_end = Date.now();
           console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
-          
+
         });
-        
+
       });
-    
+
     });
 
   });
@@ -347,7 +348,7 @@ exports.stats = function(req, res, next) {
 // FIXME function ALREADY used in server.js, stop duplicating
 function readJSONFile(filename) {
   var JSONFile = '';
-  
+
   try {
     JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
   } catch(e) {
@@ -381,7 +382,7 @@ function parseTweetsForGraph(tweets) {
   var length = tweets.length;
   for (var i = 0; i < length; i++) {
     var created_at = new Date(tweets[i].created_at);
-    
+
     // 20130217
     var created_at_key = created_at.getFullYear() +''+ pad(created_at.getMonth() + 1) +''+ pad(created_at.getDate());
 
@@ -394,7 +395,7 @@ function parseTweetsForGraph(tweets) {
     if (dates.indexOf(created_at_key) == -1) {
       dates.push(created_at_key);
     }
-    
+
     var hashtags = JSON.parse(tweets[i].hashtags);
 
     hashtags.forEach(function(hash) {
@@ -476,7 +477,7 @@ exports.graph = function(req, res, next) {
 
     marker_end = Date.now();
     console.log('* ...answered GRAPH Request ('+ (marker_end - marker_start) +'ms)');
- 
+
   });
 
 };

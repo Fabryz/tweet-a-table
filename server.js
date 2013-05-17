@@ -50,9 +50,27 @@ app.get('/', function(req, res) {
 	res.sendfile('index.html');
 });
 
+app.get('/about.html', function(req, res) {
+	res.sendfile('about.html');
+});
+
+app.get('/archive/euro2012.html', function(req, res) {
+	res.sendfile('archive/euro2012.html');
+});
+
+app.get('/archive/london2012.html', function(req, res) {
+	res.sendfile('archive/london2012.html');
+});
+
 app.get('/api', tweet_manager.api);
 
 app.get('/stats', tweet_manager.stats);
+
+app.get('/graph.json', tweet_manager.graph);
+
+app.get('/elezioni2013.html', function(req, res) {
+  res.sendfile('elezioni2013.html');
+});
 
 app.get('/uptime', function(req, res) {
 	res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
@@ -89,14 +107,14 @@ var stream = {
 };
 
 var tu = '',
-configs = readConfigs();
+    configs = readConfigs();
 
 //createParamsFile();
 // checkDb();
 
 app.listen(8080);
 
-// grabTwitterFeed(); // UNCOMMENT ME TO START
+grabTwitterFeed(); // UNCOMMENT ME TO START
 
 // var interval = setInterval(function() {
 //   tu = '';
@@ -234,6 +252,7 @@ function elaborateStats(hashtags) {
 
 // Using Twitter Streaming API
 function grabTwitterFeed() {
+
 	tu = new Tuiter(configs.twitterApp);
 
 	tu.filter({ track: configs.value.split(',') }, function(feed) {
