@@ -1,7 +1,11 @@
 var express = require('express'),
-fs = require('fs'),
-Tuiter = require('tuiter'),
-app = module.exports = express.createServer();
+    socketio = require('socket.io'),
+    http = require('http'),
+    path = require('path'),
+    fs = require('fs'),
+    Tuiter = require('tuiter');
+
+var app = express();
 
 var tweet_manager = require('./controllers/tweet_manager');
 
@@ -9,13 +13,12 @@ var tweet_manager = require('./controllers/tweet_manager');
 * Configurations
 */
 
-app.configure(function() {
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-  app.use(express.logger(':remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'));
-  app.use(express.favicon());
+app.configure(function(){
+    app.set('port', process.env.PORT || 8080);
+    app.use(express.favicon());
+    app.use(express.logger('short'));
+    app.use(app.router);
+    app.use(express.static(path.join(__dirname, 'public')));
 });
 
 // all environments
@@ -30,7 +33,7 @@ app.configure('development', function() {
 
 // production only
 app.configure('production', function() {
-	app.use(express.errorHandler());
+    app.use(express.errorHandler());
 });
 
 /*
@@ -38,72 +41,50 @@ app.configure('production', function() {
 */
 
 function secondsToString(seconds) {
-	var numDays = Math.floor(seconds / 86400);
-	var numHours = Math.floor((seconds % 86400) / 3600);
-	var numMinutes = Math.floor(((seconds % 86400) % 3600) / 60);
-	var numSeconds = Math.floor((seconds % 86400) % 3600) % 60;
+    var numDays = Math.floor(seconds / 86400);
+    var numHours = Math.floor((seconds % 86400) / 3600);
+    var numMinutes = Math.floor(((seconds % 86400) % 3600) / 60);
+    var numSeconds = Math.floor((seconds % 86400) % 3600) % 60;
 
-	return numDays +' days '+ numHours +' hours '+ numMinutes +' minutes '+ numSeconds +' seconds.';
+    return numDays +' days '+ numHours +' hours '+ numMinutes +' minutes '+ numSeconds +' seconds.';
 }
 
 app.get('/', function(req, res) {
-	res.sendfile('index.html');
-});
-
-app.get('/about.html', function(req, res) {
-	res.sendfile('about.html');
-});
-
-app.get('/archive/euro2012.html', function(req, res) {
-	res.sendfile('archive/euro2012.html');
-});
-
-app.get('/archive/london2012.html', function(req, res) {
-	res.sendfile('archive/london2012.html');
-});
-
-app.get('/api', tweet_manager.api);
-
-app.get('/stats', tweet_manager.stats);
-
-app.get('/graph.json', tweet_manager.graph);
-
-app.get('/elezioni2013.html', function(req, res) {
-  res.sendfile('elezioni2013.html');
+    res.sendfile(path.join(__dirname, 'public/index.html'));
 });
 
 app.get('/uptime', function(req, res) {
-	res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
+    res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
 });
 
 // app.get('/resetdb', function(req, res) {
-//	createDb();
-//	console.log('Db has been resetted.');
-//	res.redirect('/');
+//  createDb();
+//  console.log('Db has been resetted.');
+//  res.redirect('/');
 // });
 
 app.get('/restart', function(req, res) {
-	console.log(' * Restarting in 5 seconds... * ');
-	setTimeout(function() {
-		tu = '';
-		grabTwitterFeed();
-		console.log(' * Triggered restart * ');
-		res.redirect('/');
-	}, 5000);
+    console.log(' * Restarting in 5 seconds... * ');
+    setTimeout(function() {
+        tu = '';
+        grabTwitterFeed();
+        console.log(' * Triggered restart * ');
+        res.redirect('/');
+    }, 5000);
 });
 
 /*
 * Main
 */
 
-var	totUsers = 0;
+var totUsers = 0;
 
 var stream = {
-	leaderboard: [],
-	events: {},
-	options: {},
-	createdAt: '',
-	updatedAt: ''
+    leaderboard: [],
+    events: {},
+    options: {},
+    createdAt: '',
+    updatedAt: ''
 };
 
 var tu = '',
@@ -111,8 +92,6 @@ var tu = '',
 
 //createParamsFile();
 // checkDb();
-
-app.listen(8080);
 
 grabTwitterFeed(); // UNCOMMENT ME TO START
 
@@ -122,34 +101,36 @@ grabTwitterFeed(); // UNCOMMENT ME TO START
 //   console.log(' * 5 mins passed, autorestarted. * ');
 // }, 300000); // 5 mins
 
-console.log('Express server listening in %s mode', app.settings.env);
+var server = http.createServer(app).listen(app.get('port'), function() {
+    console.log("Express server listening on port "+ app.get('port') +" in "+ app.get('env') +" mode.");
+});
 
 /*
 * Functions
 */
 
 function resetDb() {
-	var now = new Date();
-	stream.createdAt = now;
-	stream.updatedAt = now;
+    var now = new Date();
+    stream.createdAt = now;
+    stream.updatedAt = now;
 
-	stream.leaderboard = [];
-	stream.options.forEach(function(opt) {
-		stream.leaderboard.push({ option: opt.substring(1), count: 0 });
-	});
+    stream.leaderboard = [];
+    stream.options.forEach(function(opt) {
+        stream.leaderboard.push({ option: opt.substring(1), count: 0 });
+    });
 }
 
 function createDb() {
-	resetDb();
+    resetDb();
 
   writeJSONFile('db.json', stream);
 }
 
 function checkDb() {
-	fs.stat(__dirname +'/db.json', function(err, stat) {
-		if (err === null) { // file exists
-			loadDb();
-		} else if (err.code == 'ENOENT') { // file doesn't exist
+    fs.stat(__dirname +'/db.json', function(err, stat) {
+        if (err === null) { // file exists
+            loadDb();
+        } else if (err.code == 'ENOENT') { // file doesn't exist
    createDb();
  } else {
    console.log('Error while reading the database file: '+ err.code);
@@ -158,56 +139,56 @@ function checkDb() {
 }
 
 function loadDb() {
-	stream = readJSONFile('db.json');
-	orderLeaderboard();
+    stream = readJSONFile('db.json');
+    orderLeaderboard();
 }
 
 function saveDb() {
-	orderLeaderboard();
-	stream.updatedAt = new Date();
-	writeJSONFile('db.json', stream);
+    orderLeaderboard();
+    stream.updatedAt = new Date();
+    writeJSONFile('db.json', stream);
 }
 
 // return require('./filename-with-no-extension'); could be used
 function readJSONFile(filename) {
-	var JSONFile = '';
+    var JSONFile = '';
 
-	try {
-		JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
-	} catch(e) {
-		console.log('Error while reading '+ filename +': '+ e);
-	}
+    try {
+        JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
+    } catch(e) {
+        console.log('Error while reading '+ filename +': '+ e);
+    }
 
-	return JSONFile;
+    return JSONFile;
 }
 
 function writeJSONFile(filename, contents) {
-	try {
-		fs.writeFileSync(__dirname +'/'+ filename, JSON.stringify(contents), 'utf8');
-	} catch(e) {
-		console.log('Error while writing '+ filename +': '+ e);
-	}
+    try {
+        fs.writeFileSync(__dirname +'/'+ filename, JSON.stringify(contents), 'utf8');
+    } catch(e) {
+        console.log('Error while writing '+ filename +': '+ e);
+    }
 }
 
 function createParamsFile() {
-	var keywords = readJSONFile('./configs/keywords.json');
-	stream.options = keywords.options.split(',');
-	stream.events = keywords.events.split(',');
+    var keywords = readJSONFile('./configs/keywords.json');
+    stream.options = keywords.options.split(',');
+    stream.events = keywords.events.split(',');
 
-	var value = '';
-	stream.options.forEach(function(opt) {
-		stream.events.forEach(function(ev) {
-			value += ev +' '+ opt +',';
-		});
-	});
-	value = value.substring(0, value.length - 1); // remove last ,
+    var value = '';
+    stream.options.forEach(function(opt) {
+        stream.events.forEach(function(ev) {
+            value += ev +' '+ opt +',';
+        });
+    });
+    value = value.substring(0, value.length - 1); // remove last ,
 
-	var params = {
-		'param': keywords.param,
-		'value': value
-	};
+    var params = {
+        'param': keywords.param,
+        'value': value
+    };
 
-	writeJSONFile('./configs/params.json', params);
+    writeJSONFile('./configs/params.json', params);
 }
 
 function readConfigs() {
@@ -227,13 +208,13 @@ function strencode(data) {
 }
 
 function SortByCountDesc(a, b) {
-	a = a.count;
-	b = b.count;
-	return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    a = a.count;
+    b = b.count;
+    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
 }
 
 function orderLeaderboard() {
-	stream.leaderboard.sort(SortByCountDesc);
+    stream.leaderboard.sort(SortByCountDesc);
 }
 
 function elaborateStats(hashtags) {
@@ -244,23 +225,23 @@ function elaborateStats(hashtags) {
 
       saveDb();
 
-				// console.log(item.option +' has now '+ item.count);
-			}
-		});
+                // console.log(item.option +' has now '+ item.count);
+            }
+        });
   });
 }
 
 // Using Twitter Streaming API
 function grabTwitterFeed() {
 
-	tu = new Tuiter(configs.twitterApp);
+    tu = new Tuiter(configs.twitterApp);
 
-	tu.filter({ track: configs.value.split(',') }, function(feed) {
-		console.log(' * Stream started * ');
+    tu.filter({ track: configs.value.split(',') }, function(feed) {
+        console.log(' * Stream started * ');
 
-		feed.on('tweet', function(tweet) {
-			// var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
-			//elaborateStats(hashtags);
+        feed.on('tweet', function(tweet) {
+            // var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
+            //elaborateStats(hashtags);
 
       tweet_manager.create(tweet);
 
@@ -268,47 +249,40 @@ function grabTwitterFeed() {
         console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
       //}
 
-			//io.sockets.emit('leaderboard', strencode(stream.leaderboard));
-		});
+            //io.sockets.emit('leaderboard', strencode(stream.leaderboard));
+        });
 
-		feed.on('error', function(err) {
-			console.log(err);
-		});
-	});
+        feed.on('error', function(err) {
+            console.log(err);
+        });
+    });
 }
 
 /*
 * Socket.io
 */
 
-var io = require('socket.io').listen(app);
+var io = socketio.listen(server);
 
 io.configure(function() {
-	io.enable('browser client minification');
-	io.set('log level', 1);
-	// io.set('transports', [
- //   'websocket',
- //   'flashsocket',
- //   'htmlfile',
- //   'xhr-polling',
- //   'jsonp-polling'
- //   ]);
+    io.enable('browser client minification');
+    io.set('log level', 1);
 });
 
 io.sockets.on('connection', function(client) {
-	totUsers++;
-	console.log('+ User '+ client.id +' connected, total users: '+ totUsers);
+    totUsers++;
+    console.log('+ User '+ client.id +' connected, total users: '+ totUsers);
 
-	client.emit('clientId', { id: client.id });
-	client.emit('filters', { events: stream.events, options: stream.options, createdAt: stream.createdAt });
-	io.sockets.emit('tot', { tot: totUsers });
+    client.emit('clientId', { id: client.id });
+    client.emit('filters', { events: stream.events, options: stream.options, createdAt: stream.createdAt });
+    io.sockets.emit('tot', { tot: totUsers });
 
-	io.sockets.emit('leaderboard', strencode(stream.leaderboard));
+    io.sockets.emit('leaderboard', strencode(stream.leaderboard));
 
-	client.on('disconnect', function() {
-		totUsers--;
-		console.log('- User '+ client.id +' disconnected, total users: '+ totUsers);
+    client.on('disconnect', function() {
+        totUsers--;
+        console.log('- User '+ client.id +' disconnected, total users: '+ totUsers);
 
-		io.sockets.emit('tot', { tot: totUsers });
-	});
+        io.sockets.emit('tot', { tot: totUsers });
+    });
 });
