@@ -3,3 +3,5 @@ node_modules
 
 configs/twitter_*.json
 configs/database_*.json
+
+deploy_*
