@@ -1,19 +1,22 @@
+/*
+* Requirements
+*/
+
 var express = require('express'),
     socketio = require('socket.io'),
     http = require('http'),
     path = require('path'),
     fs = require('fs'),
-    Tuiter = require('tuiter');
+    Tuiter = require('tuiter'),
+    tweet_manager = require('./controllers/tweet_manager');
 
 var app = express();
-
-var tweet_manager = require('./controllers/tweet_manager');
 
 /*
 * Configurations
 */
 
-app.configure(function(){
+app.configure(function() {
     app.set('port', process.env.PORT || 8080);
     app.use(express.favicon());
     app.use(express.logger('short'));
@@ -54,14 +57,12 @@ app.get('/', function(req, res) {
 });
 
 app.get('/uptime', function(req, res) {
-    res.end('The server has been up for: '+ secondsToString( process.uptime().toString() ) );
+    var uptime = secondsToString( process.uptime().toString() );
+
+    res.end('The server has been up for: '+ uptime );
 });
 
-// app.get('/resetdb', function(req, res) {
-//  createDb();
-//  console.log('Db has been resetted.');
-//  res.redirect('/');
-// });
+app.get('/stats', tweet_manager.stats);
 
 app.get('/restart', function(req, res) {
     console.log(' * Restarting in 5 seconds... * ');
@@ -74,80 +75,8 @@ app.get('/restart', function(req, res) {
 });
 
 /*
-* Main
-*/
-
-var totUsers = 0;
-
-var stream = {
-    leaderboard: [],
-    events: {},
-    options: {},
-    createdAt: '',
-    updatedAt: ''
-};
-
-var tu = '',
-    configs = readConfigs();
-
-//createParamsFile();
-// checkDb();
-
-grabTwitterFeed(); // UNCOMMENT ME TO START
-
-// var interval = setInterval(function() {
-//   tu = '';
-//   grabTwitterFeed();
-//   console.log(' * 5 mins passed, autorestarted. * ');
-// }, 300000); // 5 mins
-
-var server = http.createServer(app).listen(app.get('port'), function() {
-    console.log("Express server listening on port "+ app.get('port') +" in "+ app.get('env') +" mode.");
-});
-
-/*
 * Functions
 */
-
-function resetDb() {
-    var now = new Date();
-    stream.createdAt = now;
-    stream.updatedAt = now;
-
-    stream.leaderboard = [];
-    stream.options.forEach(function(opt) {
-        stream.leaderboard.push({ option: opt.substring(1), count: 0 });
-    });
-}
-
-function createDb() {
-    resetDb();
-
-  writeJSONFile('db.json', stream);
-}
-
-function checkDb() {
-    fs.stat(__dirname +'/db.json', function(err, stat) {
-        if (err === null) { // file exists
-            loadDb();
-        } else if (err.code == 'ENOENT') { // file doesn't exist
-   createDb();
- } else {
-   console.log('Error while reading the database file: '+ err.code);
- }
-});
-}
-
-function loadDb() {
-    stream = readJSONFile('db.json');
-    orderLeaderboard();
-}
-
-function saveDb() {
-    orderLeaderboard();
-    stream.updatedAt = new Date();
-    writeJSONFile('db.json', stream);
-}
 
 // return require('./filename-with-no-extension'); could be used
 function readJSONFile(filename) {
@@ -176,11 +105,26 @@ function createParamsFile() {
     stream.events = keywords.events.split(',');
 
     var value = '';
-    stream.options.forEach(function(opt) {
-        stream.events.forEach(function(ev) {
-            value += ev +' '+ opt +',';
+
+    // Add the single events first
+    if (keywords.events) {
+        value += keywords.events +',';
+    }
+
+    // Then compose event param1,event param2...
+    if (keywords.options) {
+        stream.options.forEach(function(opt) {
+            stream.events.forEach(function(ev) {
+                if (ev && opt) {
+                    value += ev +' '+ opt +',';
+                } else if (ev) {
+                    value += ev +',';
+                } else if (opt) {
+                    value += opt +',';
+                }
+            });
         });
-    });
+    }
     value = value.substring(0, value.length - 1); // remove last ,
 
     var params = {
@@ -189,46 +133,24 @@ function createParamsFile() {
     };
 
     writeJSONFile('./configs/params.json', params);
+
+    console.log("* Params.json created with: "+ JSON.stringify(params));
 }
 
 function readConfigs() {
-  var env = process.env.NODE_ENV,
-    twitterConfigs = readJSONFile('./configs/twitter_'+ env +'.json'),
-    paramsConfigs = readJSONFile('./configs/params.json');
+    var env = process.env.NODE_ENV,
+        twitterConfigs = readJSONFile('./configs/twitter_'+ env +'.json'),
+        paramsConfigs = readJSONFile('./configs/params.json');
 
-  return {
-    twitterApp : twitterConfigs,
-    param : paramsConfigs.param,
-    value : paramsConfigs.value
-  };
+    return {
+        twitterApp : twitterConfigs,
+        param : paramsConfigs.param,
+        value : paramsConfigs.value
+    };
 }
 
 function strencode(data) {
-  return unescape(encodeURIComponent(JSON.stringify(data)));
-}
-
-function SortByCountDesc(a, b) {
-    a = a.count;
-    b = b.count;
-    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
-}
-
-function orderLeaderboard() {
-    stream.leaderboard.sort(SortByCountDesc);
-}
-
-function elaborateStats(hashtags) {
-   hashtags.forEach(function(hash) {
-    stream.leaderboard.forEach(function(item) {
-     if (item.option == hash) {
-      item.count++;
-
-      saveDb();
-
-                // console.log(item.option +' has now '+ item.count);
-            }
-        });
-  });
+    return unescape(encodeURIComponent(JSON.stringify(data)));
 }
 
 // Using Twitter Streaming API
@@ -237,17 +159,14 @@ function grabTwitterFeed() {
     tu = new Tuiter(configs.twitterApp);
 
     tu.filter({ track: configs.value.split(',') }, function(feed) {
-        console.log(' * Stream started * ');
+        console.log('* Stream started');
 
         feed.on('tweet', function(tweet) {
-            // var hashtags = parseTweetForHashtags(tweet.entities.hashtags);
-            //elaborateStats(hashtags);
+            if (process.env.NODE_ENV == "development") { // DEBUG
+                console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
+            }
 
-      tweet_manager.create(tweet);
-
-      //if (process.env.NODE_ENV == "development") {
-        console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
-      //}
+            tweet_manager.create(tweet);
 
             //io.sockets.emit('leaderboard', strencode(stream.leaderboard));
         });
@@ -257,6 +176,37 @@ function grabTwitterFeed() {
         });
     });
 }
+
+/*
+* Main
+*/
+
+var totUsers = 0;
+
+var stream = {
+    leaderboard: [],
+    events: {},
+    options: {},
+    createdAt: '',
+    updatedAt: ''
+};
+
+var tu = '',
+    configs = readConfigs();
+
+createParamsFile();
+
+grabTwitterFeed(); // UNCOMMENT ME TO START
+
+// var interval = setInterval(function() {
+//   tu = '';
+//   grabTwitterFeed();
+//   console.log(' * 5 mins passed, autorestarted. * ');
+// }, 300000); // 5 mins
+
+var server = http.createServer(app).listen(app.get('port'), function() {
+    console.log("Express server listening on port "+ app.get('port') +" in "+ app.get('env') +" mode.");
+});
 
 /*
 * Socket.io
