@@ -64,7 +64,10 @@ app.get('/uptime', function(req, res) {
     res.end('The server has been up for: '+ uptime );
 });
 
-app.get('/stats', tweet_manager.stats);
+// app.get('/stats', tweet_manager.stats);
+app.get('/count', tweet_manager.count);
+// app.get('/tweets', tweet_manager.tweets);
+app.get('/occurences', tweet_manager.occurences);
 
 app.get('/restart', function(req, res) {
     console.log(' * Restarting in 5 seconds... * ');

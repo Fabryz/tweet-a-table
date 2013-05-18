@@ -46,12 +46,12 @@ function parseTweetForHashtags(hashtags) {
 }
 
 exports.create = function(data) {
-  var hashtags = parseTweetForHashtags(data.entities.hashtags);
+  // var hashtags = parseTweetForHashtags(data.entities.hashtags);
 
   var tweet = new Tweet({
-    id_str   : data.id_str,
-    tweet    : JSON.stringify(data),
-    hashtags : JSON.stringify(hashtags)
+    // id_str   : data.id_str,
+    tweet    : data
+    // hashtags : JSON.stringify(hashtags)
   });
 
   tweet.save(function(err) {
@@ -119,14 +119,19 @@ function generateOccurrences(tweets) {
 
   var length = tweets.length;
   for (var i = 0; i < length; i++) {
-    var hashtags = JSON.parse(tweets[i].hashtags);
 
-    hashtags.forEach(function(hash) {
-      if (!parsed[hash]) {
-        parsed[hash] = 0;
-      }
-      parsed[hash] = parsed[hash] + 1;
-    });
+    var hashtags = "";
+    if (tweets[i].tweet.entities.hashtags) {
+      hashtags = tweets[i].tweet.entities.hashtags;
+
+      hashtags.forEach(function(hash) {
+        if (!parsed[hash.text]) {
+          parsed[hash.text] = 0;
+        }
+        parsed[hash.text] = parsed[hash.text] + 1;
+      });
+
+    }
 
   }
 
@@ -136,60 +141,121 @@ function generateOccurrences(tweets) {
 }
 
 // FIXME remove duplicated code
-exports.stats = function(req, res, next) {
+// exports.stats = function(req, res, next) {
+//   var marker_start = Date.now(),
+//       marker_end = '';
+
+//   console.log('* Received STATS Request...');
+
+//   Tweet.find().select('tweet.entities.hashtags tweet.created_at').lean().exec(function(err, tweets) {
+//     if (err) {
+//       console.log(err);
+
+//       return next();
+//     }
+
+//     Tweet.find({}).select('tweet.created_at').sort({ "tweet.created_at": 1 }).limit(1).lean().exec(function(err, date_start) {
+//       if (err) {
+//         console.log(err);
+
+//         return next();
+//       }
+
+//       Tweet.find({}).select('tweet.created_at').sort({ "tweet.created_at": -1 }).limit(1).lean().exec(function(err, date_end) {
+//         if (err) {
+//           console.log(err);
+
+//           return next();
+//         }
+
+//         Tweet.count().lean().exec(function(err, total_tweets) {
+//           if (err) {
+//             console.log(err);
+
+//             return next();
+//           }
+
+//           var occurrences = generateOccurrences(tweets);
+
+//           var response_json = {
+//             occurrences  : JSON.stringify(occurrences),
+//             date_start   : date_start[0].created_at,
+//             date_end     : date_end[0].created_at,
+//             total_tweets : total_tweets
+//           };
+
+//           res.contentType('application/json');
+//           res.end(JSON.stringify(response_json));
+
+//           marker_end = Date.now();
+//           console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
+
+//         });
+
+//       });
+
+//     });
+
+//   });
+
+// };
+
+exports.count = function(req, res, next) {
   var marker_start = Date.now(),
       marker_end = '';
 
-  console.log('* Received STATS Request...');
+  console.log('* Received COUNT Request...');
 
-  Tweet.find().select('_id id_str hashtags created_at').lean().exec(function(err, tweets) {
+  Tweet.count().lean().exec(function(err, total_tweets) {
     if (err) {
       console.log(err);
 
       return next();
     }
 
-    Tweet.find({}).select('created_at').sort({ created_at: 1 }).limit(1).lean().exec(function(err, date_start) {
-      if (err) {
-        console.log(err);
+    var response_json = {
+      total_tweets : total_tweets
+    };
 
-        return next();
-      }
+    res.contentType('application/json');
+    res.end(JSON.stringify(response_json));
 
-      Tweet.find({}).select('created_at').sort({ created_at: -1 }).limit(1).lean().exec(function(err, date_end) {
-        if (err) {
-          console.log(err);
+    marker_end = Date.now();
+    console.log('* ...answered COUNT Request ('+ (marker_end - marker_start) +'ms)');
 
-          return next();
-        }
+  });
 
-        Tweet.count().lean().exec(function(err, total_tweets) {
-          if (err) {
-            console.log(err);
+};
 
-            return next();
-          }
+exports.occurences = function(req, res, next) {
+  var marker_start = Date.now(),
+      marker_end = '';
 
-          var occurrences = generateOccurrences(tweets);
+  console.log('* Received OCCURENCES Request...');
 
-          var response_json = {
-            occurrences  : JSON.stringify(occurrences),
-            date_start   : date_start[0].created_at,
-            date_end     : date_end[0].created_at,
-            total_tweets : total_tweets
-          };
+  Tweet.find().select('tweet.entities.hashtags').lean().exec(function(err, tweets) {
+    if (err) {
+      console.log(err);
 
-          res.contentType('application/json');
-          res.end(JSON.stringify(response_json));
+      return next();
+    }
 
-          marker_end = Date.now();
-          console.log('* ...answered STATS Request ('+ (marker_end - marker_start) +'ms)');
+    // res.send(tweets);
 
-        });
+    // var data = {};
+    // data.hashtags = parseTweetForHashtags(tweets.entities.hashtags);
 
-      });
+    var occurrences = generateOccurrences(tweets);
 
-    });
+    var response_json = {
+      occurrences  : JSON.stringify(occurrences)
+    };
+
+    res.contentType('application/json');
+    res.end(JSON.stringify(response_json));
+
+    marker_end = Date.now();
+    console.log('* ...answered OCCURENCES Request ('+ (marker_end - marker_start) +'ms)');
 
   });
 
