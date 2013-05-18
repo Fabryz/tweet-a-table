@@ -8,7 +8,9 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs'),
     Tuiter = require('tuiter'),
-    tweet_manager = require('./controllers/tweet_manager');
+    tweet_manager = require('./controllers/tweet_manager'),
+    tweetsQueue = [],
+    tweetsQueueMaxSize = 3;
 
 var app = express();
 
@@ -162,11 +164,30 @@ function grabTwitterFeed() {
         console.log('* Stream started');
 
         feed.on('tweet', function(tweet) {
-            if (process.env.NODE_ENV == "development") { // DEBUG
-                console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
+            // if (process.env.NODE_ENV == "development") { // DEBUG
+            //     console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
+            // }
+
+            // Puts the tweet on queue
+            if (tweetsQueue.length < (tweetsQueueMaxSize - 1)) {
+                tweetsQueue.push(tweet);
+
+                if (process.env.NODE_ENV == "development") { // DEBUG
+                    process.stdout.write(".");
+                }
+            } else { // If the queue is full save to DB, then empty it
+                var length = tweetsQueue.length;
+                for (var i = 0; i < length; i++) {
+                    tweet_manager.create(tweetsQueue[i]);
+                }
+
+                tweetsQueue = [];
+
+                if (process.env.NODE_ENV == "development") { // DEBUG
+                    process.stdout.write("O");
+                }
             }
 
-            tweet_manager.create(tweet);
 
             //io.sockets.emit('leaderboard', strencode(stream.leaderboard));
         });
