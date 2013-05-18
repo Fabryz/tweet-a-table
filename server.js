@@ -175,19 +175,20 @@ function grabTwitterFeed() {
                 if (process.env.NODE_ENV == "development") { // DEBUG
                     process.stdout.write(".");
                 }
-            } else { // If the queue is full save to DB, then empty it
+            } else {
+                tweetsQueue.push(tweet);
+
+                 // If the queue is full save to DB, then empty it
                 var length = tweetsQueue.length;
                 for (var i = 0; i < length; i++) {
                     tweet_manager.create(tweetsQueue[i]);
                 }
-
-                tweetsQueue = [];
-
                 if (process.env.NODE_ENV == "development") { // DEBUG
                     process.stdout.write("O");
                 }
-            }
 
+                tweetsQueue = [];
+            }
 
             //io.sockets.emit('leaderboard', strencode(stream.leaderboard));
         });
