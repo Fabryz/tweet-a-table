@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-logs
+logs/*
 
 configs/twitter_*.json
 configs/database_*.json
