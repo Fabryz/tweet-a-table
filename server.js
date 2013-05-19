@@ -174,7 +174,7 @@ function grabTwitterFeed() {
 
             // Send only tweets with geo info
             // if (tweet.geo) {
-                // io.sockets.emit("tweet", strencode(tweet));
+                io.sockets.emit("tweet", strencode(tweet));
             // }
         });
 

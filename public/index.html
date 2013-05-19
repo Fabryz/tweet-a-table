@@ -1,1 +1,38 @@
-High Wheel
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+  <title>Highwheel</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="./css/style.css" media="screen">
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Searching for: <span id="query"></span></h1>
+    <div id="map"></div>
+    <div id="tweets"><ul></ul></div>
+    <div id="stats">
+      <span id="speed">0</span> tweets/sec (Max: <span id="maxSpeed">0</span> )<br />
+      Limit
+      <select name="limit" id="limit">
+        <option value="0">Infinite</option>
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+      </select>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="./js/vendor/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="./js/vendor/gmaps.js"></script>
+
+  <script type="text/javascript" src="./js/highwheel.js"></script>
+</body>
+</html>
