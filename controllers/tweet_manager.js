@@ -125,10 +125,12 @@ function generateOccurrences(tweets) {
       hashtags = tweets[i].tweet.entities.hashtags;
 
       hashtags.forEach(function(hash) {
-        if (!parsed[hash.text]) {
-          parsed[hash.text] = 0;
+        var hash_key = hash.text.toLowerCase();
+
+        if (!parsed[hash_key]) {
+          parsed[hash_key] = 0;
         }
-        parsed[hash.text] = parsed[hash.text] + 1;
+        parsed[hash_key] = parsed[hash_key] + 1;
       });
 
     }
