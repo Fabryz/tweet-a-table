@@ -6,9 +6,10 @@ var express = require('express'),
     socketio = require('socket.io'),
     http = require('http'),
     path = require('path'),
-    fs = require('fs'),
     Tuiter = require('tuiter'),
+    helpers = require('./helpers/helpers'),
     tweet_manager = require('./controllers/tweet_manager'),
+    statsController = require('./controllers/statsController'),
     tweetsQueue = [],
     tweetsQueueMaxSize = 3;
 
@@ -45,21 +46,12 @@ app.configure('production', function() {
 * Express
 */
 
-function secondsToString(seconds) {
-    var numDays = Math.floor(seconds / 86400);
-    var numHours = Math.floor((seconds % 86400) / 3600);
-    var numMinutes = Math.floor(((seconds % 86400) % 3600) / 60);
-    var numSeconds = Math.floor((seconds % 86400) % 3600) % 60;
-
-    return numDays +' days '+ numHours +' hours '+ numMinutes +' minutes '+ numSeconds +' seconds.';
-}
-
 app.get('/', function(req, res) {
     res.sendfile(path.join(__dirname, 'public/index.html'));
 });
 
 app.get('/uptime', function(req, res) {
-    var uptime = secondsToString( process.uptime().toString() );
+    var uptime = helpers.secondsToString( process.uptime().toString() );
 
     res.end('The server has been up for: '+ uptime );
 });
@@ -68,6 +60,8 @@ app.get('/uptime', function(req, res) {
 app.get('/count', tweet_manager.count);
 // app.get('/tweets', tweet_manager.tweets);
 app.get('/occurences', tweet_manager.occurences);
+
+app.get('/serverinfo', statsController.serverinfo);
 
 app.get('/restart', function(req, res) {
     console.log(' * Restarting in 5 seconds... * ');
@@ -83,29 +77,11 @@ app.get('/restart', function(req, res) {
 * Functions
 */
 
-// return require('./filename-with-no-extension'); could be used
-function readJSONFile(filename) {
-    var JSONFile = '';
-
-    try {
-        JSONFile = JSON.parse(fs.readFileSync(__dirname +'/'+ filename, 'utf8'));
-    } catch(e) {
-        console.log('Error while reading '+ filename +': '+ e);
-    }
-
-    return JSONFile;
-}
-
-function writeJSONFile(filename, contents) {
-    try {
-        fs.writeFileSync(__dirname +'/'+ filename, JSON.stringify(contents), 'utf8');
-    } catch(e) {
-        console.log('Error while writing '+ filename +': '+ e);
-    }
-}
-
 function createParamsFile() {
-    var keywords = readJSONFile('./configs/keywords.json');
+
+    console.log("dir " + path.join(__dirname, 'configs', 'keywords.json'));
+
+    var keywords = helpers.readJSONFile(path.join(__dirname, 'configs', 'keywords.json'));
     stream.options = keywords.options.split(',');
     stream.events = keywords.events.split(',');
 
@@ -137,15 +113,15 @@ function createParamsFile() {
         'value': value
     };
 
-    writeJSONFile('./configs/params.json', params);
+    helpers.writeJSONFile(path.join(__dirname, 'configs', 'params.json'), params);
 
     console.log("* Params.json created with: "+ JSON.stringify(params));
 }
 
 function readConfigs() {
     var env = process.env.NODE_ENV,
-        twitterConfigs = readJSONFile('./configs/twitter_'+ env +'.json'),
-        paramsConfigs = readJSONFile('./configs/params.json');
+        twitterConfigs = helpers.readJSONFile(path.join(__dirname, 'configs', 'twitter_'+ env +'.json')),
+        paramsConfigs = helpers.readJSONFile(path.join(__dirname, 'configs', 'params.json'));
 
     return {
         twitterApp : twitterConfigs,
