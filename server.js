@@ -6,6 +6,8 @@ var express = require('express'),
     socketio = require('socket.io'),
     http = require('http'),
     path = require('path'),
+    fs = require('fs'),
+    access_logfile = fs.createWriteStream(path.join(__dirname, 'logs', 'access.log'), { flags: 'a' }),
     Tuiter = require('tuiter'),
     helpers = require('./helpers/helpers'),
     tweet_manager = require('./controllers/tweet_manager'),
@@ -23,6 +25,7 @@ app.configure(function() {
     app.set('port', process.env.PORT || 8080);
     app.use(express.favicon());
     app.use(express.logger('short'));
+    app.use(express.logger({ stream: access_logfile }));
     app.use(app.router);
     app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -169,7 +172,10 @@ function grabTwitterFeed() {
                 tweetsQueue = [];
             }
 
-            //io.sockets.emit('leaderboard', strencode(stream.leaderboard));
+            // Send only tweets with geo info
+            // if (tweet.geo) {
+                // io.sockets.emit("tweet", strencode(tweet));
+            // }
         });
 
         feed.on('error', function(err) {
