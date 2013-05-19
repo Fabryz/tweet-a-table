@@ -7,7 +7,8 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     fs = require('fs'),
-    access_logfile = fs.createWriteStream(path.join(__dirname, 'logs', 'access.log'), { flags: 'a' }),
+    node_env = process.env.NODE_ENV,
+    access_logfile = fs.createWriteStream(path.join(__dirname, 'logs', 'access.'+ node_env +'.log'), { flags: 'a' }),
     Tuiter = require('tuiter'),
     helpers = require('./helpers/helpers'),
     tweet_manager = require('./controllers/tweet_manager'),
@@ -122,8 +123,7 @@ function createParamsFile() {
 }
 
 function readConfigs() {
-    var env = process.env.NODE_ENV,
-        twitterConfigs = helpers.readJSONFile(path.join(__dirname, 'configs', 'twitter_'+ env +'.json')),
+    var twitterConfigs = helpers.readJSONFile(path.join(__dirname, 'configs', 'twitter_'+ node_env +'.json')),
         paramsConfigs = helpers.readJSONFile(path.join(__dirname, 'configs', 'params.json'));
 
     return {
@@ -146,7 +146,7 @@ function grabTwitterFeed() {
         console.log('* Stream started');
 
         feed.on('tweet', function(tweet) {
-            // if (process.env.NODE_ENV == "development") { // DEBUG
+            // if (node_env == "development") { // DEBUG
             //     console.log(tweet.created_at +' '+ JSON.stringify(tweet.entities.hashtags)); // DEBUG tweets
             // }
 
@@ -154,7 +154,7 @@ function grabTwitterFeed() {
             if (tweetsQueue.length < (tweetsQueueMaxSize - 1)) {
                 tweetsQueue.push(tweet);
 
-                if (process.env.NODE_ENV == "development") { // DEBUG
+                if (node_env == "development") { // DEBUG
                     process.stdout.write(".");
                 }
             } else {
@@ -165,7 +165,7 @@ function grabTwitterFeed() {
                 for (var i = 0; i < length; i++) {
                     tweet_manager.create(tweetsQueue[i]);
                 }
-                if (process.env.NODE_ENV == "development") { // DEBUG
+                if (node_env == "development") { // DEBUG
                     process.stdout.write("O");
                 }
 
